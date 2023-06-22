@@ -2,14 +2,13 @@ import * as React from "react"
 import Seo from "../shared/seo"
 import { MainLayout } from "../shared/MainLayout/MainLayout"
 import { Fit } from "../shared/Fit/Fit"
+import { FileDrop } from "../shared/FileDrop/FileDrop"
 
 export const IndexPage = () => {
     return (
         <MainLayout title={"Mimetype.io"} header footer>
             <Fit>
-                We've been having very strange and serious DNS issues. We hope
-                to have the site fully restored within 12 hours. In the meantime
-                you can access mimetype information with the URL scheme.
+                <FileDrop />
             </Fit>
         </MainLayout>
     )

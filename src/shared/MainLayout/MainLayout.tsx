@@ -17,7 +17,11 @@ export const MainLayout = ({
     footer,
 }: PropsWithChildren<MainLayoutProps>) => {
     return (
-        <div className={"flex h-full w-full flex-1 flex-col bg-slate-50"}>
+        <div
+            className={
+                "flex h-full min-h-screen w-full flex-1 flex-col bg-slate-50"
+            }
+        >
             {header && (
                 <div className={"mb-4 border-b border-slate-200 bg-slate-100"}>
                     <Fit>

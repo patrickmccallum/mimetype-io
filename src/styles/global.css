@@ -16,3 +16,7 @@ html {
   min-height: 100vh;
   height: fit-content;
 }
+
+body, #___gatsby, #gatsby-focus-wrapper {
+  min-height: 100vh;
+}
