@@ -56,6 +56,7 @@ const MimetypeTemplate = props => {
                                 }
                             >
                                 <a
+                                    target={"_blank"}
                                     href={url}
                                     className={"text-blue-500 hover:underline"}
                                 >
