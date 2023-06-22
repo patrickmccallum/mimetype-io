@@ -43,16 +43,16 @@ const MimetypeTemplate = props => {
                         title={"File types"}
                         data={mime.types}
                         className={"mb-8"}
+                        emptyText={
+                            "Not known to appear with any file extensions"
+                        }
                     />
 
                     <DataWell
                         title={"Also appears as"}
-                        data={
-                            mime?.appearsAs ?? [
-                                "This type is not known to appear as anything else",
-                            ]
-                        }
+                        data={mime?.appearsAs}
                         className={"mb-8"}
+                        emptyText={"Not known to appear as any other types"}
                     />
 
                     <h2 className={"text-md font-bold text-slate-500"}>
