@@ -46,4 +46,4 @@ Contributions are welcome and greatly appreciated!
 
 ## Contact
 
-For any queries, feel free to reach out: patrick [at] patrickmccallum [dot] com
+For any queries, feel free to reach out either here, with an issue, or at contact [at] mimetype [dot] io
