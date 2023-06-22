@@ -8,6 +8,7 @@
     "@tabler/icons-react": "^2.22.0",
     "classnames": "^2.3.2",
     "gatsby": "^5.11.0",
+    "gatsby-plugin-google-analytics": "^5.11.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
