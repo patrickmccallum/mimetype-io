@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #___gatsby, #gatsby-focus-wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  font-family: Montserrat, -apple-system, sans-serif;
+}
+
+html {
+  min-height: 100vh;
+  height: fit-content;
+}
