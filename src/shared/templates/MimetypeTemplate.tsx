@@ -4,6 +4,7 @@ import { Fit } from "../Fit/Fit"
 import { DataWell } from "../ DataWell/DataWell"
 import { SecondaryButton } from "../Button/SecondaryButton"
 import { IconExternalLink } from "@tabler/icons-react"
+import { Link } from "gatsby"
 
 const MimetypeTemplate = props => {
     const mime = props.pageContext
@@ -17,9 +18,19 @@ const MimetypeTemplate = props => {
                             {mime.name}
                         </h1>
                         <div className={"flex items-center gap-4"}>
-                            <SecondaryButton size={"lg"}>
-                                Edit this page
-                            </SecondaryButton>
+                            <Link
+                                to={
+                                    "https://github.com/patrickmccallum/mimetype-io/blob/master/mimeData.json"
+                                }
+                                target={"_blank"}
+                            >
+                                <SecondaryButton
+                                    size={"lg"}
+                                    className={"whitespace-nowrap"}
+                                >
+                                    Edit this page
+                                </SecondaryButton>
+                            </Link>
                         </div>
                     </div>
                     <p
