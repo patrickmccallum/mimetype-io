@@ -48,7 +48,7 @@ const MimetypeTemplate = props => {
                         Further reading
                     </h2>
                     <ol className={"list list-inside list-decimal"}>
-                        {mime?.furtherReading.map(({ title, url }) => (
+                        {mime?.furtherReading?.map(({ title, url }) => (
                             <li
                                 key={url}
                                 className={
