@@ -6,6 +6,7 @@ import {
     IconArrowLeft,
     IconBrandGithub,
     IconCode,
+    IconHome,
     IconPlus,
     IconSearch,
     IconSlash,
@@ -23,30 +24,28 @@ export const Header = ({}: HeaderProps) => {
         <div className={"flex w-full items-stretch justify-between gap-4 py-4"}>
             <div className={"flex flex-1 items-stretch gap-4"}>
                 <div className={"flex items-center text-lg tracking-wide"}>
-                    {/*<Link to={"/"} className={"flex items-center no-underline"}>*/}
-                    {/*    <div*/}
-                    {/*        className={*/}
-                    {/*            "rounded-full bg-slate-500 p-2 font-bold text-slate-50 underline-offset-4 hover:underline"*/}
-                    {/*        }*/}
-                    {/*    >*/}
-                    {/*        <IconCode />*/}
-                    {/*    </div>*/}
-                    {/*</Link>*/}
-                    <IconButton>
-                        <IconArrowLeft />
-                    </IconButton>
+                    <Link to={"/"} className={"flex items-center no-underline"}>
+                        <div
+                            className={
+                                "rounded-full bg-slate-500 p-2 font-bold text-slate-50 underline-offset-4 hover:underline"
+                            }
+                        >
+                            <IconHome />
+                        </div>
+                    </Link>
+                    {/*<IconButton>*/}
+                    {/*    <IconArrowLeft />*/}
+                    {/*</IconButton>*/}
                 </div>
-                <div className={"flex items-center"}>
-                    <div
-                        className={
-                            "flex items-center gap-1 border border-slate-300 px-2 py-1"
-                        }
-                    >
-                        <div>image</div>/<div>heic</div>
-                    </div>
-                </div>
-            </div>
-            <div className={"flex items-center gap-2 text-slate-500"}>
+                {/*<div className={"flex items-center"}>*/}
+                {/*    <div*/}
+                {/*        className={*/}
+                {/*            "flex items-center gap-1 border border-slate-300 px-2 py-1"*/}
+                {/*        }*/}
+                {/*    >*/}
+                {/*        <div>image</div>/<div>heic</div>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
                 <div
                     className={classNames(
                         "flex w-full max-w-sm flex-1 cursor-text items-center gap-4 rounded-lg bg-slate-200 px-6 py-3 transition-all duration-100",
@@ -71,12 +70,27 @@ export const Header = ({}: HeaderProps) => {
                         onBlur={() => setIsSearchFocused(false)}
                     />
                 </div>
-                <IconButton>
-                    <IconBrandGithub />
-                </IconButton>
-                <IconButton>
-                    <IconPlus />
-                </IconButton>
+            </div>
+            <div className={"flex items-center gap-2 text-slate-500"}>
+                <Link
+                    to={"https://github.com/patrickmccallum/mimetype-io"}
+                    target={"_blank"}
+                >
+                    <IconButton>
+                        <IconBrandGithub />
+                    </IconButton>
+                </Link>
+
+                <Link
+                    to={
+                        "https://github.com/patrickmccallum/mimetype-io/issues/new?assignees=&labels=&projects=&template=mimetype-change.md&title=%5BCHANGE%5D+mimetype%2Fhere"
+                    }
+                    target={"_blank"}
+                >
+                    <IconButton>
+                        <IconPlus />
+                    </IconButton>
+                </Link>
             </div>
         </div>
     )

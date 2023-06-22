@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "mimetype.io",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Check a files mimetype instantly, see related extensions, and alternatives it may appear as.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Patrick Mcallum",
   "dependencies": {
     "@tabler/icons-react": "^2.22.0",
     "classnames": "^2.3.2",
