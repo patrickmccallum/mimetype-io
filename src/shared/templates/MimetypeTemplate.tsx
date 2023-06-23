@@ -48,7 +48,7 @@ const MimetypeTemplate = props => {
                             <IconDatabase
                                 size={40}
                                 className={
-                                    "rounded-md bg-indigo-500 p-2 text-indigo-50"
+                                    "rounded-md bg-blue-500 p-2 text-indigo-50"
                                 }
                             />{" "}
                             <div className={"italic text-slate-600"}>
