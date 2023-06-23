@@ -3,6 +3,7 @@ import { useMemo } from "react"
 import * as classNames from "classnames"
 import { CopyButton } from "../Button/CopyButton"
 import { IconGhost } from "@tabler/icons-react"
+import { EmptyData } from "../EmptyData/EmptyData"
 
 interface DataWellProps {
     title?: string
@@ -57,11 +58,7 @@ export const DataWell = ({
                     </div>
                 )}
             </div>
-            {!data && (
-                <div className={"flex gap-2 italic text-slate-500"}>
-                    <IconGhost /> {emptyText}
-                </div>
-            )}
+            {!data && <EmptyData text={emptyText} />}
             {data && (
                 <div
                     className={classNames(
