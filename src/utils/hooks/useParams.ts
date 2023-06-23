@@ -1,18 +1,15 @@
-import { useMemo } from "react"
+import { useMemo, useState } from "react"
 
 export const useParams = () => {
-    return useMemo(() => {
+    const [params, setParams] = useState<URLSearchParams>(
+        new URLSearchParams(document.location.search)
+    )
+
+    useMemo(() => {
         const params = new URLSearchParams(document.location.search)
-        const paramsMap: Record<string, string> = {}
 
-        console.info(params, paramsMap, document.location)
-
-        for (const key of Object.keys(params)) {
-            paramsMap[key] = params[key]
-        }
-
-        console.info("map", paramsMap)
-
-        return params
+        setParams(params)
     }, [document.location.search])
+
+    return params
 }
