@@ -7,7 +7,7 @@ export const useParams = () => {
         const params = new URLSearchParams(document.location.search)
 
         setParams(params)
-    }, [document.location.search])
+    }, [location])
 
     return params
 }
