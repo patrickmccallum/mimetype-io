@@ -14,6 +14,7 @@ module.exports = {
         author: `@gatsbyjs`,
         siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
     },
+    trailingSlash: "never",
     plugins: [
         `gatsby-plugin-image`,
         {
