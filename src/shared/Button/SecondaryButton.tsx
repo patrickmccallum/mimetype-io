@@ -18,11 +18,11 @@ export const SecondaryButton = ({
         <button
             onClick={onClick}
             className={classNames(
-                "rounded-md border border-slate-200 bg-white text-slate-500 shadow-sm",
+                "flex items-center rounded-md border border-slate-200 bg-white text-slate-500 shadow-sm",
                 {
-                    "px-4 py-2 text-sm": size === "lg",
-                    "px-3 py-1 text-sm": size === "md",
-                    "px-2 py-1 text-xs": size === "sm",
+                    "gap-2 px-4 py-2 text-sm": size === "lg",
+                    "gap-2 px-3 py-1 text-sm": size === "md",
+                    "gap-1 px-2 py-1 text-xs": size === "sm",
                 },
                 className
             )}

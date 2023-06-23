@@ -7,7 +7,7 @@ export const Footer = () => {
     return (
         <footer
             className={
-                "mt-4 flex items-stretch justify-between border-t border-slate-200 py-8 text-sm text-slate-400"
+                "mt-4 flex flex-col items-center justify-between border-t border-slate-200 py-8 text-sm text-slate-400 md:flex-row md:items-stretch"
             }
         >
             <div className={"flex items-center"}>

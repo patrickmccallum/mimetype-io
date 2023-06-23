@@ -6,12 +6,14 @@ import { SecondaryButton } from "../Button/SecondaryButton"
 import {
     IconBrowser,
     IconDatabase,
+    IconEdit,
     IconExternalLink,
     IconFocusAuto,
 } from "@tabler/icons-react"
 import { Link } from "gatsby"
 import { useParams } from "../../utils/hooks/useParams"
 import { EmptyData } from "../EmptyData/EmptyData"
+import { CopyButton } from "../Button/CopyButton"
 
 const MimetypeTemplate = props => {
     const mime = props.pageContext
@@ -21,11 +23,32 @@ const MimetypeTemplate = props => {
         <MainLayout title={`${mime.name}`} header footer>
             <Fit>
                 <div className={"flex flex-col gap-4 py-4"}>
-                    <div className={"flex items-center justify-between gap-4"}>
-                        <h1 className={"text-4xl font-bold text-slate-700"}>
+                    <div
+                        className={
+                            "flex flex-col items-start justify-between gap-8 md:flex-row md:items-center"
+                        }
+                    >
+                        <h1
+                            id={"mime-title"}
+                            className={
+                                "break-all text-2xl font-bold text-slate-700 md:text-4xl"
+                            }
+                            onClick={() => {
+                                // Select the title
+                                const selection = window.getSelection()
+                                const range = document.createRange()
+                                range.selectNodeContents(
+                                    document.getElementById("mime-title")
+                                )
+                                selection.removeAllRanges()
+                                selection.addRange(range)
+                            }}
+                        >
                             {mime.name}
                         </h1>
-                        <div className={"flex items-center gap-4"}>
+                        <div
+                            className={"flex items-start gap-4 md:items-center"}
+                        >
                             <a
                                 href={
                                     "https://github.com/patrickmccallum/mimetype-io/blob/master/mimeData.json"
@@ -36,7 +59,7 @@ const MimetypeTemplate = props => {
                                     size={"lg"}
                                     className={"whitespace-nowrap"}
                                 >
-                                    Edit this page
+                                    <IconEdit size={16} /> Edit this page
                                 </SecondaryButton>
                             </a>
                         </div>
@@ -78,7 +101,7 @@ const MimetypeTemplate = props => {
                         dangerouslySetInnerHTML={{
                             __html: mime.description as string,
                         }}
-                    ></p>
+                    />
                     <DataWell
                         title={"File types"}
                         data={mime.types}
@@ -105,9 +128,7 @@ const MimetypeTemplate = props => {
                         {mime?.furtherReading?.map(({ title, url }) => (
                             <li
                                 key={url}
-                                className={
-                                    "mb-2 flex list-item items-center gap-2"
-                                }
+                                className={"mb-2 list-item items-center gap-2"}
                             >
                                 <a
                                     target={"_blank"}
