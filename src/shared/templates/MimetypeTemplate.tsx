@@ -1,7 +1,7 @@
 import * as React from "react"
 import { MainLayout } from "../MainLayout/MainLayout"
 import { Fit } from "../Fit/Fit"
-import { DataWell } from "../ DataWell/DataWell"
+import { DataWell } from "../DataWell/DataWell"
 import { SecondaryButton } from "../Button/SecondaryButton"
 import {
     IconBrowser,
