@@ -72,17 +72,17 @@ export const Header = ({}: HeaderProps) => {
                 </div>
             </div>
             <div className={"flex items-center gap-2 text-slate-500"}>
-                <Link
-                    to={"https://github.com/patrickmccallum/mimetype-io"}
+                <a
+                    href={"https://github.com/patrickmccallum/mimetype-io"}
                     target={"_blank"}
                 >
                     <IconButton>
                         <IconBrandGithub />
                     </IconButton>
-                </Link>
+                </a>
 
-                <Link
-                    to={
+                <a
+                    href={
                         "https://github.com/patrickmccallum/mimetype-io/issues/new?assignees=&labels=&projects=&template=mimetype-change.md&title=%5BCHANGE%5D+mimetype%2Fhere"
                     }
                     target={"_blank"}
@@ -90,7 +90,7 @@ export const Header = ({}: HeaderProps) => {
                     <IconButton>
                         <IconPlus />
                     </IconButton>
-                </Link>
+                </a>
             </div>
         </div>
     )

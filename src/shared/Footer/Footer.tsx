@@ -13,29 +13,30 @@ export const Footer = () => {
             <div className={"flex items-center"}>
                 <div>
                     Made by{" "}
-                    <Link
-                        to={"https://twitter.com/patsnacks"}
+                    <a
+                        href={"https://twitter.com/patsnacks"}
                         className={"text-blue-500 hover:underline"}
+                        target={"_blank"}
                     >
                         @patsnacks
-                    </Link>
+                    </a>
                 </div>
             </div>
             <div className={"flex items-center gap-4"}>
                 <div>Licensed under MIT</div>
-                <Link
-                    to={"https://github.com/patrickmccallum/mimetype-io"}
+                <a
+                    href={"https://github.com/patrickmccallum/mimetype-io"}
                     target={"_blank"}
                 >
                     <IconButton size={"sm"} title={"Visit the Github"}>
                         <IconBrandGithub />
                     </IconButton>
-                </Link>
-                <Link to={"https://twitter.com/patsnacks"} target={"_blank"}>
+                </a>
+                <a href={"https://twitter.com/patsnacks"} target={"_blank"}>
                     <IconButton size={"sm"} title={"Visit my Twitter"}>
                         <IconBrandTwitter />
                     </IconButton>
-                </Link>
+                </a>
             </div>
         </footer>
     )

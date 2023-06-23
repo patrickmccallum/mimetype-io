@@ -4,13 +4,38 @@ import { useCallback } from "react"
 import { useDropzone } from "react-dropzone"
 import * as classNames from "classnames"
 import { navigate } from "gatsby"
+import { useData } from "../DataContext/DataContext"
 
 export const FileDrop = () => {
+    const mimeData = useData()
+
     const onDrop = useCallback(acceptedFiles => {
         // Do something with the files
         console.info("Got files", acceptedFiles)
 
-        navigate(acceptedFiles[0].type)
+        // First attempt from browser API
+        const browsersType = acceptedFiles[0].type
+
+        if (browsersType) {
+            navigate(`/${acceptedFiles[0].type}?source=browser`)
+            return
+        }
+
+        // Second attempt from file extension
+        const extension = `.${acceptedFiles[0].name.split(".").pop()}`
+
+        if (extension) {
+            console.info(`Trying to find ${extension} in`, mimeData)
+            for (const mime of mimeData) {
+                if (mime.types.includes(extension)) {
+                    navigate(`/${mime.name}?source=data`)
+                    return
+                }
+            }
+        }
+
+        // Fail to unknown
+        navigate(`/unknown?source=unknown`)
     }, [])
 
     const { getRootProps, getInputProps, isDragActive } = useDropzone({

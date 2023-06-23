@@ -1,4 +1,4 @@
-const data = require("./mimeData.json")
+const data = require("./src/mimeData.json")
 
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}

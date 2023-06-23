@@ -3,11 +3,19 @@ import { MainLayout } from "../MainLayout/MainLayout"
 import { Fit } from "../Fit/Fit"
 import { DataWell } from "../ DataWell/DataWell"
 import { SecondaryButton } from "../Button/SecondaryButton"
-import { IconExternalLink } from "@tabler/icons-react"
+import {
+    IconBrowser,
+    IconDatabase,
+    IconExternalLink,
+    IconFocusAuto,
+} from "@tabler/icons-react"
 import { Link } from "gatsby"
+import { useParams } from "../../utils/hooks/useParams"
+import { EmptyData } from "../EmptyData/EmptyData"
 
 const MimetypeTemplate = props => {
     const mime = props.pageContext
+    const params = useParams()
 
     return (
         <MainLayout title={`${mime.name}`} header footer>
@@ -18,8 +26,8 @@ const MimetypeTemplate = props => {
                             {mime.name}
                         </h1>
                         <div className={"flex items-center gap-4"}>
-                            <Link
-                                to={
+                            <a
+                                href={
                                     "https://github.com/patrickmccallum/mimetype-io/blob/master/mimeData.json"
                                 }
                                 target={"_blank"}
@@ -30,9 +38,41 @@ const MimetypeTemplate = props => {
                                 >
                                     Edit this page
                                 </SecondaryButton>
-                            </Link>
+                            </a>
                         </div>
                     </div>
+                    {params.get("source") === "data" && (
+                        <div
+                            className={"flex items-center gap-3 text-indigo-50"}
+                        >
+                            <IconDatabase
+                                size={40}
+                                className={
+                                    "rounded-md bg-indigo-500 p-2 text-indigo-50"
+                                }
+                            />{" "}
+                            <div className={"italic text-slate-600"}>
+                                We found this mimetype in our database, your
+                                browser didn't recognise it.
+                            </div>
+                        </div>
+                    )}
+                    {params.get("source") === "browser" && (
+                        <div
+                            className={"flex items-center gap-3 text-indigo-50"}
+                        >
+                            <IconBrowser
+                                size={40}
+                                className={
+                                    "rounded-md bg-indigo-500 p-2 text-indigo-50"
+                                }
+                            />{" "}
+                            <div className={"italic text-slate-600"}>
+                                Your browser detected this mimetype
+                                automatically.
+                            </div>
+                        </div>
+                    )}
                     <p
                         className={"mb-8 text-base text-slate-500"}
                         dangerouslySetInnerHTML={{
@@ -58,6 +98,9 @@ const MimetypeTemplate = props => {
                     <h2 className={"text-md font-bold text-slate-500"}>
                         Further reading
                     </h2>
+                    {!mime?.furtherReading && (
+                        <EmptyData text={"No additional links listed"} />
+                    )}
                     <ol className={"list list-inside list-decimal"}>
                         {mime?.furtherReading?.map(({ title, url }) => (
                             <li
