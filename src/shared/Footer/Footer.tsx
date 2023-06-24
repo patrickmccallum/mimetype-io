@@ -32,7 +32,7 @@ export const Footer = () => {
                 </div>
             </div>
             <div className={"flex items-center gap-4"}>
-                <div>Licensed under MIT</div>
+                <div>Have a good day!</div>
                 <a
                     href={"https://github.com/patrickmccallum/mimetype-io"}
                     target={"_blank"}
