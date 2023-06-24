@@ -1,11 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import {
-    IconBrandGithub,
-    IconHome,
-    IconHome2,
-    IconPlus,
-} from "@tabler/icons-react"
+import { IconBrandGithub, IconHome2, IconPlus } from "@tabler/icons-react"
 import { IconButton } from "../Button/IconButton"
 import { Search } from "../Search/Search"
 

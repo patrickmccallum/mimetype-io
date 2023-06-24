@@ -11,7 +11,6 @@ interface MainLayoutProps {
 }
 
 export const MainLayout = ({
-    title,
     children,
     header,
     footer,
