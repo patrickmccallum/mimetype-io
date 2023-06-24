@@ -45,7 +45,7 @@ export const Search = ({}: SearchProps) => {
     }, [])
 
     const onKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === "Esc") {
+        if (event.key === "Escape") {
             closeSearch()
         } else if (
             event.key === "Enter" &&
@@ -63,10 +63,12 @@ export const Search = ({}: SearchProps) => {
         } else {
             const query = inputRef.current.value
             if (query.length > 0) {
+                setSelectedIndex(0)
                 setSearchResults(
                     fuse
                         .search(query)
                         .map(result => result.item)
+                        .filter(m => !m.appearsAs)
                         .slice(0, 5)
                 )
             } else {
@@ -95,11 +97,9 @@ export const Search = ({}: SearchProps) => {
         <div
             ref={barRef}
             className={classNames(
-                "absolute bottom-4 left-0 right-0 top-4 flex w-full max-w-sm flex-1 cursor-text items-center gap-4 rounded-lg bg-slate-200 px-6 py-3 transition-colors duration-100 md:relative md:bottom-0 md:left-0 md:right-0 md:top-0",
+                "absolute bottom-4 left-0 right-0 top-4 flex w-full max-w-sm flex-1 cursor-text items-center gap-2 rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 transition-colors duration-100 md:relative md:bottom-0 md:left-0 md:right-0 md:top-0",
                 {
-                    "bg-white shadow-sm shadow-slate-400 ring-slate-500":
-                        isSearchFocused,
-                    "rounded-b-none": searchResults,
+                    "!bg-white ": isSearchFocused,
                 }
             )}
             onClick={() => {
@@ -121,21 +121,18 @@ export const Search = ({}: SearchProps) => {
             {searchResults && (
                 <div
                     className={
-                        "absolute left-0 right-0 top-[100%] z-10 rounded-md rounded-t-none bg-white shadow-sm shadow-slate-400"
+                        "absolute left-0 right-0 top-[100%] z-10 translate-y-2 rounded-md bg-white shadow-lg"
                     }
                 >
                     {searchResults.map((result, index) => {
-                        if (result.useInstead) {
-                            return null
-                        }
-
                         return (
                             <div
                                 key={result.name}
                                 className={classNames(
-                                    "flex cursor-pointer flex-col gap-2 border-b border-gray-100 px-6 py-3 text-gray-700 transition-all duration-100",
+                                    "flex cursor-pointer flex-col gap-2 px-6 py-3 text-gray-700 transition-all duration-100",
                                     {
-                                        "bg-gray-100": index === selectedIndex,
+                                        "border-l-4 border-blue-500 bg-blue-50":
+                                            index === selectedIndex,
                                     }
                                 )}
                             >

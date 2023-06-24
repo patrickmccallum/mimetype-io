@@ -1,6 +1,11 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { IconBrandGithub, IconHome, IconPlus } from "@tabler/icons-react"
+import {
+    IconBrandGithub,
+    IconHome,
+    IconHome2,
+    IconPlus,
+} from "@tabler/icons-react"
 import { IconButton } from "../Button/IconButton"
 import { Search } from "../Search/Search"
 
@@ -13,16 +18,12 @@ export const Header = ({}: HeaderProps) => {
                 "relative flex w-full items-stretch justify-between gap-4 py-4"
             }
         >
-            <div className={"flex flex-1 items-stretch gap-4"}>
+            <div className={"flex flex-1 items-stretch gap-2"}>
                 <div className={"flex items-center text-lg tracking-wide"}>
                     <Link to={"/"} className={"flex items-center no-underline"}>
-                        <div
-                            className={
-                                "rounded-full bg-slate-500 p-2 font-bold text-slate-50 underline-offset-4 hover:underline"
-                            }
-                        >
-                            <IconHome />
-                        </div>
+                        <IconButton outlined>
+                            <IconHome2 />
+                        </IconButton>
                     </Link>
                 </div>
                 <Search />
@@ -32,7 +33,7 @@ export const Header = ({}: HeaderProps) => {
                     href={"https://github.com/patrickmccallum/mimetype-io"}
                     target={"_blank"}
                 >
-                    <IconButton>
+                    <IconButton outlined>
                         <IconBrandGithub />
                     </IconButton>
                 </a>
@@ -43,7 +44,7 @@ export const Header = ({}: HeaderProps) => {
                     }
                     target={"_blank"}
                 >
-                    <IconButton>
+                    <IconButton outlined>
                         <IconPlus />
                     </IconButton>
                 </a>

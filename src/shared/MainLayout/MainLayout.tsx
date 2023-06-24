@@ -23,7 +23,7 @@ export const MainLayout = ({
             }
         >
             {header && (
-                <div className={"border-slate-5 mb-4 border-b bg-gray-50"}>
+                <div className={"mb-4 border-b border-slate-100 bg-gray-50"}>
                     <Fit>
                         <Header />
                     </Fit>

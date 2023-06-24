@@ -20,12 +20,12 @@ export const IconButton = ({
         <button
             title={title}
             className={classNames(
-                "rounded-lg bg-transparent bg-white text-slate-500 hover:bg-slate-200 hover:text-slate-600",
+                "rounded-lg bg-transparent text-slate-500 hover:bg-slate-200 hover:text-slate-600",
                 {
                     "p-3 text-lg": size === "lg",
                     "text-md p-3": size === "md",
                     "p-2 text-sm": size === "sm",
-                    "border border-gray-200": outlined,
+                    "border border-gray-300": outlined,
                 }
             )}
             onClick={onClick}
