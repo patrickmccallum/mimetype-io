@@ -10,7 +10,7 @@ export const Footer = () => {
                 "mt-4 flex flex-col items-center justify-between border-t border-slate-200 py-8 text-sm text-slate-400 md:flex-row md:items-stretch"
             }
         >
-            <div className={"flex items-center"}>
+            <div className={"flex items-center gap-2"}>
                 <div>
                     Made by{" "}
                     <a
@@ -20,6 +20,15 @@ export const Footer = () => {
                     >
                         @patsnacks
                     </a>
+                </div>
+                -
+                <div>
+                    <Link
+                        to={"/all-types"}
+                        className={"text-blue-500 hover:underline"}
+                    >
+                        All mime types
+                    </Link>
                 </div>
             </div>
             <div className={"flex items-center gap-4"}>
