@@ -4,18 +4,21 @@ import * as classNames from "classnames"
 import { CopyButton } from "../Button/CopyButton"
 import { IconGhost } from "@tabler/icons-react"
 import { EmptyData } from "../EmptyData/EmptyData"
+import { Link } from "gatsby"
 
 interface DataWellProps {
     title?: string
     data: Array<string> | unknown
     className?: string
     emptyText?: string
+    linkItems?: boolean
 }
 
 export const DataWell = ({
     data,
     className,
     title,
+    linkItems,
     emptyText = "No data provided",
 }: DataWellProps) => {
     const content = useMemo(() => {
@@ -75,7 +78,23 @@ export const DataWell = ({
                             "flex-1 whitespace-break-spaces p-4 text-sm leading-loose"
                         }
                     >
-                        {content}
+                        {!linkItems ? (
+                            content
+                        ) : (
+                            <div>
+                                {Array.isArray(data) &&
+                                    data.map((item, index) => (
+                                        <div key={index}>
+                                            <Link
+                                                to={`/${item}`}
+                                                className={"hover:underline"}
+                                            >
+                                                {item}
+                                            </Link>
+                                        </div>
+                                    ))}
+                            </div>
+                        )}
                     </pre>
                 </div>
             )}

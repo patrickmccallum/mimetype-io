@@ -68,7 +68,7 @@ export const Search = ({}: SearchProps) => {
                     fuse
                         .search(query)
                         .map(result => result.item)
-                        .filter(m => !m.appearsAs)
+                        .filter(m => !m.deprecated)
                         .slice(0, 5)
                 )
             } else {

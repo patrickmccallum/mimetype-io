@@ -9,14 +9,16 @@ import {
     IconEdit,
     IconExternalLink,
     IconFocusAuto,
+    IconHandStop,
 } from "@tabler/icons-react"
 import { Link } from "gatsby"
 import { useParams } from "../../utils/hooks/useParams"
 import { EmptyData } from "../EmptyData/EmptyData"
 import { CopyButton } from "../Button/CopyButton"
+import { MimeData } from "../../types/mimeData"
 
 const MimetypeTemplate = props => {
-    const mime = props.pageContext
+    const mime = props.pageContext as MimeData
     const params = useParams()
 
     return (
@@ -64,17 +66,51 @@ const MimetypeTemplate = props => {
                             </a>
                         </div>
                     </div>
+                    {mime.useInstead && (
+                        <div
+                            className={
+                                "flex items-stretch gap-3 rounded-md bg-red-50 p-1 text-indigo-50"
+                            }
+                        >
+                            <div
+                                className={
+                                    "flex w-10 items-center justify-center rounded-md bg-red-500 p-2 text-red-50"
+                                }
+                            >
+                                <IconHandStop size={20} />
+                            </div>{" "}
+                            <div className={"py-2 text-red-900"}>
+                                This mimetype is deprecated. You should still
+                                support it, but avoid using it to{" "}
+                                <strong>assign</strong> new mimetypes.
+                                {mime.useInstead && (
+                                    <div>
+                                        Instead, please use{" "}
+                                        <Link
+                                            to={`/${mime.useInstead}`}
+                                            className={"underline"}
+                                        >
+                                            {mime.useInstead}
+                                        </Link>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )}
                     {params.get("source") === "data" && (
                         <div
-                            className={"flex items-center gap-3 text-indigo-50"}
+                            className={
+                                "flex items-center gap-3 rounded-md bg-indigo-50 p-1 text-indigo-50"
+                            }
                         >
-                            <IconDatabase
-                                size={40}
+                            <div
                                 className={
-                                    "rounded-md bg-blue-500 p-2 text-indigo-50"
+                                    "text-indigo-5 flex w-10 items-center justify-center rounded-md bg-blue-500 p-2"
                                 }
-                            />{" "}
-                            <div className={"italic text-slate-600"}>
+                            >
+                                <IconDatabase size={20} />
+                            </div>{" "}
+                            <div className={"text-indigo-900"}>
                                 We found this mimetype in our database, your
                                 browser didn't recognise it.
                             </div>
@@ -82,17 +118,20 @@ const MimetypeTemplate = props => {
                     )}
                     {params.get("source") === "browser" && (
                         <div
-                            className={"flex items-center gap-3 text-indigo-50"}
+                            className={
+                                "flex items-center gap-3 rounded-md bg-indigo-50 p-1 text-indigo-50"
+                            }
                         >
-                            <IconBrowser
-                                size={40}
+                            <div
                                 className={
-                                    "rounded-md bg-indigo-500 p-2 text-indigo-50"
+                                    "flex w-10 items-center justify-center rounded-md bg-indigo-500 p-2 text-indigo-50"
                                 }
-                            />{" "}
-                            <div className={"italic text-slate-600"}>
+                            >
+                                <IconBrowser size={20} />
+                            </div>{" "}
+                            <div className={"text-indigo-900"}>
                                 Your browser detected this mimetype
-                                automatically.
+                                automatically. No uploads were made.
                             </div>
                         </div>
                     )}
@@ -113,9 +152,14 @@ const MimetypeTemplate = props => {
 
                     <DataWell
                         title={"Also appears as"}
-                        data={mime?.appearsAs}
+                        data={
+                            mime.alternatives.length !== 0
+                                ? mime.alternatives
+                                : null
+                        }
                         className={"mb-8"}
                         emptyText={"Not known to appear as any other types"}
+                        linkItems
                     />
 
                     <h2 className={"text-md font-bold text-slate-500"}>
