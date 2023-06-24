@@ -8,13 +8,11 @@ import {
     IconDatabase,
     IconEdit,
     IconExternalLink,
-    IconFocusAuto,
     IconHandStop,
 } from "@tabler/icons-react"
 import { Link } from "gatsby"
 import { useParams } from "../../utils/hooks/useParams"
 import { EmptyData } from "../EmptyData/EmptyData"
-import { CopyButton } from "../Button/CopyButton"
 import { MimeData } from "../../types/mimeData"
 
 const MimetypeTemplate = props => {
@@ -53,7 +51,7 @@ const MimetypeTemplate = props => {
                         >
                             <a
                                 href={
-                                    "https://github.com/patrickmccallum/mimetype-io/blob/master/mimeData.json"
+                                    "https://github.com/patrickmccallum/mimetype-io/blob/master/src/mimeData.json"
                                 }
                                 target={"_blank"}
                             >
