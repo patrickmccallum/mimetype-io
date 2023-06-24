@@ -6,11 +6,13 @@ interface IconButtonProps {
     onClick?: () => void
     size?: "sm" | "md" | "lg"
     title?: string
+    outlined?: boolean
 }
 
 export const IconButton = ({
     onClick,
     size = "md",
+    outlined = false,
     children,
     title,
 }: PropsWithChildren<IconButtonProps>) => {
@@ -18,11 +20,12 @@ export const IconButton = ({
         <button
             title={title}
             className={classNames(
-                "bg-transparent¬ rounded-full text-slate-500 hover:bg-slate-200 hover:text-slate-600",
+                "rounded-lg bg-transparent bg-white text-slate-500 hover:bg-slate-200 hover:text-slate-600",
                 {
-                    "p-4 text-lg": size === "lg",
+                    "p-3 text-lg": size === "lg",
                     "text-md p-3": size === "md",
                     "p-2 text-sm": size === "sm",
+                    "border border-gray-200": outlined,
                 }
             )}
             onClick={onClick}

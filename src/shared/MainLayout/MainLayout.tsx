@@ -19,11 +19,11 @@ export const MainLayout = ({
     return (
         <div
             className={
-                "flex h-full min-h-screen w-full flex-1 flex-col bg-slate-50"
+                "flex h-full min-h-screen w-full flex-1 flex-col bg-white"
             }
         >
             {header && (
-                <div className={"mb-4 border-b border-slate-200 bg-slate-100"}>
+                <div className={"border-slate-5 mb-4 border-b bg-gray-50"}>
                     <Fit>
                         <Header />
                     </Fit>
