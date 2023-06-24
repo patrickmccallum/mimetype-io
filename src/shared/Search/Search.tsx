@@ -149,14 +149,27 @@ export const Search = ({}: SearchProps) => {
                                     </div>
                                 )}
                                 <div className={"flex flex-wrap gap-2"}>
-                                    {result.types.map(type => (
-                                        <div
-                                            key={type}
-                                            className={"text-xs text-gray-400"}
-                                        >
-                                            {type}
-                                        </div>
-                                    ))}
+                                    {result.types.map(type => {
+                                        const matchesSearch =
+                                            inputRef.current.value.includes(
+                                                type.substring(1)
+                                            )
+
+                                        return (
+                                            <div
+                                                key={type}
+                                                className={classNames(
+                                                    "text-xs text-gray-400",
+                                                    {
+                                                        "font-bold text-amber-500":
+                                                            matchesSearch,
+                                                    }
+                                                )}
+                                            >
+                                                {type}
+                                            </div>
+                                        )
+                                    })}
                                 </div>
                             </div>
                         )
