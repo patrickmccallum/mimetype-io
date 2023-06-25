@@ -135,6 +135,10 @@ export const Search = ({}: SearchProps) => {
                                             index === selectedIndex,
                                     }
                                 )}
+                                onClick={() => {
+                                    navigate(`/${result.name}`)
+                                    closeSearch()
+                                }}
                             >
                                 <div className={"text-sm font-semibold"}>
                                     {result.name}
