@@ -29,7 +29,8 @@
     "name": "image/avif",
     "description": "AVIF (AV1 Image File Format) is an image and animation file format, an extension of <a href=\"/image/heif\">HEIF</a> allowing images encoded with AV1. Most files will only have AV1-encoded images, but a mixture of different encodings is allowed. Early draft versions were named AV1 Still Image File Format.",
     "types": [
-      ".avif", ".avifs"
+      ".avif",
+      ".avifs"
     ],
     "alternatives": [
     ],
@@ -70,7 +71,8 @@
     "name": "image/heic",
     "description": "The MIME subtype name may be 'heic' only if the file conforms to the requirements of the 'heic', 'heix', 'heim', or 'heis' brand, and contains at least one of those brands as a compatible brand. The MIME subtype name may be 'heif' only if the file conforms to the requirements of the 'mif1' brand, and contains that brand as a compatible brand.<br /><br />HEIF (High Efficiency Image File Format) is the lossy image and animation format defined by MPEG-H Part 12 (ISO/IEC 23008-12). <br /><br />It is closely related to the HEVC video format, so in that way it is similar to BPG. It uses boxes/atoms format as a container format, so in that way it is similar to JPEG 2000.",
     "types": [
-      ".heif", ".heic"
+      ".heif",
+      ".heic"
     ],
     "alternatives": [
     ],
@@ -5272,9 +5274,24 @@
       ".vsd",
       ".vss",
       ".vst",
-      ".vsw"
+      ".vsw",
+      ".vsdx",
+      ".vssx",
+      ".vstx",
+      ".vssm",
+      ".vstm"
     ],
-    "alternatives": []
+    "alternatives": [],
+    "furtherReading": [
+      {
+        "url": "http://msdn.microsoft.com/en-us/library/office/ff768724.aspx",
+        "title": "Microsoft's documentation of the Visio file format"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/office/client-developer/visio/introduction-to-the-visio-file-formatvsdx",
+        "title": "Introduction to the Visio file format (.vsdx)"
+      }
+    ]
   },
   {
     "name": "application/vnd.vsf",
