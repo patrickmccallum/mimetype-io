@@ -1,31 +1,42 @@
 import * as React from "react"
-import Seo from "../shared/seo"
 import { MainLayout } from "../shared/MainLayout/MainLayout"
 import { Fit } from "../shared/Fit/Fit"
 import { FileDrop } from "../shared/FileDrop/FileDrop"
+import Helmet from "react-helmet"
 
 export const IndexPage = () => {
     return (
         <MainLayout title={"Mimetype.io"} header footer>
+            <Helmet>
+                <title>mimetype.io - The great mimetype resource</title>
+                <meta
+                    name="description"
+                    content={`Find MIME types, related extensions, alternatives, and resources.`}
+                />
+                <meta
+                    property="og:title"
+                    content={`mimetype.io - The great mimetype resource`}
+                />
+                <meta
+                    property="og:description"
+                    content={`Find MIME types, see related extensions, alternatives, and resources.`}
+                />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={`https://mimetype.io/`} />
+                <meta
+                    property="twitter:title"
+                    content={`mimetype.io - The great mimetype resource`}
+                />
+                <meta
+                    property="twitter:description"
+                    content={`Find MIME types, see related extensions, alternatives, and resources.`}
+                />
+            </Helmet>
             <Fit>
                 <FileDrop />
             </Fit>
         </MainLayout>
     )
 }
-
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => (
-    <Seo
-        title="Home"
-        description={
-            "Check a files mimetype instantly, see related extensions, and alternatives it may appear as."
-        }
-    />
-)
 
 export default IndexPage

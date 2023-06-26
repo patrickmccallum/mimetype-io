@@ -14,6 +14,7 @@ import { Link } from "gatsby"
 import { useParams } from "../../utils/hooks/useParams"
 import { EmptyData } from "../EmptyData/EmptyData"
 import { MimeData } from "../../types/mimeData"
+import Helmet from "react-helmet"
 
 const MimetypeTemplate = props => {
     const mime = props.pageContext as MimeData
@@ -21,6 +22,34 @@ const MimetypeTemplate = props => {
 
     return (
         <MainLayout title={`${mime.name}`} header footer>
+            <Helmet>
+                <title>{mime.name} - mimetype.io</title>
+                <meta
+                    name="description"
+                    content={`${mime.name} - See related extensions, alternatives, and resources.`}
+                />
+                <meta
+                    property="og:title"
+                    content={`${mime.name} - mimetype.io`}
+                />
+                <meta
+                    property="og:description"
+                    content={`${mime.name} - See related extensions, alternatives, and resources.`}
+                />
+                <meta property="og:type" content="website" />
+                <meta
+                    property="og:url"
+                    content={`https://mimetype.io/${mime.name}`}
+                />
+                <meta
+                    property="twitter:title"
+                    content={`${mime.name} - mimetype.io`}
+                />
+                <meta
+                    property="twitter:description"
+                    content={`${mime.name} - See related extensions, alternatives, and resources.`}
+                />
+            </Helmet>
             <Fit>
                 <div className={"flex flex-col gap-4 py-4"}>
                     <div

@@ -4,6 +4,7 @@ import { Fit } from "../shared/Fit/Fit"
 import { useData } from "../shared/DataContext/DataContext"
 import { useMemo } from "react"
 import { Link } from "gatsby"
+import { Helmet } from "react-helmet"
 
 const AllTypesPage = () => {
     const data = useData()
@@ -15,6 +16,36 @@ const AllTypesPage = () => {
 
     return (
         <MainLayout title={"All Types"} header footer>
+            <Helmet>
+                <title>mimetype.io - All MIME types</title>
+                <meta
+                    name="description"
+                    content={`All mimetypes listed in our database.`}
+                />
+                <meta
+                    property="og:title"
+                    content={`mimetype.io - All MIME types`}
+                />
+                <meta
+                    property="og:description"
+                    content={`All mimetypes listed in our database.`}
+                />
+                <meta property="og:type" content="website" />
+                <meta
+                    property="og:url"
+                    content={"https://mimetype.io/all-types"}
+                />
+                <meta
+                    property="twitter:title"
+                    content={"mimetype.io - All MIME types"}
+                />
+                <meta
+                    property="twitter:description"
+                    content={
+                        "Find MIME types, see related extensions, alternatives, and resources."
+                    }
+                />
+            </Helmet>
             <Fit>
                 <div className={"flex flex-col py-4 text-gray-700"}>
                     <h1 className={"mb-2 text-4xl text-gray-800"}>
