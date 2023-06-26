@@ -22,6 +22,10 @@ module.exports = {
                 trackingIds: [
                     "G-XPG13CGVHN", // Google Analytics / GA
                 ],
+                gtagConfig: {
+                    anonymize_ip: true,
+                    cookie_expires: 0,
+                },
                 // This object is used for configuration specific to this plugin
                 pluginConfig: {
                     // Puts tracking script in the head instead of the body
