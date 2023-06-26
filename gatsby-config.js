@@ -26,8 +26,6 @@ module.exports = {
                 pluginConfig: {
                     // Puts tracking script in the head instead of the body
                     head: true,
-                    // Apparently needed (bug)
-                    anonymize_ip: true,
                     // Setting this parameter is also optional
                     respectDNT: true,
                     // Delays processing pageview events on route update (in milliseconds)
