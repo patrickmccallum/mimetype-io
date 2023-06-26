@@ -9,13 +9,14 @@
  */
 module.exports = {
     siteMetadata: {
-        title: `Gatsby Default Starter`,
-        description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-        author: `@gatsbyjs`,
-        siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+        title: `mimetype.io`,
+        description: `Find mimetypes, alternatives, and lookup resources easily in your browser.`,
+        author: `@patsnacks`,
+        siteUrl: `https://mimetype.io/`,
     },
     trailingSlash: "never",
     plugins: [
+        `gatsby-plugin-react-helmet`,
         `gatsby-plugin-image`,
         {
             resolve: `gatsby-source-filesystem`,
@@ -50,7 +51,7 @@ module.exports = {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
                 // The property ID; the tracking code won't be generated without it
-                trackingId: "386423877",
+                trackingId: "G-XPG13CGVHN",
                 // Defines where to place the tracking script - `true` in the head and `false` in the body
                 head: false,
                 // Setting this parameter is also optional
