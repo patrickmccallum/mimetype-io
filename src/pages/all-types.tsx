@@ -5,6 +5,7 @@ import { useData } from "../shared/DataContext/DataContext"
 import { useMemo } from "react"
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
+import { IconBrandGithub } from "@tabler/icons-react"
 
 const AllTypesPage = () => {
     const data = useData()
@@ -56,7 +57,7 @@ const AllTypesPage = () => {
                         database.
                     </p>
                     <p>
-                        If you wish you make modifications to add to or edit any
+                        If you'd like to make modifications to add or edit any
                         of the items below please submit a pull request on our{" "}
                         <a
                             href={
@@ -64,7 +65,7 @@ const AllTypesPage = () => {
                             }
                             className={"text-blue-500 hover:underline"}
                         >
-                            GitHub
+                            <IconBrandGithub className={"inline"} /> GitHub
                         </a>
                         .
                     </p>
