@@ -32,8 +32,7 @@
       ".avif",
       ".avifs"
     ],
-    "alternatives": [
-    ],
+    "alternatives": [],
     "appearsAs": [
       "image/avif-sequence"
     ],
@@ -74,8 +73,7 @@
       ".heif",
       ".heic"
     ],
-    "alternatives": [
-    ],
+    "alternatives": [],
     "appearsAs": [
       "image/heif"
     ],
@@ -4149,7 +4147,9 @@
     "types": [
       ".rar"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "application/vnd.rar"
+    ],
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
