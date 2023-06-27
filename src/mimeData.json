@@ -4168,7 +4168,7 @@
       ".rar"
     ],
     "deprecated": true,
-    "useInstead": "application/vnd.rar",
+    "useInstead": "application/x-rar-compressed",
     "alternatives": [
       "application/vnd.rar"
     ],
