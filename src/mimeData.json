@@ -134,7 +134,7 @@
   },
   {
     "name": "application/octet-stream",
-    "description": "This MIME type is used for binary files, it's usuall a fallback for unknown/generic MIMEs with no specific designation.",
+    "description": "This MIME type is used for binary files, it's usually a fallback for unknown/generic MIMEs with no specific designation.",
     "types": [
       ".a",
       ".bin",
