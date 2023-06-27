@@ -79,9 +79,9 @@ const MimetypeTemplate = props => {
                             className={"flex items-start gap-4 md:items-center"}
                         >
                             <a
-                                href={
-                                    "https://github.com/patrickmccallum/mimetype-io/blob/master/src/mimeData.json"
-                                }
+                                href={`https://github.com/patrickmccallum/mimetype-io/issues/new?assignees=&labels=&projects=&template=mimetype-change.md&title=%5BCHANGE%5D+${encodeURIComponent(
+                                    mime.name
+                                )}`}
                                 target={"_blank"}
                             >
                                 <SecondaryButton
