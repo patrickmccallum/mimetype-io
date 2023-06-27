@@ -4149,11 +4149,7 @@
     "types": [
       ".rar"
     ],
-    "deprecated": true,
-    "useInstead": "application/vnd.rar",
-    "alternatives": [
-      "application/vnd.rar"
-    ],
+    "alternatives": [],
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -4168,7 +4164,7 @@
       ".rar"
     ],
     "deprecated": true,
-    "useInstead": "application/vnd.rar",
+    "useInstead": "application/x-rar-compressed",
     "alternatives": [
       "application/x-rar-compressed"
     ],
