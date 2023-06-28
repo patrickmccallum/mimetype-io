@@ -32,8 +32,7 @@
       ".avif",
       ".avifs"
     ],
-    "alternatives": [
-    ],
+    "alternatives": [],
     "appearsAs": [
       "image/avif-sequence"
     ],
@@ -74,8 +73,7 @@
       ".heif",
       ".heic"
     ],
-    "alternatives": [
-    ],
+    "alternatives": [],
     "appearsAs": [
       "image/heif"
     ],
@@ -4144,6 +4142,26 @@
     "alternatives": []
   },
   {
+    "name": "application/vnd.rar",
+    "description": "<strong>R</strong>oshal <strong>AR</strong>chive (RAR) is a proprietary file format used by the compression software WinRAR. They make the decompression code available for use in other programs and allow its distribution, but with a license provision that \"You cannot use the unrar source to re-create the RAR compression algorithm, which is proprietary.",
+    "types": [
+      ".rar"
+    ],
+    "alternatives": [
+      "application/x-rar-compressed"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/application/vnd.rar"
+      },
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/RAR"
+      }
+    ]
+  },
+  {
     "name": "application/x-rar-compressed",
     "description": "<strong>R</strong>oshal <strong>AR</strong>chive (RAR) is a proprietary file format used by the compression software WinRAR. They make the decompression code available for use in other programs and allow its distribution, but with a license provision that \"You cannot use the unrar source to re-create the RAR compression algorithm, which is proprietary.",
     "types": [
@@ -4156,23 +4174,9 @@
     ],
     "furtherReading": [
       {
-        "title": "Let's Solve the File Format Problem!",
-        "url": "http://fileformats.archiveteam.org/wiki/RAR"
-      }
-    ]
-  },
-  {
-    "name": "application/vnd.rar",
-    "description": "<strong>R</strong>oshal <strong>AR</strong>chive (RAR) is a proprietary file format used by the compression software WinRAR. They make the decompression code available for use in other programs and allow its distribution, but with a license provision that \"You cannot use the unrar source to re-create the RAR compression algorithm, which is proprietary.",
-    "types": [
-      ".rar"
-    ],
-    "deprecated": true,
-    "useInstead": "application/vnd.rar",
-    "alternatives": [
-      "application/x-rar-compressed"
-    ],
-    "furtherReading": [
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/application/vnd.rar"
+      },
       {
         "title": "Let's Solve the File Format Problem!",
         "url": "http://fileformats.archiveteam.org/wiki/RAR"
