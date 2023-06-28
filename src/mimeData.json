@@ -4353,11 +4353,22 @@
   },
   {
     "name": "application/rss+xml",
-    "description": "",
+    "description": "The MIME used for RSS feeds (RSS 0.9x, 2.0, 3.0 and others). Many feeds end up being served as plain text/html however and _most_ parsers seem to be able to handle this discrepancy.    RSS is an XML-based document format for the syndication of web\n   content so that it can be republished on other sites or downloaded\n   periodically and presented to users. RSS is currently used for a number of applications, including news headline syndication, weblog content distribution, and the exchange of other timely information such as software release notes.",
     "types": [
-      ".rss"
+      ".rss",
+      ".xml"
     ],
-    "alternatives": []
+    "alternatives": [],
+    "furtherReading": [
+      {
+        "title": "RSS Board Media Type Application",
+        "url": "https://www.rssboard.org/rss-mime-type-application.txt"
+      },
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/RSS"
+      }
+    ]
   },
   {
     "name": "application/rtf",
