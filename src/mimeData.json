@@ -5356,6 +5356,7 @@
     "types": [
       ".ts"
     ],
+    "alternatives": [],
     "furtherReading": [
       {
         "url": "http://fileformats.archiveteam.org/wiki/MPEG_Transport_Stream",
