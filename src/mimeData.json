@@ -5351,6 +5351,23 @@
     "alternatives": []
   },
   {
+    "name": "video/mp2t",
+    "description": "MPEG Transport Stream (or MPEG-2 Transport Stream) is an MPEG multimedia format that allows interleaving more than one Packetized Elementary Stream in a single file. It is an alternative to MPEG Program Stream, designed to work better with certain kinds of streaming. It was introduced in the MPEG-2 standard. There is a variant format named M2TS, used with Blu-ray discs.<br /><br />Alternatively, you got here like I did by selecting a typescript file. That's wrong, that's your browser doing that. There's no official standard for typescript.",
+    "types": [
+      ".ts"
+    ],
+    "furtherReading": [
+      {
+        "url": "http://fileformats.archiveteam.org/wiki/MPEG_Transport_Stream",
+        "title": "Let's Solve the File Format Problem!"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/MPEG_transport_stream",
+        "title": "Wikipedia article on MPEG Transport Stream"
+      }
+    ]
+  },
+  {
     "name": "audio/wav",
     "description": "The Waveform Audio File Format (WAV or WAVE) is a widely used audio format, originally developed by Microsoft and IBM and based on the RIFF wrapper format. The usual audio encoding in a .wav file is LPCM, considered an 'uncompressed' encoding. Because of large file sizes, WAV is not well-suited for distributing audio such as songs or podcasts. WAV is used in MS-Windows to store sounds used in applications. It is also used as an archival format for first-generation (master) files, often with a metadata chunk as specified in the Broadcast Wave (BWF) standard.",
     "types": [
