@@ -5351,25 +5351,22 @@
     "alternatives": []
   },
   {
-    "name": "audio/x-wav",
-    "description": "",
-    "deprecated": true,
-    "useInstead": "audio/wav",
-    "types": [
-      ".wav"
-    ],
-    "alternatives": [
-      "audio/wav"
-    ]
-  },
-  {
     "name": "audio/wav",
-    "description": "",
+    "description": "The Waveform Audio File Format (WAV or WAVE) is a widely used audio format, originally developed by Microsoft and IBM and based on the RIFF wrapper format. The usual audio encoding in a .wav file is LPCM, considered an 'uncompressed' encoding. Because of large file sizes, WAV is not well-suited for distributing audio such as songs or podcasts. WAV is used in MS-Windows to store sounds used in applications. It is also used as an archival format for first-generation (master) files, often with a metadata chunk as specified in the Broadcast Wave (BWF) standard.",
     "types": [
       ".wav"
     ],
     "alternatives": [
-      "audio/x-wav"
+      "audio/x-wav",
+      "audio/vnd.wave",
+      "audio/wave",
+      "audio/x-pn-wav"
+    ],
+    "furtherReading": [
+      {
+        "url": "http://fileformats.archiveteam.org/wiki/WAV",
+        "title": "Let's Solve the File Format Problem!"
+      }
     ]
   },
   {
