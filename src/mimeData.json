@@ -1021,7 +1021,10 @@
       "text/comma-separated-values"
     ],
     "furtherReading": [
-      {}
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/CSV"
+      }
     ]
   },
   {
