@@ -1009,11 +1009,20 @@
   },
   {
     "name": "text/csv",
-    "description": "",
+    "description": "CSV (Comma Separated Values) is a text-based format typically used for the storage or exchange of database-like records. In Microsoft Windows systems, it will commonly open in Excel, but it is not a proprietary format and can be used in many other programs.",
     "types": [
       ".csv"
     ],
-    "alternatives": []
+    "alternatives": [
+      "application/csv",
+      "text/x-csv",
+      "application/x-csv",
+      "text/x-comma-separated-values",
+      "text/comma-separated-values"
+    ],
+    "furtherReading": [
+      {}
+    ]
   },
   {
     "name": "application/cu-seeme",
