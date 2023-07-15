@@ -2,9 +2,11 @@ import * as React from "react"
 import { useMemo } from "react"
 import * as classNames from "classnames"
 import { CopyButton } from "../Button/CopyButton"
-import { IconGhost } from "@tabler/icons-react"
 import { EmptyData } from "../EmptyData/EmptyData"
 import { Link } from "gatsby"
+
+import { globalHistory } from "@reach/router"
+const path = globalHistory.location.pathname
 
 interface DataWellProps {
     title?: string
@@ -21,8 +23,6 @@ export const DataWell = ({
     linkItems,
     emptyText = "No data provided",
 }: DataWellProps) => {
-    const path = window.location.pathname
-
     const content = useMemo(() => {
         if (Array.isArray(data)) {
             return data.sort().join("\n")
