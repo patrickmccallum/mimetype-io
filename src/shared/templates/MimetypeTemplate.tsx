@@ -155,8 +155,9 @@ const MimetypeTemplate = props => {
                                 <IconDatabase size={20} />
                             </div>{" "}
                             <div className={"text-indigo-900"}>
-                                We found this mimetype in our database, your
-                                browser didn't recognise it.
+                                Your browser didn't detect this mimetype, we
+                                matched it based off the file extension. No
+                                upload was made.
                             </div>
                         </div>
                     )}
