@@ -181,7 +181,7 @@ const MimetypeTemplate = props => {
                         title={"Also appears as"}
                         data={
                             mime.alternatives.length !== 0
-                                ? mime.alternatives
+                                ? [mime.name, ...mime.alternatives]
                                 : null
                         }
                         className={"mb-8"}
@@ -221,5 +221,7 @@ const MimetypeTemplate = props => {
         </MainLayout>
     )
 }
+
+MimetypeTemplate
 
 export default MimetypeTemplate

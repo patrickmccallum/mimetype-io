@@ -21,6 +21,8 @@ export const DataWell = ({
     linkItems,
     emptyText = "No data provided",
 }: DataWellProps) => {
+    const path = window.location.pathname
+
     const content = useMemo(() => {
         if (Array.isArray(data)) {
             return data.sort().join("\n")
@@ -87,7 +89,11 @@ export const DataWell = ({
                                         <div key={index}>
                                             <Link
                                                 to={`/${item}`}
-                                                className={"hover:underline"}
+                                                className={
+                                                    !path.includes(item)
+                                                        ? "underline"
+                                                        : ""
+                                                }
                                             >
                                                 {item}
                                             </Link>
