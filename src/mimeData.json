@@ -2932,6 +2932,25 @@
     "alternatives": []
   },
   {
+    "name": "application/yaml",
+    "description": "YAML (YAML Ain’t Markup Language) is a serialization format. It is a strict superset of JSON, with the addition of syntactically significant newlines and indentation, like Python. Unlike Python, however, YAML doesn’t allow literal tab characters for indentation. It is designed to be human-friendly and work well with modern programming languages for common everyday tasks. It is broadly useful for programming needs ranging from configuration files to Internet messaging to object persistence to data auditing. Together with the Unicode standard for characters, it is also well-suited for internationalization.",
+    "types": [
+      ".yaml",
+      ".yml"
+    ],
+    "alternatives": ["text/yaml", "text/x-yaml", "application/x-yaml"],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/application/yaml"
+      },
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/YAML"
+      }
+    ]
+  },
+  {
     "name": "application/mp4",
     "description": "",
     "types": [
