@@ -24,6 +24,10 @@ const MimetypeTemplate = props => {
         <MainLayout title={`${mime.name}`} header footer>
             <Helmet>
                 <title>{mime.name} - mimetype.io</title>
+                <link
+                    rel="canonical"
+                    href={`https://mimetype.io/${mime.name}`}
+                />
                 <meta
                     name="description"
                     content={`${mime.name} - See related extensions, alternatives, and resources.`}
@@ -42,12 +46,25 @@ const MimetypeTemplate = props => {
                     content={`https://mimetype.io/${mime.name}`}
                 />
                 <meta
+                    property={"og:image"}
+                    content={"https://mimetype.io/og-image.png"}
+                />
+                <meta
                     property="twitter:title"
                     content={`${mime.name} - mimetype.io`}
                 />
                 <meta
                     property="twitter:description"
                     content={`${mime.name} - See related extensions, alternatives, and resources.`}
+                />
+                <meta
+                    property={"twitter:card"}
+                    content={"summary_large_image"}
+                />
+                <meta property={"twitter:site"} content={"@mimetypeio"} />
+                <meta
+                    property={"twitter:image"}
+                    content={"https://mimetype.io/og-image.png"}
                 />
             </Helmet>
             <Fit>

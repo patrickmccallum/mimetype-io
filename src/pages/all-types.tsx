@@ -19,6 +19,7 @@ const AllTypesPage = () => {
         <MainLayout title={"All Types"} header footer>
             <Helmet>
                 <title>mimetype.io - All MIME types</title>
+                <link rel="canonical" href={`https://mimetype.io/all-types`} />
                 <meta
                     name="description"
                     content={`All mimetypes listed in our database.`}
@@ -37,6 +38,10 @@ const AllTypesPage = () => {
                     content={"https://mimetype.io/all-types"}
                 />
                 <meta
+                    property={"og:image"}
+                    content={"https://mimetype.io/og-image.png"}
+                />
+                <meta
                     property="twitter:title"
                     content={"mimetype.io - All MIME types"}
                 />
@@ -45,6 +50,10 @@ const AllTypesPage = () => {
                     content={
                         "Find MIME types, see related extensions, alternatives, and resources."
                     }
+                />
+                <meta
+                    property={"twitter:image"}
+                    content={"https://mimetype.io/og-image.png"}
                 />
             </Helmet>
             <Fit>
