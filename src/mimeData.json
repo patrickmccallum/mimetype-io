@@ -167,12 +167,22 @@
     "alternatives": []
   },
   {
-    "name": "audio/x-aac",
-    "description": "",
+    "name": "audio/aac",
+    "description": "AAC (Advanced Audio Coding) is a compressed audio format defined in MPEG-2 Part 7 (ISO/IEC 13818-7), and in an updated form in MPEG-4 Part 3 (ISO/IEC 14496-3). It was designed to be the successor to MP3. iTunes distributes (or distributed) files in this format, apparently including various metadata (like the name, and sometimes email of the account which downloaded it, along with the time it was downloaded).<br /><br />An AAC file may contain only the raw AAC format, or it may use a multimedia container format such MP4 or QuickTime. AAC is often used for the audio component of a video file.",
     "types": [
-      ".aac"
+      ".aac",
+      ".mp4",
+      ".m4a"
     ],
-    "alternatives": []
+    "alternatives": [
+      "audio/x-aac"
+    ],
+    "furtherReading": [
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/AAC"
+      }
+    ]
   },
   {
     "name": "application/x-authorware-map",
@@ -2938,7 +2948,11 @@
       ".yaml",
       ".yml"
     ],
-    "alternatives": ["text/yaml", "text/x-yaml", "application/x-yaml"],
+    "alternatives": [
+      "text/yaml",
+      "text/x-yaml",
+      "application/x-yaml"
+    ],
     "furtherReading": [
       {
         "title": "Internet Assigned Numbers Authority (IANA)",
