@@ -168,7 +168,7 @@
   },
   {
     "name": "image/x-icns",
-    "description": "ICNS (often written in lowercase as icns) is the native icon format of Mac OS and OS X.<br />It goes by many other names, including Apple Icon, Macintosh Icon, Mac OS Icon, Macintosh OS X Icon, Mac OS X Icon Resource, Mac OS icns Resource, and IconFamily Resource.<br />There are usually multiple images in a file. Supported image sizes are 16×12, and 16, 32, 48, 128, 256, 512, and 1024 pixels square.",
+    "description": "ICNS (often written in lowercase as icns) is the native icon format of Mac OS and OS X.<br /><br />It goes by many other names, including Apple Icon, Macintosh Icon, Mac OS Icon, Macintosh OS X Icon, Mac OS X Icon Resource, Mac OS icns Resource, and IconFamily Resource.<br /><br />There are usually multiple images in a file. Supported image sizes are 16×12, and 16, 32, 48, 128, 256, 512, and 1024 pixels square.",
     "types": [
       ".icns"
     ],
