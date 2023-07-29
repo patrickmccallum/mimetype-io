@@ -5187,7 +5187,13 @@
     "types": [
       ".tsv"
     ],
-    "alternatives": []
+    "alternatives": [],
+    "furtherReading": [
+      {
+        "title": "IANA (Internet Assigned Numbers Authority)",
+        "url": "https://www.iana.org/assignments/media-types/text/tab-separated-values"
+      }
+    ]
   },
   {
     "name": "application/x-font-ttf",
