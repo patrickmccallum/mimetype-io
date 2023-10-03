@@ -4072,6 +4072,20 @@
     "alternatives": []
   },
   {
+    "name": "application/prql",
+    "description": "PRQL is a modern language for transforming data — a simple, powerful, pipelined SQL replacement.",
+    "types": [
+      ".prql"
+    ],
+    "alternatives": [],
+    "furtherReading": [
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/PRQL"
+      }
+    ]
+  },
+  {
     "name": "application/vnd.3gpp.pic-bw-small",
     "description": "",
     "types": [
