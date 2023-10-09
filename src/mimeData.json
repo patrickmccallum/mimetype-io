@@ -963,6 +963,22 @@
     ]
   },
   {
+    "name": "application/wasm",
+    "description": "A wasm binary allowed to be used with WebAssembly.instantiateStreaming",
+    "types": [
+      ".wasm"
+    ],
+    "furtherReading": [
+      {
+        "title": "IANA website on the media type",
+        "url": "https://www.iana.org/assignments/media-types/application/wasm"
+      },
+      {
+        "title": "how ",
+        "url": ""
+    ]
+  },
+  {
     "name": "application/x-cpio",
     "description": "",
     "types": [
