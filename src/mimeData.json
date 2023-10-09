@@ -974,8 +974,9 @@
         "url": "https://www.iana.org/assignments/media-types/application/wasm"
       },
       {
-        "title": "how ",
-        "url": ""
+        "title": "w3 on the web api for streaming webassembly instanciation",
+        "url": "https://www.w3.org/TR/wasm-web-api-2/#streaming-modules"
+      }
     ]
   },
   {
