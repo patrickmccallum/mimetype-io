@@ -964,17 +964,18 @@
   },
   {
     "name": "application/wasm",
-    "description": "A wasm binary allowed to be used with WebAssembly.instantiateStreaming",
+    "description": "A WASM binary allowed to be used with WebAssembly.instantiateStreaming.",
     "types": [
       ".wasm"
     ],
+    "alternatives": [],
     "furtherReading": [
       {
-        "title": "IANA website on the media type",
+        "title": "Internet Assigned Numbers Authority (IANA)",
         "url": "https://www.iana.org/assignments/media-types/application/wasm"
       },
       {
-        "title": "w3 on the web api for streaming webassembly instanciation",
+        "title": "W3C - Streaming Module Compilation and Instantiation",
         "url": "https://www.w3.org/TR/wasm-web-api-2/#streaming-modules"
       }
     ]
