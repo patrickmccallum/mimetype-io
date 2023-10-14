@@ -1956,6 +1956,24 @@
     "alternatives": []
   },
   {
+    "name": "application/vnd.gerber",
+    "description": "The Gerber file format is the de facto standard for printed circuit board (PCB) image data transfer. Gerber files consist of 7bit ASCII text and do not contain any active or executable content. <br /><br />The format does include an optional integrity check: A checksum of the file's content can be specified using the MD5 File Attribute. Any additional integrity protection or privacy protection must be supplied externally.",
+    "types": [
+      ".gbr"
+    ],
+    "alternatives": [],
+    "furtherReading": [
+      {
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gerber_format"
+      },
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/application/vnd.gerber"
+      }
+    ]
+  },
+  {
     "name": "application/x-hdf",
     "description": "",
     "types": [
