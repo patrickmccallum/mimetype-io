@@ -603,6 +603,26 @@
     "alternatives": []
   },
   {
+    "name": "text/zig",
+    "description": "Zig Programming Language source file",
+    "types": [
+      ".zig",
+      ".zon",
+      ".zig.zon"
+    ],
+    "alternatives": [],
+    "furtherReading": [
+      {
+        "title": "Zig Homepage",
+        "url": "https://ziglang.org/"
+      },
+      {
+        "title": "Zig Language Reference",
+        "url": "https://ziglang.org/documentation/master/"
+      }
+    ]
+  },
+  {
     "name": "application/vnd.clonk.c4group",
     "description": "",
     "types": [
