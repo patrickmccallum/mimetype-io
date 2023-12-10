@@ -144,7 +144,6 @@
       ".dms",
       ".dump",
       ".elc",
-      ".iso",
       ".lha",
       ".lrf",
       ".lzh",
@@ -2986,6 +2985,32 @@
       ".mpg4"
     ],
     "alternatives": []
+  },
+  {
+    "name": "application/x-iso9660-image",
+    "description": "An ISO image is a file containing an image of an optical disc (CD, DVD, etc.), which can be stored and transferred on other media. It is an uncompressed image containing all the data on the CD. (However, audio CDs are unable to be stored in this format because of technical differences in that format; the DDP or CUE and BIN formats can be used instead.) It usually uses the ISO 9660 filesystem, but UDF and Apple Partition Map may also be used.",
+    "types": [
+      ".iso",
+      ".isoimg",
+      ".cdr"
+    ],
+    "alternatives": [
+      "application/x-cd-image"
+    ],
+    "furtherReading": [
+      {
+        "title": "Library of Congress",
+        "url": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000348.shtml"
+      },
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/ISO_image"
+      },
+      {
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/ISO_image"
+      }
+    ]
   },
   {
     "name": "audio/mp4",
