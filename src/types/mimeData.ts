@@ -11,7 +11,7 @@ export interface MimeData {
     notices: {
         hasNoOfficial: boolean
         communityContributed: boolean
-        popularUsage: string
+        popularUsage: string | null
     }
     furtherReading?: Array<{
         title: string
