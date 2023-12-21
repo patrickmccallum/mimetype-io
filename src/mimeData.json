@@ -12059,6 +12059,10 @@
         "title": "Let's Solve the File Format Problem!"
       },
       {
+        "title": "IETF - Internet Engineering Task Force (RFC 2361)",
+        "url": "https://datatracker.ietf.org/doc/html/rfc2361"
+      },
+      {
         "url": "https://github.com/patrickmccallum/mimetype-io/issues/18",
         "title": "mimetype.io issue #18 discussion on type"
       }
