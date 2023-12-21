@@ -6,11 +6,20 @@ import { EmptyData } from "../EmptyData/EmptyData"
 import { Link } from "gatsby"
 
 import { globalHistory } from "@reach/router"
+
 const path = globalHistory.location.pathname
+
+export type DataWellItem = {
+    label: string
+    linkTo?: string
+    endAdornment?: JSX.Element | string
+}
+
+export type DataWellItems = Array<DataWellItem>
 
 interface DataWellProps {
     title?: string
-    data: Array<string> | unknown
+    data: DataWellItems
     className?: string
     emptyText?: string
     linkItems?: boolean
@@ -24,11 +33,33 @@ export const DataWell = ({
     emptyText = "No data provided",
 }: DataWellProps) => {
     const content = useMemo(() => {
-        if (Array.isArray(data)) {
-            return data.sort().join("\n")
-        }
+        return data
+            .sort((a, b) => (a.label < b.label ? -1 : 1))
+            .map((item, index) => (
+                <div key={index} className={"flex items-baseline gap-2"}>
+                    {item.linkTo ? (
+                        <Link
+                            to={item.linkTo}
+                            className={
+                                !path.includes(item.linkTo) ? "underline" : ""
+                            }
+                        >
+                            {item.label}
+                        </Link>
+                    ) : (
+                        <div>{item.label}</div>
+                    )}
+                    {item.endAdornment && (
+                        <div className={"text-xs text-gray-500"}>
+                            {item.endAdornment}
+                        </div>
+                    )}
+                </div>
+            ))
+    }, [data])
 
-        return JSON.stringify(data, null, 4)
+    const jsonData = useMemo(() => {
+        return data.map(item => item.label)
     }, [data])
 
     return (
@@ -53,22 +84,18 @@ export const DataWell = ({
                         }
                     >
                         <CopyButton
-                            data={JSON.stringify(data, null, 1)}
+                            data={JSON.stringify(jsonData, null, 4)}
                             label={"Copy as JSON"}
                         />
                         <CopyButton
-                            data={
-                                Array.isArray(data)
-                                    ? data.join(", ")
-                                    : (data as string)
-                            }
+                            data={jsonData.map(item => item).join("\n")}
                             label={"Copy as is"}
                         />
                     </div>
                 )}
             </div>
-            {!data && <EmptyData text={emptyText} />}
-            {data && (
+            {data.length === 0 && <EmptyData text={emptyText} />}
+            {data.length !== 0 && (
                 <div
                     className={classNames(
                         "relative flex flex-col overflow-hidden rounded-md bg-slate-200 md:flex-row",
@@ -80,27 +107,7 @@ export const DataWell = ({
                             "flex-1 whitespace-break-spaces p-4 text-sm leading-loose"
                         }
                     >
-                        {!linkItems ? (
-                            content
-                        ) : (
-                            <div>
-                                {Array.isArray(data) &&
-                                    data.map((item, index) => (
-                                        <div key={index}>
-                                            <Link
-                                                to={`/${item}`}
-                                                className={
-                                                    !path.includes(item)
-                                                        ? "underline"
-                                                        : ""
-                                                }
-                                            >
-                                                {item}
-                                            </Link>
-                                        </div>
-                                    ))}
-                            </div>
-                        )}
+                        {content}
                     </pre>
                 </div>
             )}

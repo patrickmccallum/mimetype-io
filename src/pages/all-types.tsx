@@ -10,9 +10,8 @@ import { IconBrandGithub } from "@tabler/icons-react"
 const AllTypesPage = () => {
     const data = useData()
     const filtered = useMemo(() => {
-        return data
-            .sort((a, b) => (a.name < b.name ? -1 : 1))
-            .filter(item => !item.deprecated)
+        return data.sort((a, b) => (a.name < b.name ? -1 : 1))
+        // .filter(item => !item.templateData.deprecatedBy)
     }, [data])
 
     return (
@@ -139,14 +138,14 @@ const AllTypesPage = () => {
                                             "px-4 py-1 align-top md:py-2"
                                         }
                                     >
-                                        {item.types.join(", ")}
+                                        {item.fileTypes.join(", ")}
                                     </td>
                                     <td
                                         className={
                                             "flex flex-wrap gap-x-2 px-4 py-1 align-top empty:hidden md:py-2"
                                         }
                                     >
-                                        {item.alternatives.map(alt => {
+                                        {item.links.parentOf.map(alt => {
                                             return (
                                                 <Link
                                                     to={`/${alt}`}

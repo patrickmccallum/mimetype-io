@@ -68,7 +68,7 @@ export const Search = ({}: SearchProps) => {
                     fuse
                         .search(query)
                         .map(result => result.item)
-                        .filter(m => !m.deprecated)
+                        // .filter(m => !m.templateData.deprecatedBy)
                         .slice(0, 5)
                 )
             } else {
@@ -153,7 +153,7 @@ export const Search = ({}: SearchProps) => {
                                     </div>
                                 )}
                                 <div className={"flex flex-wrap gap-2"}>
-                                    {result.types.map(type => {
+                                    {result.fileTypes.map(type => {
                                         const matchesSearch =
                                             inputRef.current.value.includes(
                                                 type.substring(1)

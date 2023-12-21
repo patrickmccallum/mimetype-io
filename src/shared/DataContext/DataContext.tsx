@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useContext } from "react"
+import { createContext, useState, useEffect, useContext, useMemo } from "react"
 import data from "../../mimeData.json"
 import { MimeData } from "../../types/mimeData"
 
@@ -8,7 +8,11 @@ const defaultValue = data
 export const DataContext = createContext<MimeData[]>(defaultValue)
 
 export const DataProvider = ({ children }) => {
-    const [dataset, setDataset] = useState<MimeData[]>(defaultValue)
+    const dataset = useMemo(() => {
+        return data.map(mimeData => {
+            mimeData["templateData"] = {}
+        })
+    }, [data])
 
     return (
         <DataContext.Provider value={{ dataset }}>

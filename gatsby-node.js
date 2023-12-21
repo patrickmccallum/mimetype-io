@@ -1,7 +1,7 @@
 const data = require("./src/mimeData.json")
 
 /**
- * @type {import('gatsby').GatsbyNode['createPages']}
+ * @type {import("gatsby").GatsbyNode["createPages"]}
  */
 exports.createPages = async ({ actions }) => {
     const { createPage } = actions
@@ -13,70 +13,112 @@ exports.createPages = async ({ actions }) => {
     if (!templateWeb) {
         throw new Error("templateWeb not found")
     }
-    //
-    // createPage({
-    //     path: "/using-dsg",
-    //     component: require.resolve("./src/shared/templates/using-dsg.js"),
-    //     context: {},
-    //     defer: true,
-    // })
 
     data.forEach(mimeObject => {
-        if (mimeObject.deprecated) {
-            return
-        }
-
         var path = mimeObject.name
+
+        // Create MimeData for page
+        const pageMimeData = {
+            ...mimeObject,
+            templateData: {
+                deprecatedBy: null,
+                parentType: null,
+            },
+        }
 
         createPage({
             path,
             component: templateWeb,
-            context: {
-                ...mimeObject,
-                alternatives: mimeObject.alternatives || [],
-            },
+            context: pageMimeData,
         })
 
         const appearsAs = mimeObject.appearsAs ? mimeObject.appearsAs : []
 
-        if (mimeObject.alternatives) {
-            for (const alternative of mimeObject.alternatives) {
-                const newAlternativesList = [
-                    ...appearsAs,
-                    ...mimeObject.alternatives.filter(m => m !== alternative),
-                    mimeObject.name,
-                ]
+        if (pageMimeData.links.deprecates) {
+            // Create pages for deprecated mimetypes
+            for (const deprecatedTypeName of pageMimeData.links.deprecates) {
+                // Create MimeData for page
+                const deprecatedPageMimeData = {
+                    ...mimeObject,
+                    path: deprecatedTypeName,
+                    name: deprecatedTypeName,
+                    templateData: {
+                        deprecatedBy: pageMimeData.name,
+                        parentType: pageMimeData.name,
+                    },
+                }
 
                 createPage({
-                    path: alternative,
+                    path: deprecatedTypeName,
                     component: templateWeb,
-                    context: {
-                        ...mimeObject,
-                        name: alternative,
-                        deprecated: true,
-                        useInstead: mimeObject.name,
-                        alternatives: newAlternativesList,
-                    },
+                    context: deprecatedPageMimeData,
                 })
             }
         }
 
-        for (const alternative of appearsAs) {
+        // Create child pages using same MimeData with no deprecatedBy warning
+        for (const childTypeName of pageMimeData.links.parentOf) {
+            // Create MimeData for page
+            const alternativePageMimeData = {
+                ...mimeObject,
+                path: childTypeName,
+                name: childTypeName,
+                templateData: {
+                    deprecatedBy: null,
+                    parentType: pageMimeData.name,
+                },
+            }
+
             const newAlternativesList = [
                 mimeObject.name,
-                ...appearsAs.filter(m => m !== alternative),
+                ...appearsAs.filter(m => m !== childTypeName),
                 ...(mimeObject.alternatives || []),
             ]
 
             createPage({
-                path: alternative,
+                path: childTypeName,
+                component: templateWeb,
+                context: alternativePageMimeData,
+            })
+        }
+
+        // Create child pages using same MimeData with no deprecatedBy warning
+        for (const alternativeTypeName of pageMimeData.links.alternativeTo) {
+            // Create MimeData for page
+            const alternativePageMimeData = {
+                ...mimeObject,
+                path: alternativeTypeName,
+                name: alternativeTypeName,
+                templateData: {
+                    deprecatedBy: null,
+                    parentType: null,
+                },
+            }
+
+            const newRelatedList = [
+                mimeObject.name,
+                ...pageMimeData.links.relatedTo.filter(
+                    m => m !== alternativeTypeName
+                ),
+            ]
+
+            const newAlternativesList = [
+                mimeObject.name,
+                ...pageMimeData.links.alternativeTo.filter(
+                    m => m !== alternativeTypeName
+                ),
+            ]
+
+            createPage({
+                path: alternativeTypeName,
                 component: templateWeb,
                 context: {
-                    ...mimeObject,
-                    name: alternative,
-                    deprecated: false,
-                    useInstead: mimeObject.name,
-                    alternatives: newAlternativesList,
+                    ...alternativePageMimeData,
+                    links: {
+                        ...pageMimeData.links,
+                        relatedTo: newRelatedList,
+                        alternativeTo: newAlternativesList,
+                    },
                 },
             })
         }
