@@ -1,27 +1,23 @@
 import * as React from "react"
+import { useMemo } from "react"
 import { MainLayout } from "../MainLayout/MainLayout"
 import { Fit } from "../Fit/Fit"
 import { DataWell, DataWellItems } from "../DataWell/DataWell"
 import { SecondaryButton } from "../Button/SecondaryButton"
 import {
-    IconAlertSquareRounded,
-    IconAlertTriangle,
     IconAlertTriangleFilled,
     IconBrowser,
-    IconChevronUp,
     IconCode,
     IconDatabase,
     IconEdit,
     IconExternalLink,
     IconHandStop,
-    IconInfoSquare,
 } from "@tabler/icons-react"
 import { Link } from "gatsby"
 import { useParams } from "../../utils/hooks/useParams"
 import { EmptyData } from "../EmptyData/EmptyData"
 import { MimeData } from "../../types/mimeData"
 import Helmet from "react-helmet"
-import { useMemo } from "react"
 
 const MimetypeTemplate = props => {
     const mime = props.pageContext as MimeData
@@ -310,7 +306,7 @@ const MimetypeTemplate = props => {
                         linkItems
                     />
 
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col items-start gap-4 lg:flex-row">
                         <div className={"flex flex-1 flex-col gap-4"}>
                             <h2 className={"text-md font-bold text-slate-500"}>
                                 Further reading
