@@ -5147,39 +5147,15 @@
       {
         "title": "Let's Solve the File Format Problem!",
         "url": "http://fileformats.archiveteam.org/wiki/JSON"
+      },
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/application/json"
       }
     ],
     "links": {
       "deprecates": [
         "text/json"
-      ],
-      "relatedTo": [],
-      "parentOf": [],
-      "alternativeTo": []
-    },
-    "fileTypes": [
-      ".json"
-    ],
-    "notices": {
-      "hasNoOfficial": false,
-      "communityContributed": false,
-      "popularUsage": null
-    }
-  },
-  {
-    "name": "text/json",
-    "description": "JSON (JavaScript Object Notation) is widely used by web applications, mobile apps, and other programs to communicate between different systems (such as between a client and server). While it is named after JavaScript, there are libraries for many other programming and scripting languages to let them use this format as well. The geospatial format GeoJSON is based on JSON, as is the remote-procedure-call protocol JSON-RPC and the JSON-LD linked-data format. The IBM standard of JSONx is an XML implementation of JSON. I-JSON is a restricted profile of JSON for Internet use. JSON Web Tokens, JSON Web Encryption, and JSON Web Signatures are JSON-based formats for security-related functions.",
-    "deprecated": true,
-    "useInstead": "application/json",
-    "furtherReading": [
-      {
-        "title": "Let's Solve the File Format Problem!",
-        "url": "http://fileformats.archiveteam.org/wiki/JSON"
-      }
-    ],
-    "links": {
-      "deprecates": [
-        "application/json"
       ],
       "relatedTo": [],
       "parentOf": [],
