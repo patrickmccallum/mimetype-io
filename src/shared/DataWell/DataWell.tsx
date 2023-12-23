@@ -22,14 +22,12 @@ interface DataWellProps {
     data: DataWellItems
     className?: string
     emptyText?: string
-    linkItems?: boolean
 }
 
 export const DataWell = ({
     data,
     className,
     title,
-    linkItems,
     emptyText = "No data provided",
 }: DataWellProps) => {
     const content = useMemo(() => {
@@ -77,7 +75,7 @@ export const DataWell = ({
                     )}
                 </div>
 
-                {data && (
+                {data.length > 0 && (
                     <div
                         className={
                             "flex items-center gap-2 rounded-lg bg-slate-50"

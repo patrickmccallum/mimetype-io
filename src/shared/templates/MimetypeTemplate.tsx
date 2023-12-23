@@ -303,7 +303,6 @@ const MimetypeTemplate = props => {
                         data={dataAlsoAppearsAs}
                         className={"mb-8"}
                         emptyText={"Not known to appear as any other types"}
-                        linkItems
                     />
 
                     <div className="flex flex-col items-start gap-4 lg:flex-row">
