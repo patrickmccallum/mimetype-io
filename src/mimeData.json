@@ -397,7 +397,12 @@
       "parentOf": [],
       "alternativeTo": []
     },
-    "fileTypes": []
+    "fileTypes": [],
+    "notices": {
+      "hasNoOfficial": true,
+      "communityContributed": false,
+      "popularUsage": null
+    }
   },
   {
     "name": "audio/aacp",
@@ -422,7 +427,12 @@
     },
     "fileTypes": [
       ".aacp"
-    ]
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": true,
+      "popularUsage": null
+    }
   },
   {
     "name": "application/x-authorware-map",
