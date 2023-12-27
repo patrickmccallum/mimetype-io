@@ -41,10 +41,10 @@
     "name": "video/3gpp2",
     "description": "",
     "links": {
-      "deprecates": [
+      "deprecates": [],
+      "relatedTo": [
         "audio/3gpp2"
       ],
-      "relatedTo": [],
       "parentOf": [],
       "alternativeTo": []
     },
@@ -180,10 +180,10 @@
     "name": "audio/3gpp2",
     "description": "",
     "links": {
-      "deprecates": [
+      "deprecates": [],
+      "relatedTo": [
         "video/3gpp2"
       ],
-      "relatedTo": [],
       "parentOf": [],
       "alternativeTo": []
     },
@@ -302,6 +302,47 @@
     }
   },
   {
+    "name": "audio/mp4",
+    "description": "MP4 is a multimedia container format defined by MPEG-4 Part 14 (ISO/IEC 14496-14). It is based on the Apple QuickTime format, but is not identical to it.<br /><br />It is a successor to the older MOV format, and is used for video (with H.264 and H.265 codecs) and audio (with AAC and AC-3 codecs).<br /><br />It is used by iTunes for music and video downloads, and by many other services for video streaming. It is also used for video files on Blu-ray discs.",
+    "furtherReading": [
+      {
+        "title": "RFC Editor - RFC4337",
+        "url": "https://www.rfc-editor.org/rfc/rfc4337"
+      },
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/MP4"
+      },
+      {
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/MPEG-4_Part_14"
+      }
+    ],
+    "links": {
+      "deprecates": [
+        "audio/mpeg4-generic",
+        "audio/x-m4a",
+        "audio/m4a"
+      ],
+      "relatedTo": [
+        "video/mp4",
+        "audio/aac",
+        "audio/aacp",
+        "audio/3gpp",
+        "audio/3gpp2",
+        "audio/mp4a-latm",
+        "audio/mpeg4-generic"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
     "name": "audio/aac",
     "description": "AAC (Advanced Audio Coding) is a compressed audio format defined in MPEG-2 Part 7 (ISO/IEC 13818-7), and in an updated form in MPEG-4 Part 3 (ISO/IEC 14496-3). It was designed to be the successor to MP3. iTunes distributes (or distributed) files in this format, apparently including various metadata (like the name, and sometimes email of the account which downloaded it, along with the time it was downloaded).<br /><br />An AAC file may contain only the raw AAC format, or it may use a multimedia container format such MP4 or QuickTime. AAC is often used for the audio component of a video file.",
     "furtherReading": [
@@ -314,13 +355,14 @@
       "deprecates": [
         "audio/x-aac"
       ],
-      "relatedTo": [],
+      "relatedTo": [
+        "audio/aacp"
+      ],
       "parentOf": [],
       "alternativeTo": []
     },
     "fileTypes": [
       ".aac",
-      ".mp4",
       ".m4a"
     ],
     "notices": {
@@ -328,6 +370,59 @@
       "communityContributed": false,
       "popularUsage": null
     }
+  },
+  {
+    "title": "audio/mp4a-latm",
+    "description": "Registered by RFC 3016; updated by RFC 6416, published October 2011)",
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/audio/mp4a-latm"
+      },
+      {
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/MPEG-4_Part_3#MPEG-4_Audio_Lossless_Coding_(ALS)"
+      }
+    ],
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "audio/aac",
+        "audio/aacp",
+        "audio/3gpp",
+        "audio/3gpp2",
+        "audio/mp4",
+        "audio/mpeg4-generic"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": []
+  },
+  {
+    "title": "audio/aacp",
+    "description": "AAC+ (Advanced Audio Coding Plus) is a compressed audio format defined in MPEG-4 Part 3 (ISO/IEC 14496-3). It is a successor to AAC, and is designed to be more efficient than AAC for low bitrates. It is also known as HE-AAC (High Efficiency AAC).<br /><br />An AAC+ file may contain only the raw AAC+ format, or it may use a multimedia container format such MP4 or QuickTime. AAC+ is often used for the audio component of a video file.<br /><br />Differs from audio/aac and has lower browser compatibility for playback. The Wikipedia link has the most information I could find.",
+    "furtherReading": [
+      {
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/High-Efficiency_Advanced_Audio_Coding"
+      },
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/AAC"
+      }
+    ],
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "audio/aac"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".aacp"
+    ]
   },
   {
     "name": "application/x-authorware-map",
@@ -6373,7 +6468,15 @@
     "description": "MP4 usually refers to the multimedia file format defined in Part 14 (and to a lesser extent Part 1) of the MPEG-4 standard. \"MP4\" could also mean the entire MPEG-4 standard, or some other subset of MPEG-4. MPEG-4 Part 14 is an application of Part 12. The recommended extension for it is \".mp4\", though \".m4a\" is often used for audio-only files. It is standardized by ISO/IEC 14496-14.",
     "links": {
       "deprecates": [],
-      "relatedTo": [],
+      "relatedTo": [
+        "audio/mp4",
+        "audio/aac",
+        "audio/aacp",
+        "audio/3gpp",
+        "audio/3gpp2",
+        "audio/mp4a-latm",
+        "audio/mpeg4-generic"
+      ],
       "parentOf": [],
       "alternativeTo": []
     },
@@ -6382,7 +6485,24 @@
       ".mp4v",
       ".mpg4"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Internet Engineering Task Force (RFC 4337)",
+        "url": "https://tools.ietf.org/html/rfc4337"
+      },
+      {
+        "title": "Library of Congress",
+        "url": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000426.shtml"
+      },
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/MP4"
+      },
+      {
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/MPEG-4_Part_14"
+      }
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
