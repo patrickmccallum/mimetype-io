@@ -350,12 +350,7 @@
       ".3gpa",
       ".3gpp",
       ".3gpp2",
-      ".3gp2",
-      ".3gppp",
-      ".3gpp2",
-      ".3gp2",
-      ".3gppp",
-      ".3gpp2"
+      ".3gp2"
     ],
     "notices": {
       "hasNoOfficial": false,
@@ -6570,25 +6565,6 @@
       ".isoimg",
       ".cdr"
     ],
-    "notices": {
-      "hasNoOfficial": false,
-      "communityContributed": false,
-      "popularUsage": null
-    }
-  },
-  {
-    "name": "audio/mp4",
-    "description": "MP4 usually refers to the multimedia file format defined in Part 14 (and to a lesser extent Part 1) of the MPEG-4 standard. \"MP4\" could also mean the entire MPEG-4 standard, or some other subset of MPEG-4. MPEG-4 Part 14 is an application of Part 12. The recommended extension for it is \".mp4\", though \".m4a\" is often used for audio-only files. It is standardized by ISO/IEC 14496-14.",
-    "links": {
-      "deprecates": [],
-      "relatedTo": [],
-      "parentOf": [],
-      "alternativeTo": []
-    },
-    "fileTypes": [
-      ".mp4a"
-    ],
-    "furtherReading": [],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
