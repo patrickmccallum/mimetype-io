@@ -336,6 +336,27 @@
       "parentOf": [],
       "alternativeTo": []
     },
+    "fileTypes": [
+      ".mp4",
+      ".m4a",
+      ".m4b",
+      ".m4p",
+      ".m4r",
+      ".m4v",
+      ".mp4v",
+      ".3gp",
+      ".3g2",
+      ".3ga",
+      ".3gpa",
+      ".3gpp",
+      ".3gpp2",
+      ".3gp2",
+      ".3gppp",
+      ".3gpp2",
+      ".3gp2",
+      ".3gppp",
+      ".3gpp2"
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
