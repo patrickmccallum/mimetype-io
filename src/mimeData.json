@@ -372,7 +372,7 @@
     }
   },
   {
-    "title": "audio/mp4a-latm",
+    "name": "audio/mp4a-latm",
     "description": "Registered by RFC 3016; updated by RFC 6416, published October 2011)",
     "furtherReading": [
       {
@@ -400,7 +400,7 @@
     "fileTypes": []
   },
   {
-    "title": "audio/aacp",
+    "name": "audio/aacp",
     "description": "AAC+ (Advanced Audio Coding Plus) is a compressed audio format defined in MPEG-4 Part 3 (ISO/IEC 14496-3). It is a successor to AAC, and is designed to be more efficient than AAC for low bitrates. It is also known as HE-AAC (High Efficiency AAC).<br /><br />An AAC+ file may contain only the raw AAC+ format, or it may use a multimedia container format such MP4 or QuickTime. AAC+ is often used for the audio component of a video file.<br /><br />Differs from audio/aac and has lower browser compatibility for playback. The Wikipedia link has the most information I could find.",
     "furtherReading": [
       {
