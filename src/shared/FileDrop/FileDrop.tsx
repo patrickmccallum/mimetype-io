@@ -27,7 +27,7 @@ export const FileDrop = () => {
         if (extension) {
             console.info(`Trying to find ${extension} in`, mimeData)
             for (const mime of mimeData) {
-                if (mime.types.includes(extension)) {
+                if (mime.fileTypes.includes(extension)) {
                     navigate(`/${mime.name}?source=data`)
                     return
                 }
