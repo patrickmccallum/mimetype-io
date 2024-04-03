@@ -183,7 +183,7 @@ const MimetypeTemplate = props => {
                             </a>
                         </div>
                     </div>
-                    {mime.notices.popularUsage && (
+                    {mime.notices.hasNoOfficial && (
                         <div
                             className={
                                 "flex items-stretch gap-3 rounded-md bg-amber-50 p-1 text-indigo-50"
