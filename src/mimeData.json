@@ -687,27 +687,6 @@
     }
   },
   {
-    "name": "audio/x-aiff",
-    "description": "",
-    "links": {
-      "deprecates": [],
-      "relatedTo": [],
-      "parentOf": [],
-      "alternativeTo": []
-    },
-    "fileTypes": [
-      ".aif",
-      ".aifc",
-      ".aiff"
-    ],
-    "furtherReading": [],
-    "notices": {
-      "hasNoOfficial": false,
-      "communityContributed": false,
-      "popularUsage": null
-    }
-  },
-  {
     "name": "application/vnd.adobe.air-application-installer-package+zip",
     "description": "",
     "links": {
@@ -5315,7 +5294,7 @@
   },
   {
     "name": "audio/aiff",
-    "description": "AIFF (Audio Interchange File Format) files store uncompressed signed audio samples inside an IFF container. There's also a compressed variant, called AIFC with the same mimetype.<br /><br />AIFF chunks provide native metadata. In addition, although it is not in the specification, an ID3 chunk is often used to include ID3V2 metadata.",
+    "description": "AIFF (Audio Interchange File Format) files store uncompressed signed audio samples inside an IFF container. There's also a compressed variant, called AIFC with the same mimetype.<br /><br />AIFF chunks provide native metadata. In addition, although it is not in the specification, an ID3 chunk is often used to include ID3V2 metadata.<br /><br />It is difficult to trace down official mention of an official mimetype declaration, however you should follow existing guidance which is to assign with audio/aiff and support reading from audio/x-aiff also.",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -5324,10 +5303,11 @@
     ],
     "links": {
       "deprecates": [
-        "audio/x-aiff"
       ],
       "relatedTo": [],
-      "parentOf": [],
+      "parentOf": [
+        "audio/x-aiff"
+      ],
       "alternativeTo": []
     },
     "fileTypes": [
@@ -5336,7 +5316,7 @@
       ".aff"
     ],
     "notices": {
-      "hasNoOfficial": false,
+      "hasNoOfficial": true,
       "communityContributed": false,
       "popularUsage": null
     }

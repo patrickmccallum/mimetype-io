@@ -197,6 +197,28 @@ const MimetypeTemplate = props => {
                                 <IconCode size={20} />
                             </div>{" "}
                             <div className={"py-2 text-amber-900"}>
+                                Important: An officially mentioned type either
+                                does not exist, or is hard to track down. The
+                                information here likely reflects community
+                                contributions or popular usage derived from
+                                existing implementations.
+                            </div>
+                        </div>
+                    )}
+                    {mime.notices.popularUsage && (
+                        <div
+                            className={
+                                "flex items-stretch gap-3 rounded-md bg-amber-50 p-1 text-indigo-50"
+                            }
+                        >
+                            <div
+                                className={
+                                    "flex w-10 items-center justify-center rounded-md bg-amber-500 p-2 text-red-50"
+                                }
+                            >
+                                <IconCode size={20} />
+                            </div>{" "}
+                            <div className={"py-2 text-amber-900"}>
                                 Important: The official type may not represent
                                 community/developer consensus and you may
                                 encounter issues with the official type. The{" "}
