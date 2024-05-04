@@ -11,7 +11,15 @@
     "fileTypes": [
       ".123"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/Lotus_1-2-3"
+      },
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/application/vnd.lotus-1-2-3"
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
@@ -51,7 +59,16 @@
     "fileTypes": [
       ".3g2"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/3G2"
+      },
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/video/3gpp2"
+      }
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
@@ -100,6 +117,10 @@
       {
         "title": "Krita File Format",
         "url": "https://docs.krita.org/en/general_concepts/file_formats/file_kra.html"
+      },
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/Krita"
       }
     ],
     "links": {
@@ -133,6 +154,10 @@
       {
         "title": "Wikipedia",
         "url": "https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format"
+      },
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/heic"
       }
     ],
     "links": {
@@ -169,7 +194,16 @@
     "fileTypes": [
       ".3gp"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/3GPP"
+      },
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/video/3gpp"
+      }
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
@@ -190,7 +224,16 @@
     "fileTypes": [
       ".3g2"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/3G2"
+      },
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/audio/3gpp2"
+      }
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
@@ -209,7 +252,12 @@
     "fileTypes": [
       ".7z"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/7z"
+      }
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
@@ -316,6 +364,10 @@
       {
         "title": "Wikipedia",
         "url": "https://en.wikipedia.org/wiki/MPEG-4_Part_14"
+      },
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/audio/mp4"
       }
     ],
     "links": {
@@ -365,6 +417,10 @@
       {
         "title": "Let's Solve the File Format Problem!",
         "url": "http://fileformats.archiveteam.org/wiki/AAC"
+      },
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/audio/aac"
       }
     ],
     "links": {
@@ -481,7 +537,12 @@
     "fileTypes": [
       ".aas"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/AAS"
+      }
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
@@ -500,7 +561,12 @@
     "fileTypes": [
       ".abw"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/ABW"
+      }
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
@@ -519,7 +585,12 @@
     "fileTypes": [
       ".acc"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/application/vnd.americandynamics.acc"
+      }
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
@@ -538,7 +609,12 @@
     "fileTypes": [
       ".ace"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/ACE"
+      }
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
@@ -557,7 +633,12 @@
     "fileTypes": [
       ".acu"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/application/vnd.acucobol"
+      }
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
@@ -577,7 +658,12 @@
       ".acutc",
       ".atc"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/application/vnd.acucorp"
+      }
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
@@ -596,7 +682,12 @@
     "fileTypes": [
       ".adp"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Let's Solve the File Format Problem!",
+        "url": "http://fileformats.archiveteam.org/wiki/ADPCM"
+      }
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
@@ -615,7 +706,12 @@
     "fileTypes": [
       ".aep"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/application/vnd.audiograph"
+      }
+    ],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
