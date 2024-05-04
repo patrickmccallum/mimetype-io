@@ -243,7 +243,7 @@
   },
   {
     "name": "application/x-7z-compressed",
-    "description": "7-zip archive",
+    "description": "7z is a file format for archiving and data compression, developed by Igor Pavlov. It is the native format of the 7-Zip archiving application.",
     "links": {
       "deprecates": [],
       "relatedTo": [],
@@ -560,7 +560,9 @@
       "alternativeTo": []
     },
     "fileTypes": [
-      ".abw"
+      ".abw",
+      ".zabw",
+      ".abw.gz"
     ],
     "furtherReading": [
       {
