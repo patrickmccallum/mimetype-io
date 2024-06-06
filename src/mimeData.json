@@ -2140,6 +2140,10 @@
     "description": "Markdown is a lightweight and human readable markup format for text formatting created by John Gruber and Aaron Swartz. It is similar to various forms of wiki markup. There is no formal specification for the original Markdown, and it has ambiguities that are handled inconsistently by different implementations.<br /><br />An attempt to improve on this situation was done (released 2014-09) by a group unrelated to the originators of Markdown, and was originally dubbed Standard Markdown until John Gruber objected to this name, and it was first renamed \"Common Markdown\" and later CommonMark. Markdeep is an extended Markdown implemented in JavaScript for web use.",
     "furtherReading": [
       {
+        "title": "RFC 7763 - The text/markdown Media Type",
+        "url": "https://tools.ietf.org/html/rfc7763"
+      },
+      {
         "title": "Let's Solve the File Format Problem!",
         "url": "http://fileformats.archiveteam.org/wiki/Markdown"
       }
