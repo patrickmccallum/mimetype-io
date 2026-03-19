@@ -8430,9 +8430,9 @@
   },
   {
     "name": "image/x-pcx",
-    "description": "",
+    "description": "PCX is a raster image format developed by ZSoft Corporation. It was the native file format for PC Paintbrush, and was widely used in the early days of personal computing.",
     "links": {
-      "deprecates": [],
+      "deprecates": ["image/vnd.zbrush.pcx"],
       "relatedTo": [],
       "parentOf": [],
       "alternativeTo": []
@@ -8440,7 +8440,10 @@
     "fileTypes": [
       ".pcx"
     ],
-    "furtherReading": [],
+    "furtherReading": [ {
+        "title": "PCX",
+        "url": "https://en.wikipedia.org/wiki/PCX"
+      }],
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
