@@ -118,7 +118,7 @@ const AllTypesPage = () => {
                                 <tr
                                     key={item.name}
                                     className={
-                                        "flex flex-col border-b border-gray-200 pb-2 pt-2 text-gray-500 md:table-row md:pb-0  md:pt-0"
+                                        "flex flex-col border-b border-gray-200 pb-2 pt-2 text-gray-500 md:table-row md:pb-0 md:pt-0"
                                     }
                                 >
                                     <td

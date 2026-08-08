@@ -26,7 +26,7 @@ export const IconButton = ({
                     "text-md p-3": size === "md",
                     "p-2 text-sm": size === "sm",
                     "border border-gray-300": outlined,
-                }
+                },
             )}
             onClick={onClick}
         >

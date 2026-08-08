@@ -2,6 +2,7 @@ import * as React from "react"
 import { MainLayout } from "../shared/MainLayout/MainLayout"
 import { Fit } from "../shared/Fit/Fit"
 import { IconFileUnknown } from "@tabler/icons-react"
+import Seo from "../shared/seo"
 
 export default function IndexPage() {
     return (
@@ -30,3 +31,5 @@ export default function IndexPage() {
         </MainLayout>
     )
 }
+
+export const Head = () => <Seo title="Unknown mimetype" />

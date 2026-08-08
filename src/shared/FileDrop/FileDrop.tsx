@@ -49,7 +49,7 @@ export const FileDrop = () => {
                 "flex min-h-[200px] cursor-pointer flex-col items-center justify-center gap-4 rounded-lg border-4 border-dashed border-slate-200 bg-slate-100 p-4 py-20 text-center text-slate-600",
                 {
                     "border-slate-500 bg-slate-50": isDragActive,
-                }
+                },
             )}
         >
             <input {...getInputProps()} />

@@ -5,7 +5,7 @@ export const useParams = () => {
 
     useMemo(() => {
         const params = new URLSearchParams(
-            typeof window === "undefined" ? {} : document.location.search
+            typeof window === "undefined" ? {} : document.location.search,
         )
 
         setParams(params)

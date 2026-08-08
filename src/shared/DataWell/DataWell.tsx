@@ -97,7 +97,7 @@ export const DataWell = ({
                 <div
                     className={classNames(
                         "relative flex flex-col overflow-hidden rounded-md bg-slate-200 md:flex-row",
-                        className
+                        className,
                     )}
                 >
                     <pre

@@ -41,7 +41,7 @@ const MimetypeTemplate = props => {
                     mime.notices.popularUsage === t ? (
                         <em className={"text-slate-500"}>Popular</em>
                     ) : undefined,
-            }))
+            })),
         )
 
         // Other types where this one is "preferred"
@@ -53,7 +53,7 @@ const MimetypeTemplate = props => {
                     mime.notices.popularUsage === t ? (
                         <em className={"text-slate-500"}>Popular</em>
                     ) : undefined,
-            }))
+            })),
         )
 
         // Other types where they're no longer used popularly or are "unofficial"
@@ -62,7 +62,7 @@ const MimetypeTemplate = props => {
                 label: t,
                 linkTo: `/${t}`,
                 endAdornment: <em className={"text-slate-500"}>Deprecated</em>,
-            }))
+            })),
         )
 
         // If we're an alternative, or a deprecation, show the parent and remove ourselves
@@ -75,7 +75,7 @@ const MimetypeTemplate = props => {
 
             items.splice(
                 items.findIndex(i => i.label === mime.name),
-                1
+                1,
             )
         }
 
@@ -157,7 +157,7 @@ const MimetypeTemplate = props => {
                                 const selection = window.getSelection()
                                 const range = document.createRange()
                                 range.selectNodeContents(
-                                    document.getElementById("mime-title")
+                                    document.getElementById("mime-title"),
                                 )
                                 selection.removeAllRanges()
                                 selection.addRange(range)
@@ -170,7 +170,7 @@ const MimetypeTemplate = props => {
                         >
                             <a
                                 href={`https://github.com/patrickmccallum/mimetype-io/issues/new?assignees=&labels=&projects=&template=mimetype-change.md&title=%5BCHANGE%5D+${encodeURIComponent(
-                                    mime.name
+                                    mime.name,
                                 )}`}
                                 target={"_blank"}
                             >

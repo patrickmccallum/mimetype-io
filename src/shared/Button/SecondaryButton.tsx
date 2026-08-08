@@ -24,7 +24,7 @@ export const SecondaryButton = ({
                     "gap-2 px-3 py-1 text-sm": size === "md",
                     "gap-1 px-2 py-1 text-xs": size === "sm",
                 },
-                className
+                className,
             )}
         >
             {children}

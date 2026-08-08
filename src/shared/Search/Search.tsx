@@ -2,11 +2,10 @@ import * as React from "react"
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import * as classNames from "classnames"
 import { IconSearch } from "@tabler/icons-react"
-import Fuse from "fuse.js"
+import Fuse, { type IFuseOptions } from "fuse.js"
 import { MimeData } from "../../types/mimeData"
 import { useData } from "../DataContext/DataContext"
 import { navigate } from "gatsby"
-import IFuseOptions = Fuse.IFuseOptions
 
 const fuseOptions: IFuseOptions<MimeData> = {
     isCaseSensitive: false,
@@ -58,7 +57,7 @@ export const Search = ({}: SearchProps) => {
         } else if (event.key === "ArrowUp") {
             setSelectedIndex(
                 (selectedIndex - 1 + searchResults.length) %
-                    searchResults.length
+                    searchResults.length,
             )
         } else {
             const query = inputRef.current.value
@@ -69,7 +68,7 @@ export const Search = ({}: SearchProps) => {
                         .search(query)
                         .map(result => result.item)
                         // .filter(m => !m.templateData.deprecatedBy)
-                        .slice(0, 5)
+                        .slice(0, 5),
                 )
             } else {
                 setSearchResults(null)
@@ -99,8 +98,8 @@ export const Search = ({}: SearchProps) => {
             className={classNames(
                 "absolute bottom-4 left-0 right-0 top-4 flex w-full max-w-sm flex-1 cursor-text items-center gap-2 rounded-lg border border-gray-300 bg-gray-50 px-4 py-3 transition-colors duration-100 md:relative md:bottom-0 md:left-0 md:right-0 md:top-0",
                 {
-                    "!bg-white ": isSearchFocused,
-                }
+                    "!bg-white": isSearchFocused,
+                },
             )}
             onClick={() => {
                 inputRef.current?.select()
@@ -111,7 +110,7 @@ export const Search = ({}: SearchProps) => {
                 ref={inputRef}
                 type={"text"}
                 className={classNames(
-                    "placeholder:slate-500 slate-800 flex-1 bg-transparent text-sm focus:text-slate-800 focus:outline-0"
+                    "placeholder:slate-500 slate-800 flex-1 bg-transparent text-sm focus:text-slate-800 focus:outline-0",
                 )}
                 placeholder={"Search mimetypes"}
                 onFocus={() => setIsSearchFocused(true)}
@@ -133,7 +132,7 @@ export const Search = ({}: SearchProps) => {
                                     {
                                         "border-l-4 border-blue-500 bg-blue-50":
                                             index === selectedIndex,
-                                    }
+                                    },
                                 )}
                                 onClick={() => {
                                     navigate(`/${result.name}`)
@@ -156,7 +155,7 @@ export const Search = ({}: SearchProps) => {
                                     {result.fileTypes.map(type => {
                                         const matchesSearch =
                                             inputRef.current.value.includes(
-                                                type.substring(1)
+                                                type.substring(1),
                                             )
 
                                         return (
@@ -167,7 +166,7 @@ export const Search = ({}: SearchProps) => {
                                                     {
                                                         "font-bold text-amber-500":
                                                             matchesSearch,
-                                                    }
+                                                    },
                                                 )}
                                             >
                                                 {type}

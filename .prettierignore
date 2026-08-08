@@ -2,3 +2,11 @@
 package.json
 package-lock.json
 public
+
+# GitHub-owned formats: workflow YAML is indent-sensitive and the issue
+# template's frontmatter is parsed by GitHub, so leave both alone.
+.github
+
+# Hand-curated data file. Structure is enforced by scripts/validate-data.js
+# instead of Prettier, so contributor diffs stay readable.
+src/mimeData.json

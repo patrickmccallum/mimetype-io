@@ -1,6 +1,6 @@
 {
-  "arrowParens": "avoid",
-  "semi": false,
-  "tabWidth": 4,
-  "plugins": ["prettier-plugin-tailwindcss"]
+    "arrowParens": "avoid",
+    "semi": false,
+    "tabWidth": 4,
+    "plugins": ["prettier-plugin-tailwindcss"]
 }

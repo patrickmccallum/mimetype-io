@@ -6,9 +6,8 @@ const data = require("./src/mimeData.json")
 exports.createPages = async ({ actions }) => {
     const { createPage } = actions
 
-    const templateWeb = require.resolve(
-        "./src/shared/templates/MimetypeTemplate.tsx"
-    )
+    const templateWeb =
+        require.resolve("./src/shared/templates/MimetypeTemplate.tsx")
 
     if (!templateWeb) {
         throw new Error("templateWeb not found")
@@ -98,14 +97,14 @@ exports.createPages = async ({ actions }) => {
             const newRelatedList = [
                 mimeObject.name,
                 ...pageMimeData.links.relatedTo.filter(
-                    m => m !== alternativeTypeName
+                    m => m !== alternativeTypeName,
                 ),
             ]
 
             const newAlternativesList = [
                 mimeObject.name,
                 ...pageMimeData.links.alternativeTo.filter(
-                    m => m !== alternativeTypeName
+                    m => m !== alternativeTypeName,
                 ),
             ]
 
