@@ -14246,5 +14246,31 @@
       "communityContributed": true,
       "popularUsage": null
     }
+  },
+  {
+    "name": "application/x-ms-shortcut",
+    "description": "A Windows shortcut. It is a small binary file that points at something else — a program, a document, a folder, a drive or a network location — and carries the details Windows needs to open it, such as the working directory, any command line arguments, an icon to display, and enough information about the target to go looking for it if it has since moved.<br /><br />Windows has used the format since Windows 95, where it replaced the older Program Information Files, and Microsoft documents it as the Shell Link Binary File Format. The type is not registered with IANA; <code>application/x-ms-shortcut</code> comes from the media type list shipped with the Apache HTTP Server and is the spelling that stuck.<br /><br />One thing worth knowing if you are accepting these from users: because a shortcut can carry arguments and borrow its icon from an unrelated file, a <code>.lnk</code> can be made to look harmless while pointing somewhere else entirely. They have a long history as a malware delivery route, so treat unexpected ones with care.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "application/x-msdownload"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".lnk"
+    ],
+    "furtherReading": [
+      {
+        "title": "Library of Congress - Microsoft Windows Shortcut File",
+        "url": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000596.shtml"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": true,
+      "communityContributed": true,
+      "popularUsage": null
+    }
   }
 ]
