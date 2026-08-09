@@ -38,6 +38,15 @@ module.exports = {
             },
         },
         `gatsby-plugin-react-helmet`,
+        {
+            resolve: `gatsby-plugin-sitemap`,
+            options: {
+                // 404s are not content; everything else, including the pages
+                // generated from deprecates/parentOf/alternativeTo links, is a
+                // real URL we want discovered.
+                excludes: [`/404`, `/404.html`],
+            },
+        },
         `gatsby-plugin-image`,
         {
             resolve: `gatsby-source-filesystem`,

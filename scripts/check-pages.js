@@ -204,6 +204,111 @@ check(
     home !== null && /<script[^>]+src="[^"]*\.js"/.test(home),
 )
 
+// --- SEO: sitemap and robots ---------------------------------------------
+const sitemapIndex = path.join(PUBLIC, "sitemap-index.xml")
+const sitemapUrls = new Set()
+if (fs.existsSync(sitemapIndex)) {
+    for (const file of fs.readdirSync(PUBLIC)) {
+        if (!/^sitemap-\d+\.xml$/.test(file)) continue
+        const xml = fs.readFileSync(path.join(PUBLIC, file), "utf8")
+        for (const m of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+            sitemapUrls.add(m[1].replace(/^https?:\/\/[^/]+/, "") || "/")
+        }
+    }
+}
+
+check("a sitemap index was emitted", fs.existsSync(sitemapIndex))
+
+const notInSitemap = data
+    .map(e => `/${e.name}`)
+    .filter(p => !sitemapUrls.has(p))
+check(
+    "every mimetype page appears in the sitemap",
+    notInSitemap.length === 0,
+    notInSitemap.length
+        ? `missing ${notInSitemap.length}, e.g. ${notInSitemap.slice(0, 5).join(", ")}`
+        : "",
+)
+
+check(
+    "the sitemap does not advertise 404 pages",
+    ![...sitemapUrls].some(u => u.startsWith("/404")),
+)
+
+const robots = path.join(PUBLIC, "robots.txt")
+check("robots.txt was emitted", fs.existsSync(robots))
+check(
+    "robots.txt points at the sitemap index",
+    fs.existsSync(robots) &&
+        /^\s*Sitemap:\s*https?:\/\/\S+sitemap-index\.xml\s*$/m.test(
+            fs.readFileSync(robots, "utf8"),
+        ),
+)
+
+// --- SEO: per-page head tags ---------------------------------------------
+const headProblems = []
+for (const entry of data) {
+    const html = readPage(entry.name)
+    if (!html) continue
+    const head = html.split("</head>")[0]
+    const grab = re => {
+        const m = head.match(re)
+        return m ? m[1] : null
+    }
+
+    const canonical = grab(/rel="canonical" href="([^"]*)"/)
+    if (!canonical) headProblems.push(`${entry.name}: no canonical`)
+    else if (canonical.replace(/^https?:\/\/[^/]+/, "") !== `/${entry.name}`) {
+        headProblems.push(`${entry.name}: canonical points at ${canonical}`)
+    }
+
+    if (!grab(/name="description" content="([^"]+)"/)) {
+        headProblems.push(`${entry.name}: no meta description`)
+    }
+    if (!grab(/property="og:title" content="([^"]+)"/)) {
+        headProblems.push(`${entry.name}: no og:title`)
+    }
+}
+check(
+    "every mimetype page has a self-referencing canonical, description and og:title",
+    headProblems.length === 0,
+    headProblems.slice(0, 5).join("\n      "),
+)
+
+// --- SEO: pages must not wrongly advertise themselves as deprecated -------
+/**
+ * Canonical entries whose page currently renders a "this mimetype is
+ * deprecated" banner because another entry lists them under `deprecates`.
+ *
+ * These are the mutually-deprecating pairs from issue #67. /application/zip
+ * telling readers to prefer application/zip-compressed is the most damaging:
+ * it demotes the IANA-registered type in favour of a non-standard one. Recorded
+ * so the count can only go down; any new page joining this list fails the build.
+ */
+const KNOWN_SELF_DEPRECATED = new Set([
+    "application/ecmascript",
+    "application/x-gzip",
+    "application/mathml+xml",
+    "application/x-font-otf",
+    "application/x-pkcs7-certificates",
+    "application/pkcs7-mime",
+    "application/vnd.rar",
+    "application/zip",
+    "application/x-zip-compressed",
+])
+
+const selfDeprecated = []
+for (const entry of data) {
+    const ctx = readContext(entry.name)
+    if (!ctx || !ctx.templateData.deprecatedBy) continue
+    if (!KNOWN_SELF_DEPRECATED.has(entry.name)) selfDeprecated.push(entry.name)
+}
+check(
+    "no new canonical page advertises itself as deprecated",
+    selfDeprecated.length === 0,
+    selfDeprecated.length ? `newly affected: ${selfDeprecated.join(", ")}` : "",
+)
+
 // --- report --------------------------------------------------------------
 console.log(`Ran ${checks} checks against ${emitted.length} built pages.`)
 
