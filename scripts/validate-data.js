@@ -97,6 +97,27 @@ for (const entry of data) {
                 "other entry is lowercase",
         )
     }
+    /**
+     * Descriptions are Markdown, rendered to React elements on the server.
+     *
+     * They used to be raw HTML injected with dangerouslySetInnerHTML, which
+     * made a malicious pull request against this file a stored-XSS route (#4).
+     * The renderer no longer parses embedded HTML, so a tag here would show up
+     * as literal text on the page rather than execute — but rejecting it
+     * outright keeps the data honest and the intent obvious to contributors.
+     */
+    if (typeof entry.description === "string") {
+        const tag = entry.description.match(/<\s*\/?\s*[a-zA-Z][^>]*>/)
+        if (tag) {
+            err(
+                entry.name,
+                `description contains HTML (${tag[0]}). Descriptions are ` +
+                    "Markdown: use **bold**, `code`, [text](/link) and a blank " +
+                    "line between paragraphs.",
+            )
+        }
+    }
+
     if (!Array.isArray(entry.fileTypes)) {
         err(entry.name, "`fileTypes` must be an array")
     } else {

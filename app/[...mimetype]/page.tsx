@@ -13,6 +13,7 @@ import { MainLayout } from "@/components/MainLayout"
 import { Fit } from "@/components/Fit"
 import { DataWell, type DataWellItems } from "@/components/DataWell"
 import { EmptyData } from "@/components/EmptyData"
+import { Description } from "@/components/Description"
 import { SecondaryButton } from "@/components/Button/SecondaryButton"
 import { MimeTitle } from "@/components/MimeTitle"
 import { SourceNotice } from "@/components/SourceNotice"
@@ -280,12 +281,7 @@ export default async function MimetypePage({
                         <SourceNotice />
                     </Suspense>
 
-                    <p
-                        className={"mb-8 text-base text-slate-500"}
-                        dangerouslySetInnerHTML={{
-                            __html: mime.description ?? "",
-                        }}
-                    />
+                    <Description markdown={mime.description ?? ""} />
 
                     <DataWell
                         title={"File types"}

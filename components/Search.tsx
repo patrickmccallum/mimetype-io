@@ -22,6 +22,17 @@ const fuseOptions: IFuseOptions<MimeEntry> = {
     keys: ["name", "types", "alternatives"],
 }
 
+/**
+ * Flattens a Markdown description into a single line for the results dropdown,
+ * which shows a two-line clamped preview rather than rendered Markdown.
+ */
+const toPreviewText = (markdown: string) =>
+    markdown
+        .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+        .replace(/[*_`]/g, "")
+        .replace(/\s+/g, " ")
+        .trim()
+
 export const Search = () => {
     const router = useRouter()
     const barRef = useRef<HTMLDivElement>(null)
@@ -147,7 +158,7 @@ export const Search = () => {
                                         "line-clamp-2 overflow-hidden text-xs leading-5 text-ellipsis text-gray-500"
                                     }
                                 >
-                                    {result.description.replace(/<[^>]*>/g, "")}
+                                    {toPreviewText(result.description)}
                                 </div>
                             )}
                             <div className={"flex flex-wrap gap-2"}>
