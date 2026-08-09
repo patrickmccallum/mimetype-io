@@ -54,9 +54,13 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
+# Build caches
 .cache/
-public
+
+# Next.js
+.next/
+out/
+next-env.d.ts
 
 # Mac files
 .DS_Store
@@ -71,3 +75,6 @@ yarn-error.log
 
 # Local Claude Code config
 .claude/
+
+# TypeScript incremental build info
+*.tsbuildinfo

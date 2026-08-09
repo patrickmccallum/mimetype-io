@@ -1,12 +1,16 @@
 # mimetype.io
 
-Hello! mimetype.io is an open-source Gatsby-based project that provides a comprehensive database and resources related to various MIME types. We welcome contributors of all levels to join us and make this platform even better.
+Hello! mimetype.io is an open-source Next.js project that provides a comprehensive database and resources related to various MIME types. We welcome contributors of all levels to join us and make this platform even better.
+
+The site is statically generated: every page is built ahead of time from
+[`src/mimeData.json`](src/mimeData.json), which is the file most contributions
+touch.
 
 ## Quick Start
 
 ### Prerequisites
 
-- Node.js (v18)
+- Node.js (v24 — see `.nvmrc`)
 
 ### Installation
 
@@ -28,11 +32,24 @@ cd mimetype-io
 npm install
 ```
 
-4. Start the Gatsby server.
+4. Start the dev server.
 
 ```bash
-gatsby develop
+npm run dev
 ```
+
+### Checks
+
+`npm test` runs everything CI runs: formatting, TypeScript, data validation,
+a production build, and assertions against the exported pages.
+
+```bash
+npm test
+```
+
+If you only changed `src/mimeData.json`, `npm run test:data` is the quick check
+— it catches malformed entries, duplicate names, and cross-links that would make
+one mimetype's page overwrite another's.
 
 ## Contributing
 

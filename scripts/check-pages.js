@@ -1,33 +1,56 @@
 #!/usr/bin/env node
 /**
- * Smoke test for the built site in public/.
+ * Smoke test for the static export in out/.
  *
- * Run after `gatsby build`. Asserts that pages were actually emitted, that
- * their rendered HTML contains the content we expect (rather than an empty
- * shell), and that the data Gatsby handed each page matches src/mimeData.json.
+ * Run after `next build`. Asserts that every expected page was emitted, that
+ * each one rendered its *own* entry's data rather than another's, that the
+ * rendered HTML carries the SEO tags the site depends on, and that the sitemap
+ * and robots.txt line up with the pages actually produced.
+ *
+ * `next.config.ts` sets trailingSlash: false, so static export writes a flat
+ * `<path>.html` per route rather than `<path>/index.html`. Only the site root
+ * gets an index.html.
  */
 
 const fs = require("fs")
 const path = require("path")
 
 const ROOT = path.join(__dirname, "..")
-const PUBLIC = path.join(ROOT, "public")
+const OUT = path.join(ROOT, "out")
 const data = require(path.join(ROOT, "src", "mimeData.json"))
 
+const SITE_URL = "https://mimetype.io"
+
 /**
- * Pages that currently render another entry's description.
+ * Pages that render another entry's description.
  *
- * Each of these is the target of a mutual `deprecates` pair (issue #67), so
- * gatsby-node.js generates the page twice and the second write wins. They are
- * recorded here so the suite stays green on master while still failing if a
- * change damages any *other* page the same way. Delete entries from this list
- * as the underlying pairs are untangled.
+ * Each is the target of a mutual `deprecates` pair (issue #67), so the page is
+ * generated twice and the later write wins. Recorded so the suite stays green
+ * while still failing if a change damages any *other* page the same way.
  */
 const KNOWN_OVERWRITTEN = new Set([
     "application/ecmascript",
     "application/pkcs7-mime",
     "application/vnd.rar",
     "application/x-rar-compressed",
+])
+
+/**
+ * Canonical entries whose page renders a "this mimetype is deprecated" banner,
+ * for the same reason. /application/zip telling readers to prefer
+ * application/zip-compressed is the most damaging of these. The count may only
+ * go down.
+ */
+const KNOWN_SELF_DEPRECATED = new Set([
+    "application/ecmascript",
+    "application/x-gzip",
+    "application/mathml+xml",
+    "application/x-font-otf",
+    "application/x-pkcs7-certificates",
+    "application/pkcs7-mime",
+    "application/vnd.rar",
+    "application/zip",
+    "application/x-zip-compressed",
 ])
 
 const failures = []
@@ -39,117 +62,37 @@ const check = (label, condition, detail) => {
 }
 
 const readPage = pagePath => {
-    const file = path.join(PUBLIC, pagePath, "index.html")
+    const file = pagePath
+        ? path.join(OUT, `${pagePath}.html`)
+        : path.join(OUT, "index.html")
     return fs.existsSync(file) ? fs.readFileSync(file, "utf8") : null
 }
 
-const readContext = pagePath => {
-    const file = path.join(PUBLIC, "page-data", pagePath, "page-data.json")
-    if (!fs.existsSync(file)) return null
-    try {
-        return JSON.parse(fs.readFileSync(file, "utf8")).result.pageContext
-    } catch {
-        return null
-    }
-}
-
-// --- build output exists -------------------------------------------------
-if (!fs.existsSync(PUBLIC)) {
-    console.error("public/ does not exist. Run `npm run build` first.")
-    process.exit(1)
-}
-
-const emitted = []
-const walk = dir => {
-    for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
-        const full = path.join(dir, item.name)
-        if (item.isDirectory()) walk(full)
-        else if (item.name === "index.html") emitted.push(full)
-    }
-}
-walk(PUBLIC)
-
-check(
-    `emitted at least as many pages as there are entries (${data.length})`,
-    emitted.length >= data.length,
-    `found ${emitted.length} index.html files`,
-)
-
-// --- static pages --------------------------------------------------------
-for (const staticPage of ["", "all-types", "unknown", "404"]) {
-    const html = readPage(staticPage)
-    check(`static page /${staticPage} was emitted`, html !== null)
-    if (html) {
-        check(
-            `static page /${staticPage} has a non-empty <title>`,
-            /<title[^>]*>[^<]+<\/title>/.test(html),
-        )
-    }
-}
-
-// --- every canonical entry has a page ------------------------------------
-const missing = []
-for (const entry of data) {
-    if (readPage(entry.name) === null) missing.push(entry.name)
-}
-check(
-    "every mimetype entry produced a page",
-    missing.length === 0,
-    missing.length ? `missing: ${missing.slice(0, 10).join(", ")}` : "",
-)
-
-// --- generated (deprecates / parentOf / alternativeTo) pages --------------
-const generated = new Set()
-for (const entry of data) {
-    for (const key of ["deprecates", "parentOf", "alternativeTo"]) {
-        for (const target of entry.links[key] || []) generated.add(target)
-    }
-}
-const missingGenerated = [...generated].filter(t => readPage(t) === null)
-check(
-    "every cross-referenced type produced a page",
-    missingGenerated.length === 0,
-    missingGenerated.length
-        ? `missing: ${missingGenerated.slice(0, 10).join(", ")}`
-        : "",
-)
-
-// --- page context matches source data ------------------------------------
-const contextMismatches = []
-for (const entry of data) {
-    const ctx = readContext(entry.name)
-    if (!ctx) {
-        contextMismatches.push(`${entry.name}: no page-data.json`)
-        continue
-    }
-    if (ctx.name !== entry.name) {
-        contextMismatches.push(`${entry.name}: context name is "${ctx.name}"`)
-    }
-    if (
-        (ctx.description || "") !== (entry.description || "") &&
-        !KNOWN_OVERWRITTEN.has(entry.name)
-    ) {
-        contextMismatches.push(
-            `${entry.name}: description does not match source (page may have ` +
-                `been overwritten by another entry)`,
-        )
-    }
-}
-check(
-    "each page received its own entry's data",
-    contextMismatches.length === 0,
-    contextMismatches.slice(0, 5).join("\n      "),
-)
-
-// --- rendered content ----------------------------------------------------
 /**
- * Reduce markup to comparable plain text.
- *
- * Descriptions may contain inline markup and are re-encoded on the way into the
- * HTML (apostrophes become entities, tags gain attributes). Comparing raw
- * strings gives false negatives for any description that opens with a link, so
- * both sides are stripped of markup and punctuation and lowercased first.
+ * Rebuilds the page set exactly as lib/pages.ts does, so the checker verifies
+ * the build rather than trusting it.
  */
+const buildExpectedPages = () => {
+    const pages = new Map()
+    for (const entry of data) {
+        pages.set(entry.name, {
+            source: entry,
+            name: entry.name,
+            deprecatedBy: null,
+        })
+        for (const t of entry.links.deprecates ?? []) {
+            pages.set(t, { source: entry, name: t, deprecatedBy: entry.name })
+        }
+        for (const t of entry.links.parentOf ?? []) {
+            pages.set(t, { source: entry, name: t, deprecatedBy: null })
+        }
+        for (const t of entry.links.alternativeTo ?? []) {
+            pages.set(t, { source: entry, name: t, deprecatedBy: null })
+        }
+    }
+    return pages
+}
+
 const plainText = s =>
     s
         .replace(/<script[\s\S]*?<\/script>/g, " ")
@@ -161,18 +104,64 @@ const plainText = s =>
         .trim()
         .toLowerCase()
 
-const withDescription = data.filter(e => e.description && e.description.trim())
-const notRendered = []
-for (const entry of withDescription) {
-    if (KNOWN_OVERWRITTEN.has(entry.name)) continue
-    const html = readPage(entry.name)
-    if (!html) continue
-    const fragment = plainText(entry.description).slice(0, 40)
-    const body = plainText(html.split("</head>")[1] || html)
-    if (fragment && !body.includes(fragment)) {
-        notRendered.push(entry.name)
+// --- build output exists -------------------------------------------------
+if (!fs.existsSync(OUT)) {
+    console.error("out/ does not exist. Run `npm run build` first.")
+    process.exit(1)
+}
+
+const expected = buildExpectedPages()
+
+// --- static pages --------------------------------------------------------
+for (const staticPage of ["", "all-types", "unknown"]) {
+    const html = readPage(staticPage)
+    check(`static page /${staticPage} was emitted`, html !== null)
+    if (html) {
+        check(
+            `static page /${staticPage} has a non-empty <title>`,
+            /<title[^>]*>[^<]+<\/title>/.test(html),
+        )
     }
 }
+
+check("a 404 page was emitted", fs.existsSync(path.join(OUT, "404.html")))
+
+// --- every expected mimetype page exists ---------------------------------
+const missing = [...expected.keys()].filter(p => readPage(p) === null)
+check(
+    `every expected mimetype page was emitted (${expected.size})`,
+    missing.length === 0,
+    missing.length ? `missing: ${missing.slice(0, 10).join(", ")}` : "",
+)
+
+// --- each page rendered its own entry's data -----------------------------
+const wrongData = []
+const notRendered = []
+for (const [pagePath, info] of expected) {
+    if (KNOWN_OVERWRITTEN.has(pagePath)) continue
+    const html = readPage(pagePath)
+    if (!html) continue
+
+    const body = plainText(html)
+
+    // The heading must be the page's own type name.
+    if (!body.includes(plainText(pagePath))) {
+        wrongData.push(`${pagePath}: own name not rendered`)
+    }
+
+    const description = info.source.description
+    if (description && description.trim()) {
+        const fragment = plainText(description).slice(0, 40)
+        if (fragment && !body.includes(fragment)) {
+            notRendered.push(pagePath)
+        }
+    }
+}
+check(
+    "each page rendered its own entry's data",
+    wrongData.length === 0,
+    wrongData.slice(0, 5).join("\n      "),
+)
 check(
     "descriptions are rendered into the HTML",
     notRendered.length === 0,
@@ -181,85 +170,7 @@ check(
         : "",
 )
 
-// --- no template leakage -------------------------------------------------
-const leaky = []
-for (const entry of data.slice(0, 200)) {
-    const html = readPage(entry.name)
-    if (!html) continue
-    const body = html.replace(/<script[\s\S]*?<\/script>/g, "")
-    if (/\[object Object\]|>undefined<|>NaN</.test(body)) leaky.push(entry.name)
-}
-check(
-    "no undefined / [object Object] leaked into rendered pages",
-    leaky.length === 0,
-    leaky.length ? `found in: ${leaky.slice(0, 5).join(", ")}` : "",
-)
-
-// --- titles are unique and meaningful ------------------------------------
-const blankTitles = []
-for (const entry of data.slice(0, 200)) {
-    const html = readPage(entry.name)
-    if (!html) continue
-    const m = html.match(/<title[^>]*>([^<]*)<\/title>/)
-    if (!m || !m[1].trim()) blankTitles.push(entry.name)
-    else if (!m[1].includes(entry.name))
-        blankTitles.push(`${entry.name} (title: "${m[1]}")`)
-}
-check(
-    "mimetype pages have a title containing their type",
-    blankTitles.length === 0,
-    blankTitles.length ? `problems: ${blankTitles.slice(0, 5).join(", ")}` : "",
-)
-
-// --- client bundle present ----------------------------------------------
-const home = readPage("")
-check(
-    "home page references a JS bundle (client runtime shipped)",
-    home !== null && /<script[^>]+src="[^"]*\.js"/.test(home),
-)
-
-// --- SEO: sitemap and robots ---------------------------------------------
-const sitemapIndex = path.join(PUBLIC, "sitemap-index.xml")
-const sitemapUrls = new Set()
-if (fs.existsSync(sitemapIndex)) {
-    for (const file of fs.readdirSync(PUBLIC)) {
-        if (!/^sitemap-\d+\.xml$/.test(file)) continue
-        const xml = fs.readFileSync(path.join(PUBLIC, file), "utf8")
-        for (const m of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) {
-            sitemapUrls.add(m[1].replace(/^https?:\/\/[^/]+/, "") || "/")
-        }
-    }
-}
-
-check("a sitemap index was emitted", fs.existsSync(sitemapIndex))
-
-const notInSitemap = data
-    .map(e => `/${e.name}`)
-    .filter(p => !sitemapUrls.has(p))
-check(
-    "every mimetype page appears in the sitemap",
-    notInSitemap.length === 0,
-    notInSitemap.length
-        ? `missing ${notInSitemap.length}, e.g. ${notInSitemap.slice(0, 5).join(", ")}`
-        : "",
-)
-
-check(
-    "the sitemap does not advertise 404 pages",
-    ![...sitemapUrls].some(u => u.startsWith("/404")),
-)
-
-const robots = path.join(PUBLIC, "robots.txt")
-check("robots.txt was emitted", fs.existsSync(robots))
-check(
-    "robots.txt points at the sitemap index",
-    fs.existsSync(robots) &&
-        /^\s*Sitemap:\s*https?:\/\/\S+sitemap-index\.xml\s*$/m.test(
-            fs.readFileSync(robots, "utf8"),
-        ),
-)
-
-// --- SEO: per-page head tags ---------------------------------------------
+// --- SEO head tags -------------------------------------------------------
 const headProblems = []
 for (const entry of data) {
     const html = readPage(entry.name)
@@ -282,39 +193,62 @@ for (const entry of data) {
     if (!grab(/property="og:title" content="([^"]+)"/)) {
         headProblems.push(`${entry.name}: no og:title`)
     }
+    if (!grab(/name="twitter:card" content="([^"]+)"/)) {
+        headProblems.push(`${entry.name}: no twitter:card`)
+    }
+    const title = grab(/<title[^>]*>([^<]*)<\/title>/)
+    if (!title || !title.includes(entry.name)) {
+        headProblems.push(`${entry.name}: title is ${JSON.stringify(title)}`)
+    }
 }
 check(
-    "every mimetype page has a self-referencing canonical, description and og:title",
+    "every mimetype page has canonical, description, og:title, twitter:card and a correct title",
     headProblems.length === 0,
     headProblems.slice(0, 5).join("\n      "),
 )
 
-// --- SEO: pages must not wrongly advertise themselves as deprecated -------
-/**
- * Canonical entries whose page currently renders a "this mimetype is
- * deprecated" banner because another entry lists them under `deprecates`.
- *
- * These are the mutually-deprecating pairs from issue #67. /application/zip
- * telling readers to prefer application/zip-compressed is the most damaging:
- * it demotes the IANA-registered type in favour of a non-standard one. Recorded
- * so the count can only go down; any new page joining this list fails the build.
- */
-const KNOWN_SELF_DEPRECATED = new Set([
-    "application/ecmascript",
-    "application/x-gzip",
-    "application/mathml+xml",
-    "application/x-font-otf",
-    "application/x-pkcs7-certificates",
-    "application/pkcs7-mime",
-    "application/vnd.rar",
-    "application/zip",
-    "application/x-zip-compressed",
-])
+// --- sitemap and robots --------------------------------------------------
+const sitemapFile = path.join(OUT, "sitemap.xml")
+check("a sitemap was emitted", fs.existsSync(sitemapFile))
 
+const sitemapUrls = new Set()
+if (fs.existsSync(sitemapFile)) {
+    const xml = fs.readFileSync(sitemapFile, "utf8")
+    for (const m of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+        sitemapUrls.add(m[1].replace(SITE_URL, "") || "/")
+    }
+}
+
+const notInSitemap = [...expected.keys()].filter(p => !sitemapUrls.has(`/${p}`))
+check(
+    "every mimetype page appears in the sitemap",
+    notInSitemap.length === 0,
+    notInSitemap.length
+        ? `missing ${notInSitemap.length}, e.g. ${notInSitemap.slice(0, 5).join(", ")}`
+        : "",
+)
+check(
+    "the sitemap does not advertise 404 pages",
+    ![...sitemapUrls].some(
+        u => u.startsWith("/404") || u.includes("_not-found"),
+    ),
+)
+
+const robotsFile = path.join(OUT, "robots.txt")
+check("robots.txt was emitted", fs.existsSync(robotsFile))
+check(
+    "robots.txt points at the sitemap",
+    fs.existsSync(robotsFile) &&
+        /^\s*Sitemap:\s*https?:\/\/\S+sitemap\.xml\s*$/im.test(
+            fs.readFileSync(robotsFile, "utf8"),
+        ),
+)
+
+// --- no new page advertises itself as deprecated -------------------------
 const selfDeprecated = []
 for (const entry of data) {
-    const ctx = readContext(entry.name)
-    if (!ctx || !ctx.templateData.deprecatedBy) continue
+    const info = expected.get(entry.name)
+    if (!info || !info.deprecatedBy) continue
     if (!KNOWN_SELF_DEPRECATED.has(entry.name)) selfDeprecated.push(entry.name)
 }
 check(
@@ -323,8 +257,39 @@ check(
     selfDeprecated.length ? `newly affected: ${selfDeprecated.join(", ")}` : "",
 )
 
+// --- no template leakage -------------------------------------------------
+const leaky = []
+for (const entry of data.slice(0, 200)) {
+    const html = readPage(entry.name)
+    if (!html) continue
+    const body = html.replace(/<script[\s\S]*?<\/script>/g, "")
+    if (/\[object Object\]|>undefined<|>NaN</.test(body)) leaky.push(entry.name)
+}
+check(
+    "no undefined / [object Object] leaked into rendered pages",
+    leaky.length === 0,
+    leaky.length ? `found in: ${leaky.slice(0, 5).join(", ")}` : "",
+)
+
+// --- client runtime shipped ----------------------------------------------
+const home = readPage("")
+check(
+    "home page references a JS bundle (client runtime shipped)",
+    home !== null && /<script[^>]+src="[^"]*\.js"/.test(home),
+)
+
 // --- report --------------------------------------------------------------
-console.log(`Ran ${checks} checks against ${emitted.length} built pages.`)
+const htmlCount = (function count(dir) {
+    let n = 0
+    for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
+        const full = path.join(dir, item.name)
+        if (item.isDirectory()) n += count(full)
+        else if (item.name.endsWith(".html")) n++
+    }
+    return n
+})(OUT)
+
+console.log(`Ran ${checks} checks against ${htmlCount} exported pages.`)
 
 if (failures.length) {
     console.error(`\n${failures.length} failure(s):`)

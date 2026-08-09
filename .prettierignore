@@ -1,7 +1,8 @@
-.cache
+.next
+out
 package.json
 package-lock.json
-public
+next-env.d.ts
 
 # GitHub-owned formats: workflow YAML is indent-sensitive and the issue
 # template's frontmatter is parsed by GitHub, so leave both alone.

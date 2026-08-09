@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/*
+ * Tailwind 4 is configured here rather than in tailwind.config.js, which no
+ * longer exists. Content sources are discovered automatically; only the theme
+ * needs declaring.
+ *
+ * The font stack is wired to the variable next/font sets in app/layout.tsx.
+ * Under Gatsby the CSS asked for Montserrat while gatsby-plugin-google-fonts
+ * loaded Merriweather and Open Sans, so Montserrat never actually arrived and
+ * the site fell back to a system font. It is now loaded properly.
+ */
+@theme {
+    --font-sans:
+        var(--font-montserrat), -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html,
+body {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+}
+
+html {
+    min-height: 100vh;
+    height: fit-content;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/*
+ * The App Router mounts into #__next-root's children directly; the Gatsby
+ * wrapper divs (#___gatsby, #gatsby-focus-wrapper) that used to carry these
+ * rules no longer exist, so body carries them alone.
+ */
