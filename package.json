@@ -55,5 +55,9 @@
   },
   "bugs": {
     "url": "https://github.com/patrickmccallum/mimetype-io/issues"
+  },
+  "overrides": {
+    "lodash": "^4.18.1",
+    "path-to-regexp": "^0.1.13"
   }
 }
