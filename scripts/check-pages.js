@@ -142,20 +142,34 @@ check(
 )
 
 // --- rendered content ----------------------------------------------------
+/**
+ * Reduce markup to comparable plain text.
+ *
+ * Descriptions may contain inline markup and are re-encoded on the way into the
+ * HTML (apostrophes become entities, tags gain attributes). Comparing raw
+ * strings gives false negatives for any description that opens with a link, so
+ * both sides are stripped of markup and punctuation and lowercased first.
+ */
+const plainText = s =>
+    s
+        .replace(/<script[\s\S]*?<\/script>/g, " ")
+        .replace(/<style[\s\S]*?<\/style>/g, " ")
+        .replace(/<[^>]*>/g, " ")
+        .replace(/&[a-z]+;|&#x?[0-9a-f]+;/gi, " ")
+        .replace(/[^a-z0-9 ]/gi, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .toLowerCase()
+
 const withDescription = data.filter(e => e.description && e.description.trim())
 const notRendered = []
 for (const entry of withDescription) {
     if (KNOWN_OVERWRITTEN.has(entry.name)) continue
     const html = readPage(entry.name)
     if (!html) continue
-    // Descriptions are injected as HTML; compare on a distinctive plain-text
-    // fragment so markup differences don't cause false negatives.
-    const fragment = entry.description
-        .replace(/<[^>]*>/g, " ")
-        .replace(/\s+/g, " ")
-        .trim()
-        .slice(0, 40)
-    if (fragment && !html.replace(/\s+/g, " ").includes(fragment)) {
+    const fragment = plainText(entry.description).slice(0, 40)
+    const body = plainText(html.split("</head>")[1] || html)
+    if (fragment && !body.includes(fragment)) {
         notRendered.push(entry.name)
     }
 }
