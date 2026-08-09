@@ -196,16 +196,16 @@
     "links": {
       "deprecates": [],
       "relatedTo": [
-        "image/heif"
+        "image/heif",
+        "image/heic-sequence",
+        "image/heif-sequence"
       ],
       "parentOf": [],
-      "alternativeTo": [
-        "image/heif"
-      ]
+      "alternativeTo": []
     },
     "fileTypes": [
-      ".heif",
-      ".heic"
+      ".heic",
+      ".hif"
     ],
     "notices": {
       "hasNoOfficial": false,
@@ -13106,20 +13106,27 @@
   },
   {
     "name": "application/x-xpinstall",
-    "description": "",
+    "description": "The packaging format for Firefox add-ons. An <code>.xpi</code> file is an ordinary <a href=\"/application/zip\">ZIP</a> archive containing the extension's manifest, scripts and resources, and this media type is what tells Firefox to offer to install the file rather than simply download it.<br /><br />It is not registered with IANA, but Mozilla's install flow depends on it and GitHub's releases API reports it for add-ons published there. Serving an add-on as <a href=\"/application/zip\">application/zip</a> instead will stop the browser offering to install it.",
     "links": {
       "deprecates": [],
-      "relatedTo": [],
+      "relatedTo": [
+        "application/zip"
+      ],
       "parentOf": [],
       "alternativeTo": []
     },
     "fileTypes": [
       ".xpi"
     ],
-    "furtherReading": [],
+    "furtherReading": [
+      {
+        "title": "Extension Workshop - Package your extension",
+        "url": "https://extensionworkshop.com/documentation/publish/package-your-extension/"
+      }
+    ],
     "notices": {
-      "hasNoOfficial": false,
-      "communityContributed": false,
+      "hasNoOfficial": true,
+      "communityContributed": true,
       "popularUsage": null
     }
   },
@@ -14054,6 +14061,189 @@
     "notices": {
       "hasNoOfficial": false,
       "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "image/heif",
+    "description": "HEIF is the container format defined by MPEG-H Part 12 (ISO/IEC 23008-12) for still images and image sequences. A file is labelled image/heif when it conforms to the generic 'mif1' brand rather than committing to a particular codec, so the picture inside may be coded with HEVC or something else entirely.<br /><br />Most people meet the format through Apple devices, but those photos are usually labelled <a href=\"/image/heic\">image/heic</a> instead, because they specifically use HEVC coding. If you are unsure which label applies, image/heif is the safer, more general one.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "image/heic",
+        "image/heif-sequence",
+        "image/heic-sequence"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".heif",
+      ".hif"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/heif"
+      },
+      {
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "image/heic-sequence",
+    "description": "A HEIF container holding more than one HEVC-coded image, such as a burst, an animation, or the moving part of an Apple Live Photo. It uses the same container as <a href=\"/image/heic\">image/heic</a>, but the separate label tells a reader to expect a series of timed images rather than a single still.<br /><br />This is the type the <code>file</code> command reports for Live Stickers and similar <code>.heics</code> files, and the value you need in an HTML file input's <code>accept</code> attribute if you want to receive them.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "image/heif-sequence",
+        "image/heic",
+        "image/heif"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".heics",
+      ".hif"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/heic-sequence"
+      },
+      {
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "image/heif-sequence",
+    "description": "The codec-agnostic counterpart to <a href=\"/image/heic-sequence\">image/heic-sequence</a>: a HEIF container holding several coded images without committing to HEVC in particular.<br /><br />Tools disagree about which of the two to report for the same file, so it is worth accepting both. On Linux the <code>file</code> command tends to say image/heif-sequence where a browser file input expects image/heic-sequence.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "image/heic-sequence",
+        "image/heif",
+        "image/heic"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".heifs",
+      ".hif"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/heif-sequence"
+      },
+      {
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "model/stl",
+    "description": "STL describes the surface of a three-dimensional object as a mesh of triangles. It carries no colour, no texture and no units, which is both why it is so simple to write and why so much information is lost on the way out of a CAD package.<br /><br />It originated with 3D Systems' stereolithography machines in the late 1980s and became the common currency between modelling software and 3D printers, so nearly every slicer accepts it. Two layouts share the extension: a human-readable ASCII form and a much smaller binary form.<br /><br />Watch out for the extension clash: <a href=\"/application/vnd.ms-pki.stl\">application/vnd.ms-pki.stl</a> is a Microsoft Certificate Trust List and has nothing to do with 3D models, despite also using <code>.stl</code>.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "application/vnd.ms-pki.stl"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".stl"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/model/stl"
+      },
+      {
+        "title": "Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/STL_(file_format)"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": true,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "application/vnd.ms-outlook",
+    "description": "A single Outlook item saved out as a standalone file: an email, an appointment, a contact or a task. Internally it is a Microsoft Compound File Binary container holding the item's MAPI properties, so unlike a <code>.eml</code> file it preserves Outlook-specific fields instead of following the RFC 5322 message format.<br /><br />This type is not registered with IANA, but it is what Microsoft's own documentation uses and what e-discovery and archiving tools consistently expect. You may also see the generic <a href=\"/application/octet-stream\">application/octet-stream</a> in the wild when a server has no mapping for the extension.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".msg"
+    ],
+    "furtherReading": [
+      {
+        "title": "Library of Congress - Microsoft Outlook Item (MSG)",
+        "url": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000379.shtml"
+      },
+      {
+        "title": "Microsoft Learn - Supported file types in eDiscovery",
+        "url": "https://learn.microsoft.com/en-gb/purview/ediscovery-supported-file-types"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": true,
+      "communityContributed": true,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "application/x-ipynb+json",
+    "description": "A Jupyter notebook: a JSON document holding an ordered list of cells containing code, prose and the output produced by running that code, plus metadata naming the kernel needed to execute it.<br /><br />There is no registered media type for the format. application/x-ipynb+json is the unregistered name that Jupyter's own tooling and most editors settled on, so it is a community convention rather than a standard. If you know of an authoritative source that pins this down, the maintainers would welcome it.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "application/json"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".ipynb"
+    ],
+    "furtherReading": [
+      {
+        "title": "Jupyter - The Notebook file format",
+        "url": "https://nbformat.readthedocs.io/en/latest/format_description.html"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": true,
+      "communityContributed": true,
       "popularUsage": null
     }
   }
