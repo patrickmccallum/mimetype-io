@@ -47,6 +47,21 @@ a production build, and assertions against the exported pages.
 npm test
 ```
 
+### Writing descriptions
+
+Descriptions in `src/mimeData.json` are **Markdown**, not HTML:
+
+| Want                 | Write                                                             |
+| -------------------- | ----------------------------------------------------------------- |
+| A new paragraph      | a blank line (`\n\n`)                                             |
+| Bold                 | `**bold**`                                                        |
+| Inline code          | `` `code` ``                                                      |
+| Link to another type | `[application/zip](/application/zip)`                             |
+| External link        | `[label](https://example.com)` — opens in a new tab automatically |
+
+Raw HTML is rejected by the validator and would render as literal text anyway,
+since descriptions are rendered to React elements rather than injected as HTML.
+
 If you only changed `src/mimeData.json`, `npm run test:data` is the quick check
 — it catches malformed entries, duplicate names, and cross-links that would make
 one mimetype's page overwrite another's.

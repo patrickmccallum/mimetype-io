@@ -78,7 +78,7 @@
   },
   {
     "name": "image/avif",
-    "description": "AVIF (AV1 Image File Format) is an image and animation file format, an extension of <a href=\"/image/heif\">HEIF</a> allowing images encoded with AV1. Most files will only have AV1-encoded images, but a mixture of different encodings is allowed. Early draft versions were named AV1 Still Image File Format.",
+    "description": "AVIF (AV1 Image File Format) is an image and animation file format, an extension of [HEIF](/image/heif) allowing images encoded with AV1. Most files will only have AV1-encoded images, but a mixture of different encodings is allowed. Early draft versions were named AV1 Still Image File Format.",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -111,7 +111,7 @@
     }
   },{
     "name": "image/avif-sequence",
-    "description": "AVIF (AV1 Image File Format) is an image and animation file format, an extension of <a href=\"/image/heif\">HEIF</a> allowing images encoded with AV1. Most files will only have AV1-encoded images, but a mixture of different encodings is allowed. Early draft versions were named AV1 Still Image File Format.",
+    "description": "AVIF (AV1 Image File Format) is an image and animation file format, an extension of [HEIF](/image/heif) allowing images encoded with AV1. Most files will only have AV1-encoded images, but a mixture of different encodings is allowed. Early draft versions were named AV1 Still Image File Format.",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -145,7 +145,7 @@
   },
   {
     "name": "application/x-krita",
-    "description": "KRA is the file format for Krita, a raster graphics editor. It is a ZIP archive containing a number of files, including the image data, the layer structure, and the document settings.<br /><br />It is similar in function to PSD files for photoshop.<br /><br />A .krz file is a compressed version of a .kra file and only missing the mergedimage.png contained within it to save storage. The lack of this file can affect interchange with other applications such as Scribus.",
+    "description": "KRA is the file format for Krita, a raster graphics editor. It is a ZIP archive containing a number of files, including the image data, the layer structure, and the document settings.\n\nIt is similar in function to PSD files for photoshop.\n\nA .krz file is a compressed version of a .kra file and only missing the mergedimage.png contained within it to save storage. The lack of this file can affect interchange with other applications such as Scribus.",
     "furtherReading": [
       {
         "title": "Krita File Format",
@@ -174,7 +174,7 @@
   },
   {
     "name": "image/heic",
-    "description": "The MIME subtype name may be 'heic' only if the file conforms to the requirements of the 'heic', 'heix', 'heim', or 'heis' brand, and contains at least one of those brands as a compatible brand. The MIME subtype name may be 'heif' only if the file conforms to the requirements of the 'mif1' brand, and contains that brand as a compatible brand.<br /><br />HEIF (High Efficiency Image File Format) is the lossy image and animation format defined by MPEG-H Part 12 (ISO/IEC 23008-12). <br /><br />It is closely related to the HEVC video format, so in that way it is similar to BPG. It uses boxes/atoms format as a container format, so in that way it is similar to JPEG 2000.",
+    "description": "The MIME subtype name may be 'heic' only if the file conforms to the requirements of the 'heic', 'heix', 'heim', or 'heis' brand, and contains at least one of those brands as a compatible brand. The MIME subtype name may be 'heif' only if the file conforms to the requirements of the 'mif1' brand, and contains that brand as a compatible brand.\n\nHEIF (High Efficiency Image File Format) is the lossy image and animation format defined by MPEG-H Part 12 (ISO/IEC 23008-12).\n\nIt is closely related to the HEVC video format, so in that way it is similar to BPG. It uses boxes/atoms format as a container format, so in that way it is similar to JPEG 2000.",
     "furtherReading": [
       {
         "title": "The Moving Picture Experts Group",
@@ -356,7 +356,7 @@
   },
   {
     "name": "image/x-icns",
-    "description": "ICNS (often written in lowercase as icns) is the native icon format of Mac OS and OS X.<br /><br />It goes by many other names, including Apple Icon, Macintosh Icon, Mac OS Icon, Macintosh OS X Icon, Mac OS X Icon Resource, Mac OS icns Resource, and IconFamily Resource.<br /><br />There are usually multiple images in a file. Supported image sizes are 16×12, and 16, 32, 48, 128, 256, 512, and 1024 pixels square.",
+    "description": "ICNS (often written in lowercase as icns) is the native icon format of Mac OS and OS X.\n\nIt goes by many other names, including Apple Icon, Macintosh Icon, Mac OS Icon, Macintosh OS X Icon, Mac OS X Icon Resource, Mac OS icns Resource, and IconFamily Resource.\n\nThere are usually multiple images in a file. Supported image sizes are 16×12, and 16, 32, 48, 128, 256, 512, and 1024 pixels square.",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -384,7 +384,7 @@
   },
   {
     "name": "audio/mp4",
-    "description": "MP4 is a multimedia container format defined by MPEG-4 Part 14 (ISO/IEC 14496-14). It is based on the Apple QuickTime format, but is not identical to it.<br /><br />It is a successor to the older MOV format, and is used for video (with H.264 and H.265 codecs) and audio (with AAC and AC-3 codecs).<br /><br />It is used by iTunes for music and video downloads, and by many other services for video streaming. It is also used for video files on Blu-ray discs.",
+    "description": "MP4 is a multimedia container format defined by MPEG-4 Part 14 (ISO/IEC 14496-14). It is based on the Apple QuickTime format, but is not identical to it.\n\nIt is a successor to the older MOV format, and is used for video (with H.264 and H.265 codecs) and audio (with AAC and AC-3 codecs).\n\nIt is used by iTunes for music and video downloads, and by many other services for video streaming. It is also used for video files on Blu-ray discs.",
     "furtherReading": [
       {
         "title": "RFC Editor - RFC4337",
@@ -445,7 +445,7 @@
   },
   {
     "name": "audio/aac",
-    "description": "AAC (Advanced Audio Coding) is a compressed audio format defined in MPEG-2 Part 7 (ISO/IEC 13818-7), and in an updated form in MPEG-4 Part 3 (ISO/IEC 14496-3). It was designed to be the successor to MP3. iTunes distributes (or distributed) files in this format, apparently including various metadata (like the name, and sometimes email of the account which downloaded it, along with the time it was downloaded).<br /><br />An AAC file may contain only the raw AAC format, or it may use a multimedia container format such MP4 or QuickTime. AAC is often used for the audio component of a video file.",
+    "description": "AAC (Advanced Audio Coding) is a compressed audio format defined in MPEG-2 Part 7 (ISO/IEC 13818-7), and in an updated form in MPEG-4 Part 3 (ISO/IEC 14496-3). It was designed to be the successor to MP3. iTunes distributes (or distributed) files in this format, apparently including various metadata (like the name, and sometimes email of the account which downloaded it, along with the time it was downloaded).\n\nAn AAC file may contain only the raw AAC format, or it may use a multimedia container format such MP4 or QuickTime. AAC is often used for the audio component of a video file.",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -511,7 +511,7 @@
   },
   {
     "name": "audio/aacp",
-    "description": "AAC+ (Advanced Audio Coding Plus) is a compressed audio format defined in MPEG-4 Part 3 (ISO/IEC 14496-3). It is a successor to AAC, and is designed to be more efficient than AAC for low bitrates. It is also known as HE-AAC (High Efficiency AAC).<br /><br />An AAC+ file may contain only the raw AAC+ format, or it may use a multimedia container format such MP4 or QuickTime. AAC+ is often used for the audio component of a video file.<br /><br />Differs from audio/aac and has lower browser compatibility for playback. The Wikipedia link has the most information I could find.",
+    "description": "AAC+ (Advanced Audio Coding Plus) is a compressed audio format defined in MPEG-4 Part 3 (ISO/IEC 14496-3). It is a successor to AAC, and is designed to be more efficient than AAC for low bitrates. It is also known as HE-AAC (High Efficiency AAC).\n\nAn AAC+ file may contain only the raw AAC+ format, or it may use a multimedia container format such MP4 or QuickTime. AAC+ is often used for the audio component of a video file.\n\nDiffers from audio/aac and has lower browser compatibility for playback. The Wikipedia link has the most information I could find.",
     "furtherReading": [
       {
         "title": "Wikipedia",
@@ -857,7 +857,7 @@
   },
   {
     "name": "application/vnd.android.package-archive",
-    "description": "APK is an archive format used for distributing Android apps. It is based on the Jar format (for Java), and like that format, is actually a ZIP archive with a different extension, and with specific files and directories within it.<br /><br />The executable part of the app is usually in either Dalvik Executable (for older Android versions prior to 5.0) or ART format (for newer versions).<br /><br />Metadata about the app is in a META-INF directory within the archive (similarly to Jar files), compiled code is in a lib directory, and resources in a res directory. There are also a few files at the root level including AndroidManifest.xml (which may be regular XML or, often, binary XML).",
+    "description": "APK is an archive format used for distributing Android apps. It is based on the Jar format (for Java), and like that format, is actually a ZIP archive with a different extension, and with specific files and directories within it.\n\nThe executable part of the app is usually in either Dalvik Executable (for older Android versions prior to 5.0) or ART format (for newer versions).\n\nMetadata about the app is in a META-INF directory within the archive (similarly to Jar files), compiled code is in a lib directory, and resources in a res directory. There are also a few files at the root level including AndroidManifest.xml (which may be regular XML or, often, binary XML).",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -919,7 +919,7 @@
   },
   {
     "name": "application/pgp-signature",
-    "description": "PGP (Pretty Good Privacy) is an encryption program, and its encryption format which eventually became the OpenPGP standard.<br /><br />Created by Phil Zimmerman in 1991, it got into some legal trouble early on because encryption of this grade was classified as a munition under U.S. law and restricted from export. These laws, while not completely repealed even now, have been considerably liberalized since, and now export of PGP and related software is only restricted when it's being exported to countries such as Iran that are under special sanction. Zimmerman's PGP company was eventually acquired by Network Associates (now McAfee), which eventually rebranded the original command-line-based PGP as \"McAfee E-Business Server\" and sold off all other PGP assets to some PGP developers who formed a new PGP company, which was eventually acquired by Symantec. Meanwhile, the specifications of the file format had been released as the OpenPGP spec and published as an RFC document, making it available for use in other products.<br /><br />GNU Privacy Guard (GnuPG, GPG) is a commonly-used encryption tool using PGP format, running on Linux systems.<br /><br />PGP uses a combination of several encryption techniques applied serially, including symmetric-key and public-key cryptography.",
+    "description": "PGP (Pretty Good Privacy) is an encryption program, and its encryption format which eventually became the OpenPGP standard.\n\nCreated by Phil Zimmerman in 1991, it got into some legal trouble early on because encryption of this grade was classified as a munition under U.S. law and restricted from export. These laws, while not completely repealed even now, have been considerably liberalized since, and now export of PGP and related software is only restricted when it's being exported to countries such as Iran that are under special sanction. Zimmerman's PGP company was eventually acquired by Network Associates (now McAfee), which eventually rebranded the original command-line-based PGP as \"McAfee E-Business Server\" and sold off all other PGP assets to some PGP developers who formed a new PGP company, which was eventually acquired by Symantec. Meanwhile, the specifications of the file format had been released as the OpenPGP spec and published as an RFC document, making it available for use in other products.\n\nGNU Privacy Guard (GnuPG, GPG) is a commonly-used encryption tool using PGP format, running on Linux systems.\n\nPGP uses a combination of several encryption techniques applied serially, including symmetric-key and public-key cryptography.",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -2144,7 +2144,7 @@
   },
   {
     "name": "application/vnd.debian.binary-package",
-    "description": "deb (Debian package) is a file format used for software distribution in the Debian Linux platform. It is actually an AR archive, with content that includes some tar files. <br /><br />The \"udeb\" files are in the same basic format as \"deb\", but are considered \"micro deb\", used for smaller packages with only the most essential files.",
+    "description": "deb (Debian package) is a file format used for software distribution in the Debian Linux platform. It is actually an AR archive, with content that includes some tar files.\n\nThe \"udeb\" files are in the same basic format as \"deb\", but are considered \"micro deb\", used for smaller packages with only the most essential files.",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -2169,7 +2169,7 @@
   },
   {
     "name": "text/markdown",
-    "description": "Markdown is a lightweight and human readable markup format for text formatting created by John Gruber and Aaron Swartz. It is similar to various forms of wiki markup. There is no formal specification for the original Markdown, and it has ambiguities that are handled inconsistently by different implementations.<br /><br />An attempt to improve on this situation was done (released 2014-09) by a group unrelated to the originators of Markdown, and was originally dubbed Standard Markdown until John Gruber objected to this name, and it was first renamed \"Common Markdown\" and later CommonMark. Markdeep is an extended Markdown implemented in JavaScript for web use.",
+    "description": "Markdown is a lightweight and human readable markup format for text formatting created by John Gruber and Aaron Swartz. It is similar to various forms of wiki markup. There is no formal specification for the original Markdown, and it has ambiguities that are handled inconsistently by different implementations.\n\nAn attempt to improve on this situation was done (released 2014-09) by a group unrelated to the originators of Markdown, and was originally dubbed Standard Markdown until John Gruber objected to this name, and it was first renamed \"Common Markdown\" and later CommonMark. Markdeep is an extended Markdown implemented in JavaScript for web use.",
     "furtherReading": [
       {
         "title": "RFC 7763 - The text/markdown Media Type",
@@ -2701,7 +2701,7 @@
   },
   {
     "name": "application/msword",
-    "description": "Microsoft Word is a popular word processor program which has existed in a number of versions for DOS, Windows, and the Macintosh. It is often distributed as part of the Microsoft Office suite. Various native file formats have been used, and some other non-Word-specific formats can also be opened and saved.<br /><br />Please note the more modern .docx file extension does not use this mime type.",
+    "description": "Microsoft Word is a popular word processor program which has existed in a number of versions for DOS, Windows, and the Macintosh. It is often distributed as part of the Microsoft Office suite. Various native file formats have been used, and some other non-Word-specific formats can also be opened and saved.\n\nPlease note the more modern .docx file extension does not use this mime type.",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -3368,7 +3368,7 @@
   },
   {
     "name": "application/andrew-inset",
-    "description": "Published specification:  \"Multimedia Applications Development with the Andrew Toolkit\", by Nathaniel S. Borenstein, Prentice Hall, 1990. <br /><br />Editors note: I looked him up, he works at Mimecast now. Reach out!",
+    "description": "Published specification:  \"Multimedia Applications Development with the Andrew Toolkit\", by Nathaniel S. Borenstein, Prentice Hall, 1990.\n\nEditors note: I looked him up, he works at Mimecast now. Reach out!",
     "furtherReading": [
       {
         "title": "Internet Assigned Numbers Authority (IANA)",
@@ -4343,7 +4343,7 @@
   },
   {
     "name": "gcode",
-    "description": "GCODE files are created by slicing programs, such as Simplify3D and Slic3r, that translate CAD drawings into G-Code, which a 3D printer can read.<br /><br />There's no official mimetype assigned as far as the author is aware, however these are the ones commonly reported.",
+    "description": "GCODE files are created by slicing programs, such as Simplify3D and Slic3r, that translate CAD drawings into G-Code, which a 3D printer can read.\n\nThere's no official mimetype assigned as far as the author is aware, however these are the ones commonly reported.",
     "links": {
       "deprecates": [
         "text/x.gcode",
@@ -4384,7 +4384,7 @@
   },
   {
     "name": "video/h264",
-    "description": "Advanced Video Coding (AVC), also referred to as H.264 or MPEG-4 Part 10, Advanced Video Coding (MPEG-4 AVC), is a video compression standard based on block-oriented, motion-compensated integer-DCT coding.[1] It is by far the most commonly used format for the recording, compression, and distribution of video content, used by 91% of video industry developers as of September 2019.<br /><br />It supports resolutions up to and including 8K UHD.<br /><br />H.264 is controversial for being patent-encumbered, and hence subject to royalty requirements. In 2013, Cisco is attempting to partially remedy this by producing a freely distributed executable H.264 codec for many platforms for which they have paid the royalty, allowing anybody to download and use it in unmodified form royalty-free. The source code is also openly available, but any altered versions that anybody might create from it would require separate licensing, as would any distribution of the executables other than direct download from Cisco. Thus, the only way to use it as part of a product without additional license fees is to have the product's installer download the executable from Cisco during the install process, rather than including it directly in your own product (whether on disk or downloadable from your site).<br /><br />HEVC (H.265) has been developed as a more efficient successor to this format, but it is also patent-encumbered. Attempts to create a royalty-free alternative include AV1, Daala, VP9, and Thor.<br /><br />The H.264 specification does not, in an extremely strict sense, define a codec which fits into a series of bytes; instead, it describes the stream as fitting into a sequence of frames called \"network abstraction layer units\", which can then be delineated into a raw byte format by the user. The format for putting these into a raw bytestream described by Annex B of the specification apparently is apparently very widely-used.",
+    "description": "Advanced Video Coding (AVC), also referred to as H.264 or MPEG-4 Part 10, Advanced Video Coding (MPEG-4 AVC), is a video compression standard based on block-oriented, motion-compensated integer-DCT coding.[1] It is by far the most commonly used format for the recording, compression, and distribution of video content, used by 91% of video industry developers as of September 2019.\n\nIt supports resolutions up to and including 8K UHD.\n\nH.264 is controversial for being patent-encumbered, and hence subject to royalty requirements. In 2013, Cisco is attempting to partially remedy this by producing a freely distributed executable H.264 codec for many platforms for which they have paid the royalty, allowing anybody to download and use it in unmodified form royalty-free. The source code is also openly available, but any altered versions that anybody might create from it would require separate licensing, as would any distribution of the executables other than direct download from Cisco. Thus, the only way to use it as part of a product without additional license fees is to have the product's installer download the executable from Cisco during the install process, rather than including it directly in your own product (whether on disk or downloadable from your site).\n\nHEVC (H.265) has been developed as a more efficient successor to this format, but it is also patent-encumbered. Attempts to create a royalty-free alternative include AV1, Daala, VP9, and Thor.\n\nThe H.264 specification does not, in an extremely strict sense, define a codec which fits into a series of bytes; instead, it describes the stream as fitting into a sequence of frames called \"network abstraction layer units\", which can then be delineated into a raw byte format by the user. The format for putting these into a raw bytestream described by Annex B of the specification apparently is apparently very widely-used.",
     "furtherReading": [
       {
         "title": "Wikipedia",
@@ -4431,7 +4431,7 @@
   },
   {
     "name": "application/vnd.gerber",
-    "description": "The Gerber file format is the de facto standard for printed circuit board (PCB) image data transfer. Gerber files consist of 7bit ASCII text and do not contain any active or executable content. <br /><br />The format does include an optional integrity check: A checksum of the file's content can be specified using the MD5 File Attribute. Any additional integrity protection or privacy protection must be supplied externally.",
+    "description": "The Gerber file format is the de facto standard for printed circuit board (PCB) image data transfer. Gerber files consist of 7bit ASCII text and do not contain any active or executable content.\n\nThe format does include an optional integrity check: A checksum of the file's content can be specified using the MD5 File Attribute. Any additional integrity protection or privacy protection must be supplied externally.",
     "furtherReading": [
       {
         "title": "Wikipedia",
@@ -5302,7 +5302,7 @@
   },
   {
     "name": "text/javascript",
-    "description": "JavaScript (sometimes abbreviated JS) is a scripting language commonly implemented as part of a web browser in order to create enhanced user interfaces and dynamic websites, but also used in other contexts (such as server-side JavaScript).<br /><br />This is not the same as <a href=\"/text/x-java-source\">Java</a>. People constantly get confused about that.<br /><br />JavaScript was originally developed at Netscape by Brendan Eich (who later became Mozilla CEO... very briefly), where it was originally called LiveScript while under development, but became JavaScript (with the name licensed from Sun) in order to capitalize on the popularity of Java, though the languages aren't really related (although there are some similarities in syntax). Later, a Microsoft implementation designed to be (more or less) compatible was called JScript, and an attempt at a formally standardized version of the language was published by ECMA as ECMAScript.<br /><br />The node.js runtime environment is (mostly) implemented in JavaScript, as are applications running within it.<br /><br />Due to its status as the only scripting language for browsers, JavaScript skyrocketed in popularity in the 2000's and 2010's and as of 2017 serves as a lingua franca of Web development. Arguably, it is currently the world's most popular programming language (it tops GitHub and StackOverflow currently).",
+    "description": "JavaScript (sometimes abbreviated JS) is a scripting language commonly implemented as part of a web browser in order to create enhanced user interfaces and dynamic websites, but also used in other contexts (such as server-side JavaScript).\n\nThis is not the same as [Java](/text/x-java-source). People constantly get confused about that.\n\nJavaScript was originally developed at Netscape by Brendan Eich (who later became Mozilla CEO... very briefly), where it was originally called LiveScript while under development, but became JavaScript (with the name licensed from Sun) in order to capitalize on the popularity of Java, though the languages aren't really related (although there are some similarities in syntax). Later, a Microsoft implementation designed to be (more or less) compatible was called JScript, and an attempt at a formally standardized version of the language was published by ECMA as ECMAScript.\n\nThe node.js runtime environment is (mostly) implemented in JavaScript, as are applications running within it.\n\nDue to its status as the only scripting language for browsers, JavaScript skyrocketed in popularity in the 2000's and 2010's and as of 2017 serves as a lingua franca of Web development. Arguably, it is currently the world's most popular programming language (it tops GitHub and StackOverflow currently).",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -5398,7 +5398,7 @@
   },
   {
     "name": "audio/aiff",
-    "description": "AIFF (Audio Interchange File Format) files store uncompressed signed audio samples inside an IFF container. There's also a compressed variant, called AIFC with the same mimetype.<br /><br />AIFF chunks provide native metadata. In addition, although it is not in the specification, an ID3 chunk is often used to include ID3V2 metadata.<br /><br />It is difficult to trace down official mention of an official mimetype declaration, however you should follow existing guidance which is to assign with audio/aiff and support reading from audio/x-aiff also.",
+    "description": "AIFF (Audio Interchange File Format) files store uncompressed signed audio samples inside an IFF container. There's also a compressed variant, called AIFC with the same mimetype.\n\nAIFF chunks provide native metadata. In addition, although it is not in the specification, an ID3 chunk is often used to include ID3V2 metadata.\n\nIt is difficult to trace down official mention of an official mimetype declaration, however you should follow existing guidance which is to assign with audio/aiff and support reading from audio/x-aiff also.",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -5913,7 +5913,7 @@
   },
   {
     "name": "audio/mpeg",
-    "description": "MP3 is the name commonly given to the audio formats specified by MPEG-1 Layer III and MPEG-2 Layer III, standardized as ISO/IEC 11172-3:1993, with some additions in ISO/IEC 13818-3:1995. It uses lossy compressed data.<br /><br />MP3 is based in part on work by the Fraunhofer Institute, which held patents in the format. Other companies may also have held patents encumbering its implementation. One of the relevant patents was <a href=\"http://www.google.com/patents/US5812672\" target=\"_blank\">U.S. Patent 5,812,672</a>, which expired in September 2015; many other related patents in various countries expired earlier. The final expiration of all relevant patents took until 2017, however, due to some \"submarine patents\" which were kept in the application process for years, extending their expiration dates. A modified version of DCT compression (Discrete cosine transform) is used, a lossy compression method also used in <a href=\"/image/jpeg\">JPEG images</a>.<br /><br />ID3 tags are often used to provide metadata in MP3 files, though they aren't part of the MP3 specification.",
+    "description": "MP3 is the name commonly given to the audio formats specified by MPEG-1 Layer III and MPEG-2 Layer III, standardized as ISO/IEC 11172-3:1993, with some additions in ISO/IEC 13818-3:1995. It uses lossy compressed data.\n\nMP3 is based in part on work by the Fraunhofer Institute, which held patents in the format. Other companies may also have held patents encumbering its implementation. One of the relevant patents was [U.S. Patent 5,812,672](http://www.google.com/patents/US5812672), which expired in September 2015; many other related patents in various countries expired earlier. The final expiration of all relevant patents took until 2017, however, due to some \"submarine patents\" which were kept in the application process for years, extending their expiration dates. A modified version of DCT compression (Discrete cosine transform) is used, a lossy compression method also used in [JPEG images](/image/jpeg).\n\nID3 tags are often used to provide metadata in MP3 files, though they aren't part of the MP3 specification.",
     "furtherReading": [
       {
         "title": "IETF - Internet Engineering Task Force (RFC 3003)",
@@ -9329,7 +9329,7 @@
   },
   {
     "name": "application/vnd.rar",
-    "description": "<strong>R</strong>oshal <strong>AR</strong>chive (RAR) is a proprietary file format used by the compression software WinRAR. They make the decompression code available for use in other programs and allow its distribution, but with a license provision that \"You cannot use the unrar source to re-create the RAR compression algorithm, which is proprietary.",
+    "description": "**R**oshal **AR**chive (RAR) is a proprietary file format used by the compression software WinRAR. They make the decompression code available for use in other programs and allow its distribution, but with a license provision that \"You cannot use the unrar source to re-create the RAR compression algorithm, which is proprietary.",
     "furtherReading": [
       {
         "title": "Internet Assigned Numbers Authority (IANA)",
@@ -9359,7 +9359,7 @@
   },
   {
     "name": "application/x-rar-compressed",
-    "description": "<strong>R</strong>oshal <strong>AR</strong>chive (RAR) is a proprietary file format used by the compression software WinRAR. They make the decompression code available for use in other programs and allow its distribution, but with a license provision that \"You cannot use the unrar source to re-create the RAR compression algorithm, which is proprietary.",
+    "description": "**R**oshal **AR**chive (RAR) is a proprietary file format used by the compression software WinRAR. They make the decompression code available for use in other programs and allow its distribution, but with a license provision that \"You cannot use the unrar source to re-create the RAR compression algorithm, which is proprietary.",
     "deprecated": true,
     "useInstead": "application/vnd.rar",
     "furtherReading": [
@@ -11407,7 +11407,7 @@
   },
   {
     "name": "image/tiff",
-    "description": "TIFF, formerly known as Tag(ged) Image File Format, is an image format capable of storing multiple high quality images in a single file. <br /><br />A TIFF image may be uncompressed or use a compression scheme internally. Two of the most widely used compression schemes in TIFF files are lossless, including LZW and, for bitonal images CCITT Group 4, as used for facsimile transmission [fax]. JPEG baseline DCT-based lossy compression is also used.",
+    "description": "TIFF, formerly known as Tag(ged) Image File Format, is an image format capable of storing multiple high quality images in a single file.\n\nA TIFF image may be uncompressed or use a compression scheme internally. Two of the most widely used compression schemes in TIFF files are lossless, including LZW and, for bitonal images CCITT Group 4, as used for facsimile transmission [fax]. JPEG baseline DCT-based lossy compression is also used.",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -12097,7 +12097,7 @@
   },
   {
     "name": "video/mp2t",
-    "description": "MPEG Transport Stream (or MPEG-2 Transport Stream) is an MPEG multimedia format that allows interleaving more than one Packetized Elementary Stream in a single file. It is an alternative to MPEG Program Stream, designed to work better with certain kinds of streaming. It was introduced in the MPEG-2 standard. There is a variant format named M2TS, used with Blu-ray discs.<br /><br />Alternatively, you got here like I did by selecting a typescript file. That's wrong, that's your browser doing that. There's no official standard for typescript.",
+    "description": "MPEG Transport Stream (or MPEG-2 Transport Stream) is an MPEG multimedia format that allows interleaving more than one Packetized Elementary Stream in a single file. It is an alternative to MPEG Program Stream, designed to work better with certain kinds of streaming. It was introduced in the MPEG-2 standard. There is a variant format named M2TS, used with Blu-ray discs.\n\nAlternatively, you got here like I did by selecting a typescript file. That's wrong, that's your browser doing that. There's no official standard for typescript.",
     "furtherReading": [
       {
         "url": "http://fileformats.archiveteam.org/wiki/MPEG_Transport_Stream",
@@ -12125,7 +12125,7 @@
   },
   {
     "name": "audio/vnd.wav",
-    "description": "The Waveform Audio File Format (WAV or WAVE) is a widely used audio format, originally developed by Microsoft and IBM and based on the RIFF wrapper format. The usual audio encoding in a .wav file is LPCM, considered an 'uncompressed' encoding. Because of large file sizes, WAV is not well-suited for distributing audio such as songs or podcasts. WAV is used in MS-Windows to store sounds used in applications. It is also used as an archival format for first-generation (master) files, often with a metadata chunk as specified in the Broadcast Wave (BWF) standard.<br /><br />Note a contributor has discovered compatibility issues with browsers and the official type. See the attached issue for more information.",
+    "description": "The Waveform Audio File Format (WAV or WAVE) is a widely used audio format, originally developed by Microsoft and IBM and based on the RIFF wrapper format. The usual audio encoding in a .wav file is LPCM, considered an 'uncompressed' encoding. Because of large file sizes, WAV is not well-suited for distributing audio such as songs or podcasts. WAV is used in MS-Windows to store sounds used in applications. It is also used as an archival format for first-generation (master) files, often with a metadata chunk as specified in the Broadcast Wave (BWF) standard.\n\nNote a contributor has discovered compatibility issues with browsers and the official type. See the attached issue for more information.",
     "furtherReading": [
       {
         "url": "http://fileformats.archiveteam.org/wiki/WAV",
@@ -13106,7 +13106,7 @@
   },
   {
     "name": "application/x-xpinstall",
-    "description": "The packaging format for Firefox add-ons. An <code>.xpi</code> file is an ordinary <a href=\"/application/zip\">ZIP</a> archive containing the extension's manifest, scripts and resources, and this media type is what tells Firefox to offer to install the file rather than simply download it.<br /><br />It is not registered with IANA, but Mozilla's install flow depends on it and GitHub's releases API reports it for add-ons published there. Serving an add-on as <a href=\"/application/zip\">application/zip</a> instead will stop the browser offering to install it.",
+    "description": "The packaging format for Firefox add-ons. An `.xpi` file is an ordinary [ZIP](/application/zip) archive containing the extension's manifest, scripts and resources, and this media type is what tells Firefox to offer to install the file rather than simply download it.\n\nIt is not registered with IANA, but Mozilla's install flow depends on it and GitHub's releases API reports it for add-ons published there. Serving an add-on as [application/zip](/application/zip) instead will stop the browser offering to install it.",
     "links": {
       "deprecates": [],
       "relatedTo": [
@@ -13342,7 +13342,7 @@
   },
   {
     "name": "application/zip",
-    "description": "ZIP is one of the most popular file compression formats. It was created in 1989 as the native format of the PKZIP program, which was introduced by Phil Katz in the wake of a lawsuit (which he lost) against him by the makers of the then-popular ARC program (and file format) for copyright and trademark infringement in an earlier program PKARC which had been file-compatible with ARC. <br /><br />This resulted in Katz creating a new file format, which rapidly overtook ARC in popularity (to a large extent because of BBS sysops, then the primary users of such compression, resenting the lawsuit). Many programs have been released for a variety of operating systems to compress and decompress ZIP files, and native support for the format is built into several popular operating systems.",
+    "description": "ZIP is one of the most popular file compression formats. It was created in 1989 as the native format of the PKZIP program, which was introduced by Phil Katz in the wake of a lawsuit (which he lost) against him by the makers of the then-popular ARC program (and file format) for copyright and trademark infringement in an earlier program PKARC which had been file-compatible with ARC.\n\nThis resulted in Katz creating a new file format, which rapidly overtook ARC in popularity (to a large extent because of BBS sysops, then the primary users of such compression, resenting the lawsuit). Many programs have been released for a variety of operating systems to compress and decompress ZIP files, and native support for the format is built into several popular operating systems.",
     "furtherReading": [
       {
         "title": "Internet Assigned Numbers Authority (IANA)",
@@ -13373,7 +13373,7 @@
   },
   {
     "name": "application/x-zip-compressed",
-    "description": "ZIP is one of the most popular file compression formats. It was created in 1989 as the native format of the PKZIP program, which was introduced by Phil Katz in the wake of a lawsuit (which he lost) against him by the makers of the then-popular ARC program (and file format) for copyright and trademark infringement in an earlier program PKARC which had been file-compatible with ARC. <br /><br />This resulted in Katz creating a new file format, which rapidly overtook ARC in popularity (to a large extent because of BBS sysops, then the primary users of such compression, resenting the lawsuit). Many programs have been released for a variety of operating systems to compress and decompress ZIP files, and native support for the format is built into several popular operating systems.",
+    "description": "ZIP is one of the most popular file compression formats. It was created in 1989 as the native format of the PKZIP program, which was introduced by Phil Katz in the wake of a lawsuit (which he lost) against him by the makers of the then-popular ARC program (and file format) for copyright and trademark infringement in an earlier program PKARC which had been file-compatible with ARC.\n\nThis resulted in Katz creating a new file format, which rapidly overtook ARC in popularity (to a large extent because of BBS sysops, then the primary users of such compression, resenting the lawsuit). Many programs have been released for a variety of operating systems to compress and decompress ZIP files, and native support for the format is built into several popular operating systems.",
     "deprecated": true,
     "useInstead": "application/zip",
     "furtherReading": [
@@ -13406,7 +13406,7 @@
   },
   {
     "name": "application/zip-compressed",
-    "description": "ZIP is one of the most popular file compression formats. It was created in 1989 as the native format of the PKZIP program, which was introduced by Phil Katz in the wake of a lawsuit (which he lost) against him by the makers of the then-popular ARC program (and file format) for copyright and trademark infringement in an earlier program PKARC which had been file-compatible with ARC. <br /><br />This resulted in Katz creating a new file format, which rapidly overtook ARC in popularity (to a large extent because of BBS sysops, then the primary users of such compression, resenting the lawsuit). Many programs have been released for a variety of operating systems to compress and decompress ZIP files, and native support for the format is built into several popular operating systems.",
+    "description": "ZIP is one of the most popular file compression formats. It was created in 1989 as the native format of the PKZIP program, which was introduced by Phil Katz in the wake of a lawsuit (which he lost) against him by the makers of the then-popular ARC program (and file format) for copyright and trademark infringement in an earlier program PKARC which had been file-compatible with ARC.\n\nThis resulted in Katz creating a new file format, which rapidly overtook ARC in popularity (to a large extent because of BBS sysops, then the primary users of such compression, resenting the lawsuit). Many programs have been released for a variety of operating systems to compress and decompress ZIP files, and native support for the format is built into several popular operating systems.",
     "deprecated": true,
     "useInstead": "application/zip",
     "furtherReading": [
@@ -13478,7 +13478,7 @@
   },
   {
     "name": "image/x-adobe-dng",
-    "description": "DNG (Digital Negative) is a digital camera raw image format developed by Adobe and released in 2004. Adobe also released a free DNG converter at this time which is continually being updated with compatible RAW file types. DNG is an extension of TIFF 6.0 and is compatible with TIFF/EP.<br /><br />Adobe intends for DNG to become an archival file type, creating an open standard for RAW files.",
+    "description": "DNG (Digital Negative) is a digital camera raw image format developed by Adobe and released in 2004. Adobe also released a free DNG converter at this time which is continually being updated with compatible RAW file types. DNG is an extension of TIFF 6.0 and is compatible with TIFF/EP.\n\nAdobe intends for DNG to become an archival file type, creating an open standard for RAW files.",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -13718,7 +13718,7 @@
   },
   {
     "name": "image/x-olympus-orf",
-    "description": "ORF, or Olympus RAW, is a raw image format produced by Olympus digital cameras. The format is TIFF-like, but with a different file signature. The full-size image is in the first IFD. There is also Exif data, with a MakerNote.\n\n",
+    "description": "ORF, or Olympus RAW, is a raw image format produced by Olympus digital cameras. The format is TIFF-like, but with a different file signature. The full-size image is in the first IFD. There is also Exif data, with a MakerNote.",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -13791,7 +13791,7 @@
   },
   {
     "name": "image/x-panasonic-raw",
-    "description": "Panasonic RAW/RW2, also known as Leica RAW or RWL, is a raw image format used by some Panasonic and Leica digital cameras. It can also be known by a camera-specific name such as Lumix RAW or Panasonic LX3 RAW.<br /><br />Different cameras produce different versions of it, and at some point the .raw file extension was changed to .rw2. The term Panasonic RAW might refer to just the .raw files, but more likely includes both .raw and .rw2.",
+    "description": "Panasonic RAW/RW2, also known as Leica RAW or RWL, is a raw image format used by some Panasonic and Leica digital cameras. It can also be known by a camera-specific name such as Lumix RAW or Panasonic LX3 RAW.\n\nDifferent cameras produce different versions of it, and at some point the .raw file extension was changed to .rw2. The term Panasonic RAW might refer to just the .raw files, but more likely includes both .raw and .rw2.",
     "furtherReading": [
       {
         "title": "Let's Solve the File Format Problem!",
@@ -13817,7 +13817,7 @@
   },
   {
     "name": "audio/flac",
-    "description": "FLAC stands for Free Lossless Audio Codec, an audio format similar to MP3, but lossless, meaning that audio is compressed in FLAC without any loss in quality. <br /><br />It can encode audio with a PCM bit resolution up to 32 bits per sample and sampling rates up to 640 kHz. FLAC-encoded audio is usually found either in a native container (which has the extension .flac), or in an Ogg container (when it's known as OggFLAC).",
+    "description": "FLAC stands for Free Lossless Audio Codec, an audio format similar to MP3, but lossless, meaning that audio is compressed in FLAC without any loss in quality.\n\nIt can encode audio with a PCM bit resolution up to 32 bits per sample and sampling rates up to 640 kHz. FLAC-encoded audio is usually found either in a native container (which has the extension .flac), or in an Ogg container (when it's known as OggFLAC).",
     "furtherReading": [
       {
         "title": "The National Archives",
@@ -14066,7 +14066,7 @@
   },
   {
     "name": "image/heif",
-    "description": "HEIF is the container format defined by MPEG-H Part 12 (ISO/IEC 23008-12) for still images and image sequences. A file is labelled image/heif when it conforms to the generic 'mif1' brand rather than committing to a particular codec, so the picture inside may be coded with HEVC or something else entirely.<br /><br />Most people meet the format through Apple devices, but those photos are usually labelled <a href=\"/image/heic\">image/heic</a> instead, because they specifically use HEVC coding. If you are unsure which label applies, image/heif is the safer, more general one.",
+    "description": "HEIF is the container format defined by MPEG-H Part 12 (ISO/IEC 23008-12) for still images and image sequences. A file is labelled image/heif when it conforms to the generic 'mif1' brand rather than committing to a particular codec, so the picture inside may be coded with HEVC or something else entirely.\n\nMost people meet the format through Apple devices, but those photos are usually labelled [image/heic](/image/heic) instead, because they specifically use HEVC coding. If you are unsure which label applies, image/heif is the safer, more general one.",
     "links": {
       "deprecates": [],
       "relatedTo": [
@@ -14099,7 +14099,7 @@
   },
   {
     "name": "image/heic-sequence",
-    "description": "A HEIF container holding more than one HEVC-coded image, such as a burst, an animation, or the moving part of an Apple Live Photo. It uses the same container as <a href=\"/image/heic\">image/heic</a>, but the separate label tells a reader to expect a series of timed images rather than a single still.<br /><br />This is the type the <code>file</code> command reports for Live Stickers and similar <code>.heics</code> files, and the value you need in an HTML file input's <code>accept</code> attribute if you want to receive them.",
+    "description": "A HEIF container holding more than one HEVC-coded image, such as a burst, an animation, or the moving part of an Apple Live Photo. It uses the same container as [image/heic](/image/heic), but the separate label tells a reader to expect a series of timed images rather than a single still.\n\nThis is the type the `file` command reports for Live Stickers and similar `.heics` files, and the value you need in an HTML file input's `accept` attribute if you want to receive them.",
     "links": {
       "deprecates": [],
       "relatedTo": [
@@ -14132,7 +14132,7 @@
   },
   {
     "name": "image/heif-sequence",
-    "description": "The codec-agnostic counterpart to <a href=\"/image/heic-sequence\">image/heic-sequence</a>: a HEIF container holding several coded images without committing to HEVC in particular.<br /><br />Tools disagree about which of the two to report for the same file, so it is worth accepting both. On Linux the <code>file</code> command tends to say image/heif-sequence where a browser file input expects image/heic-sequence.",
+    "description": "The codec-agnostic counterpart to [image/heic-sequence](/image/heic-sequence): a HEIF container holding several coded images without committing to HEVC in particular.\n\nTools disagree about which of the two to report for the same file, so it is worth accepting both. On Linux the `file` command tends to say image/heif-sequence where a browser file input expects image/heic-sequence.",
     "links": {
       "deprecates": [],
       "relatedTo": [
@@ -14165,7 +14165,7 @@
   },
   {
     "name": "model/stl",
-    "description": "STL describes the surface of a three-dimensional object as a mesh of triangles. It carries no colour, no texture and no units, which is both why it is so simple to write and why so much information is lost on the way out of a CAD package.<br /><br />It originated with 3D Systems' stereolithography machines in the late 1980s and became the common currency between modelling software and 3D printers, so nearly every slicer accepts it. Two layouts share the extension: a human-readable ASCII form and a much smaller binary form.<br /><br />Watch out for the extension clash: <a href=\"/application/vnd.ms-pki.stl\">application/vnd.ms-pki.stl</a> is a Microsoft Certificate Trust List and has nothing to do with 3D models, despite also using <code>.stl</code>.",
+    "description": "STL describes the surface of a three-dimensional object as a mesh of triangles. It carries no colour, no texture and no units, which is both why it is so simple to write and why so much information is lost on the way out of a CAD package.\n\nIt originated with 3D Systems' stereolithography machines in the late 1980s and became the common currency between modelling software and 3D printers, so nearly every slicer accepts it. Two layouts share the extension: a human-readable ASCII form and a much smaller binary form.\n\nWatch out for the extension clash: [application/vnd.ms-pki.stl](/application/vnd.ms-pki.stl) is a Microsoft Certificate Trust List and has nothing to do with 3D models, despite also using `.stl`.",
     "links": {
       "deprecates": [],
       "relatedTo": [
@@ -14195,7 +14195,7 @@
   },
   {
     "name": "application/vnd.ms-outlook",
-    "description": "A single Outlook item saved out as a standalone file: an email, an appointment, a contact or a task. Internally it is a Microsoft Compound File Binary container holding the item's MAPI properties, so unlike a <code>.eml</code> file it preserves Outlook-specific fields instead of following the RFC 5322 message format.<br /><br />This type is not registered with IANA, but it is what Microsoft's own documentation uses and what e-discovery and archiving tools consistently expect. You may also see the generic <a href=\"/application/octet-stream\">application/octet-stream</a> in the wild when a server has no mapping for the extension.",
+    "description": "A single Outlook item saved out as a standalone file: an email, an appointment, a contact or a task. Internally it is a Microsoft Compound File Binary container holding the item's MAPI properties, so unlike a `.eml` file it preserves Outlook-specific fields instead of following the RFC 5322 message format.\n\nThis type is not registered with IANA, but it is what Microsoft's own documentation uses and what e-discovery and archiving tools consistently expect. You may also see the generic [application/octet-stream](/application/octet-stream) in the wild when a server has no mapping for the extension.",
     "links": {
       "deprecates": [],
       "relatedTo": [],
@@ -14223,7 +14223,7 @@
   },
   {
     "name": "application/x-ipynb+json",
-    "description": "A Jupyter notebook: a JSON document holding an ordered list of cells containing code, prose and the output produced by running that code, plus metadata naming the kernel needed to execute it.<br /><br />There is no registered media type for the format. application/x-ipynb+json is the unregistered name that Jupyter's own tooling and most editors settled on, so it is a community convention rather than a standard. If you know of an authoritative source that pins this down, the maintainers would welcome it.",
+    "description": "A Jupyter notebook: a JSON document holding an ordered list of cells containing code, prose and the output produced by running that code, plus metadata naming the kernel needed to execute it.\n\nThere is no registered media type for the format. application/x-ipynb+json is the unregistered name that Jupyter's own tooling and most editors settled on, so it is a community convention rather than a standard. If you know of an authoritative source that pins this down, the maintainers would welcome it.",
     "links": {
       "deprecates": [],
       "relatedTo": [
@@ -14249,7 +14249,7 @@
   },
   {
     "name": "application/x-ms-shortcut",
-    "description": "A Windows shortcut. It is a small binary file that points at something else — a program, a document, a folder, a drive or a network location — and carries the details Windows needs to open it, such as the working directory, any command line arguments, an icon to display, and enough information about the target to go looking for it if it has since moved.<br /><br />Windows has used the format since Windows 95, where it replaced the older Program Information Files, and Microsoft documents it as the Shell Link Binary File Format. The type is not registered with IANA; <code>application/x-ms-shortcut</code> comes from the media type list shipped with the Apache HTTP Server and is the spelling that stuck.<br /><br />One thing worth knowing if you are accepting these from users: because a shortcut can carry arguments and borrow its icon from an unrelated file, a <code>.lnk</code> can be made to look harmless while pointing somewhere else entirely. They have a long history as a malware delivery route, so treat unexpected ones with care.",
+    "description": "A Windows shortcut. It is a small binary file that points at something else — a program, a document, a folder, a drive or a network location — and carries the details Windows needs to open it, such as the working directory, any command line arguments, an icon to display, and enough information about the target to go looking for it if it has since moved.\n\nWindows has used the format since Windows 95, where it replaced the older Program Information Files, and Microsoft documents it as the Shell Link Binary File Format. The type is not registered with IANA; `application/x-ms-shortcut` comes from the media type list shipped with the Apache HTTP Server and is the spelling that stuck.\n\nOne thing worth knowing if you are accepting these from users: because a shortcut can carry arguments and borrow its icon from an unrelated file, a `.lnk` can be made to look harmless while pointing somewhere else entirely. They have a long history as a malware delivery route, so treat unexpected ones with care.",
     "links": {
       "deprecates": [],
       "relatedTo": [
