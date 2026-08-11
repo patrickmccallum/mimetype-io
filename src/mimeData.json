@@ -178,7 +178,7 @@
     "furtherReading": [
       {
         "title": "The Moving Picture Experts Group",
-        "url": "https://mpeg.chiariglione.org/standards/mpeg-h/image-file-format"
+        "url": "https://mpeg.chiariglione.org/standards/mpeg-h/image-file-format.html"
       },
       {
         "title": "Let's Solve the File Format Problem!",
@@ -388,7 +388,7 @@
     "furtherReading": [
       {
         "title": "RFC Editor - RFC4337",
-        "url": "https://www.rfc-editor.org/rfc/rfc4337"
+        "url": "https://www.rfc-editor.org/info/rfc4337/"
       },
       {
         "title": "Let's Solve the File Format Problem!",
@@ -482,7 +482,7 @@
     "furtherReading": [
       {
         "title": "Internet Assigned Numbers Authority (IANA)",
-        "url": "https://www.iana.org/assignments/media-types/audio/mp4a-latm"
+        "url": "https://www.iana.org/assignments/media-types/audio/MP4A-LATM"
       },
       {
         "title": "Wikipedia",
@@ -2173,7 +2173,7 @@
     "furtherReading": [
       {
         "title": "RFC 7763 - The text/markdown Media Type",
-        "url": "https://tools.ietf.org/html/rfc7763"
+        "url": "https://datatracker.ietf.org/doc/html/rfc7763"
       },
       {
         "title": "Let's Solve the File Format Problem!",
@@ -3191,7 +3191,7 @@
       },
       {
         "title": "Internet Engineering Task Force",
-        "url": "https://www.ietf.org/rfc/rfc0822.txt"
+        "url": "https://www.rfc-editor.org/rfc/rfc822.txt"
       }
     ],
     "links": {
@@ -5917,7 +5917,7 @@
     "furtherReading": [
       {
         "title": "IETF - Internet Engineering Task Force (RFC 3003)",
-        "url": "https://tools.ietf.org/html/rfc3003"
+        "url": "https://datatracker.ietf.org/doc/html/rfc3003"
       },
       {
         "title": "Let's Solve the File Format Problem!",
@@ -6560,7 +6560,7 @@
     "furtherReading": [
       {
         "title": "Internet Engineering Task Force (RFC 4337)",
-        "url": "https://tools.ietf.org/html/rfc4337"
+        "url": "https://datatracker.ietf.org/doc/html/rfc4337"
       },
       {
         "title": "Library of Congress",
@@ -8217,7 +8217,7 @@
     "furtherReading": [
       {
         "title": "IETF - Internet Engineering Task Force (RFC 5273)",
-        "url": "https://tools.ietf.org/html/rfc5273.html#page-3"
+        "url": "https://datatracker.ietf.org/doc/html/rfc5273.html#page-3"
       },
       {
         "title": "PKI Tutorial",
@@ -8251,7 +8251,7 @@
     "furtherReading": [
       {
         "title": "IETF - Internet Engineering Task Force (RFC 5273)",
-        "url": "https://tools.ietf.org/html/rfc5273.html#page-3"
+        "url": "https://datatracker.ietf.org/doc/html/rfc5273.html#page-3"
       },
       {
         "title": "PKI Tutorial",
@@ -11988,7 +11988,7 @@
     "description": "",
     "furtherReading": [
       {
-        "url": "http://msdn.microsoft.com/en-us/library/office/ff768724.aspx",
+        "url": "https://learn.microsoft.com/en-us/previous-versions/office/developer/office-2010/ff768724(v=office.14)",
         "title": "Microsoft's documentation of the Visio file format"
       },
       {
