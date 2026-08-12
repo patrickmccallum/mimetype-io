@@ -62,6 +62,17 @@ Descriptions in `src/mimeData.json` are **Markdown**, not HTML:
 Raw HTML is rejected by the validator and would render as literal text anyway,
 since descriptions are rendered to React elements rather than injected as HTML.
 
+### Sourcing
+
+Put a citation in `furtherReading` whenever you write a description. Pages that
+assert something without one show a "no source is cited" notice, derived from
+the data rather than stored as a flag — so it stays accurate on its own.
+
+`notices.hasNoOfficial` is a separate question: set it when no media type is
+registered with IANA, regardless of whether you have a source. A format can be
+thoroughly documented (for example by the Library of Congress) and still have no
+registration.
+
 If you only changed `src/mimeData.json`, `npm run test:data` is the quick check
 — it catches malformed entries, duplicate names, and cross-links that would make
 one mimetype's page overwrite another's.

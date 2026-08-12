@@ -8,6 +8,7 @@ import {
     IconEdit,
     IconExternalLink,
     IconHandStop,
+    IconQuestionMark,
 } from "@tabler/icons-react"
 import { MainLayout } from "@/components/MainLayout"
 import { Fit } from "@/components/Fit"
@@ -186,14 +187,49 @@ export default async function MimetypePage({
                                 <IconCode size={20} />
                             </div>{" "}
                             <div className={"py-2 text-amber-900"}>
-                                Important: An officially mentioned type either
-                                does not exist, or is hard to track down. The
-                                information here likely reflects community
-                                contributions or popular usage derived from
-                                existing implementations.
+                                Important: no media type for this format is
+                                registered with IANA. The type shown here is the
+                                one in common use.
                             </div>
                         </div>
                     )}
+
+                    {/*
+                     * Whether a description is backed by a citation is derived
+                     * from the data rather than stored as a flag, so it cannot
+                     * drift. Only shown where something has actually been
+                     * asserted -- a bare entry with no description has nothing
+                     * to source.
+                     */}
+                    {mime.description?.trim() &&
+                        (mime.furtherReading?.length ?? 0) === 0 && (
+                            <div
+                                className={
+                                    "flex items-stretch gap-3 rounded-md bg-slate-100 p-1"
+                                }
+                            >
+                                <div
+                                    className={
+                                        "flex w-10 items-center justify-center rounded-md bg-slate-400 p-2 text-white"
+                                    }
+                                >
+                                    <IconQuestionMark size={20} />
+                                </div>{" "}
+                                <div className={"py-2 text-slate-700"}>
+                                    No source is cited for this description. If
+                                    you know of one,{" "}
+                                    <a
+                                        href={editUrl}
+                                        target={"_blank"}
+                                        rel={"noreferrer"}
+                                        className={"underline"}
+                                    >
+                                        it would be welcome
+                                    </a>
+                                    .
+                                </div>
+                            </div>
+                        )}
 
                     {mime.notices.popularUsage && (
                         <div

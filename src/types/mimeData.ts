@@ -9,8 +9,9 @@ export interface MimeData {
         alternativeTo: Array<string>
     }
     notices: {
+        /** No registered media type exists for this format. */
         hasNoOfficial: boolean
-        communityContributed: boolean
+        /** The type people actually use in practice, where it differs. */
         popularUsage: string | null
     }
     furtherReading?: Array<{

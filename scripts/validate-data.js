@@ -148,15 +148,28 @@ for (const entry of data) {
     if (!entry.notices || typeof entry.notices !== "object") {
         err(entry.name, "`notices` object is missing")
     } else {
-        for (const flag of ["hasNoOfficial", "communityContributed"]) {
-            if (typeof entry.notices[flag] !== "boolean") {
-                err(entry.name, `notices.${flag} must be a boolean`)
-            }
+        if (typeof entry.notices.hasNoOfficial !== "boolean") {
+            err(entry.name, "notices.hasNoOfficial must be a boolean")
         }
         if (!("popularUsage" in entry.notices)) {
             err(
                 entry.name,
                 "notices.popularUsage must be present (string or null)",
+            )
+        }
+        /**
+         * `communityContributed` was retired. It duplicated something the data
+         * already stated -- whether `furtherReading` is empty -- so it drifted
+         * out of sync instead of carrying information, and contributors had to
+         * guess which of two readings applied. Whether a description is backed
+         * by a citation is now derived at render time.
+         */
+        if ("communityContributed" in entry.notices) {
+            err(
+                entry.name,
+                "notices.communityContributed has been retired. Cite a source " +
+                    "in `furtherReading` instead; the site derives the notice " +
+                    "from whether one is present.",
             )
         }
     }
