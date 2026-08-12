@@ -535,7 +535,7 @@
     ],
     "notices": {
       "hasNoOfficial": false,
-      "communityContributed": true,
+      "communityContributed": false,
       "popularUsage": null
     }
   },
@@ -13126,7 +13126,7 @@
     ],
     "notices": {
       "hasNoOfficial": true,
-      "communityContributed": true,
+      "communityContributed": false,
       "popularUsage": null
     }
   },
@@ -14189,7 +14189,7 @@
     ],
     "notices": {
       "hasNoOfficial": false,
-      "communityContributed": true,
+      "communityContributed": false,
       "popularUsage": null
     }
   },
@@ -14217,7 +14217,7 @@
     ],
     "notices": {
       "hasNoOfficial": true,
-      "communityContributed": true,
+      "communityContributed": false,
       "popularUsage": null
     }
   },
@@ -14243,7 +14243,7 @@
     ],
     "notices": {
       "hasNoOfficial": true,
-      "communityContributed": true,
+      "communityContributed": false,
       "popularUsage": null
     }
   },
@@ -14269,7 +14269,7 @@
     ],
     "notices": {
       "hasNoOfficial": true,
-      "communityContributed": true,
+      "communityContributed": false,
       "popularUsage": null
     }
   }
