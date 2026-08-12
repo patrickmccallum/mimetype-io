@@ -14272,5 +14272,304 @@
       "communityContributed": true,
       "popularUsage": null
     }
+  },
+  {
+    "name": "image/jp2",
+    "description": "JP2 is the file format defined by JPEG 2000 Part 1 (ISO/IEC 15444-1) and registered by RFC 3745. It wraps a wavelet-coded image in a sequence of boxes. Those boxes carry colour space, resolution and metadata alongside the picture data, so a decoder can interpret the pixels without being told anything separately.\n\nWavelet coding gives it two properties JPEG lacks. It can compress without any loss, and its codestream can be cut short to give a smaller or lower-quality image without re-encoding. That made it the format of choice for digital cinema distribution and for large-scale archival scanning at national libraries.\n\nIf your file is a bare codestream with no boxes around it, the right label is [image/j2c](/image/j2c).",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "image/jpeg",
+        "image/jpx",
+        "image/jpm",
+        "image/j2c",
+        "image/jph"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".jp2",
+      ".jpg2"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/jp2"
+      },
+      {
+        "title": "RFC 3745 - MIME Type Registrations for JPEG 2000",
+        "url": "https://www.rfc-editor.org/rfc/rfc3745"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "image/jpx",
+    "description": "JPX is the extended file format from JPEG 2000 Part 2 (ISO/IEC 15444-2). RFC 3745 registered it alongside JP2, the Part 1 format. It uses the same box structure as [image/jp2](/image/jp2) but lifts that format's restrictions: several codestreams in one file, colour spaces beyond sRGB and greyscale, compositing instructions and richer metadata.\n\nRFC 3745 registers `.jpf` for it. You will also see `.jpx` used, which is the same format under a name that matches the media type.\n\nA file that uses only Part 1 features should be labelled image/jp2. JPX is for files that need the extensions.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "image/jp2",
+        "image/jpm"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".jpf"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/jpx"
+      },
+      {
+        "title": "RFC 3745 - MIME Type Registrations for JPEG 2000",
+        "url": "https://www.rfc-editor.org/rfc/rfc3745"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "image/jpm",
+    "description": "JPM is the compound image format from JPEG 2000 Part 6 (ISO/IEC 15444-6), registered by RFC 3745. It stores a page under a mixed raster content model. That means three layers: a low-resolution background, a high-resolution binary mask for text and line art, and a foreground colour layer.\n\nSplitting a scanned page that way lets each layer use the compression that suits it. That is why JPM appears in document capture and archiving systems rather than in general photography.\n\nBoth `.jpm` and `.jpgm` are registered for it.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "image/jp2",
+        "image/jpx"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".jpm",
+      ".jpgm"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/jpm"
+      },
+      {
+        "title": "RFC 3745 - MIME Type Registrations for JPEG 2000",
+        "url": "https://www.rfc-editor.org/rfc/rfc3745"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "image/j2c",
+    "description": "A bare JPEG 2000 codestream, with none of the boxes that make up a [image/jp2](/image/jp2) file. It holds entropy-coded wavelet data and the markers a decoder needs, and nothing describing colour space or metadata. The registration is broad: it covers a codestream drawing on any part of ISO/IEC 15444, not Part 1 alone.\n\nIt usually appears inside another container, such as a DICOM image, an MXF (Material Exchange Format) video file or a PDF. Those wrappers already carry the colour and metadata, so repeating it would be redundant.\n\nBoth `.j2c` and `.j2k` are registered extensions, and IANA records that both are in widespread use.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "image/jp2",
+        "image/jphc"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".j2c",
+      ".j2k"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/j2c"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "image/jph",
+    "description": "JPH is the file format for High-Throughput JPEG 2000, defined in ISO/IEC 15444-15. It keeps the box structure and the wavelet transform of [image/jp2](/image/jp2). It replaces only the block coder, with one roughly an order of magnitude faster in both directions.\n\nThe trade is a small loss of compression efficiency. In exchange, encode and decode speeds make JPEG 2000 practical for live and interactive work rather than only archival work. A legacy JPEG 2000 decoder cannot read the result directly, but the two forms convert to each other without loss, so an archive can be moved across and back.\n\nThe bare codestream form, without the boxes, is [image/jphc](/image/jphc).",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "image/jp2",
+        "image/jphc"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".jph"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/jph"
+      },
+      {
+        "title": "JPEG - High Throughput JPEG 2000",
+        "url": "https://jpeg.org/jpeg2000/htj2k.html"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "image/jphc",
+    "description": "A bare High-Throughput JPEG 2000 codestream (ISO/IEC 15444-15). It holds the coded data and its markers, without the boxes that carry colour space and metadata. It stands to [image/jph](/image/jph) as [image/j2c](/image/j2c) stands to [image/jp2](/image/jp2).\n\nUse it where the surrounding container already describes the image and only the pixels are needed.\n\nThe registered extension is `.jhc`, not `.jphc`. The shorter spelling is easy to get wrong.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "image/jph",
+        "image/j2c"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".jhc"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/jphc"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "image/jxl",
+    "description": "JPEG XL (ISO/IEC 18181) is a still and animated image format built around a new codec. It has one capability its neighbours lack: it can transcode an existing JPEG file without loss to something smaller, then reconstruct that original file exactly, byte for byte.\n\nIt also offers progressive decoding, lossless and lossy modes in one codestream, wide colour gamut, high bit depth, transparency and animation. That is roughly the union of what [image/jpeg](/image/jpeg), [image/png](/image/png) and [image/webp](/image/webp) each do separately.\n\nAdoption has been the obstacle, not the technology. Check current browser support before serving it without a fallback.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "image/jpeg",
+        "image/avif",
+        "image/webp"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".jxl"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/jxl"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "image/jxr",
+    "description": "JPEG XR (ITU-T T.832, also published as ISO/IEC 29199-2) is a still image codec. It supports lossy and lossless compression, high dynamic range and bit depths up to 32 bits per channel, with low computational and memory requirements.\n\nIt began at Microsoft as Windows Media Photo. It was renamed HD Photo before standardisation, which is why `.wdp` files and the unregistered `image/vnd.ms-photo` label describe the same format.\n\nOutside Microsoft's own products it did not replace [image/jpeg](/image/jpeg), and support today is sparse.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "image/jpeg"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".jxr"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/jxr"
+      },
+      {
+        "title": "Library of Congress - JPEG XR File Format (JXR)",
+        "url": "https://www.loc.gov/preservation/digital/formats/fdd/fdd000524.shtml"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "image/jls",
+    "description": "JPEG-LS (ITU-T T.87, also ISO/IEC 14495-1) is a lossless and near-lossless codec for continuous-tone still images. Despite the name it shares little with baseline JPEG. It predicts each sample from its neighbours and codes the difference, with no discrete cosine transform anywhere.\n\nNear-lossless mode is the distinctive part. You set a maximum permitted error per sample, and the encoder guarantees no pixel deviates by more than that. The loss is bounded and can be checked, rather than open-ended. Medical imaging adopted it for that reason, and DICOM defines transfer syntaxes for it.\n\nJPEG's own overview calls it especially suited to low-complexity hardware, which keeps it in embedded and scientific capture despite newer options.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "image/jpeg",
+        "image/dicom-rle"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".jls"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/jls"
+      },
+      {
+        "title": "JPEG - JPEG LS overview",
+        "url": "https://jpeg.org/jpegls/index.html"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
+  },
+  {
+    "name": "image/dicom-rle",
+    "description": "The run-length encoding defined by the DICOM standard for medical images, specified in PS3.5 Annex G. Pixel codes are split into byte segments, one per byte. An 8-bit RGB image gives a segment per colour; a 16-bit greyscale image gives a high-byte and a low-byte segment. Each segment is compressed on its own, and no run crosses a row boundary.\n\nLossless compression matters in diagnostic imaging, where an artefact could be read as pathology. RLE is the simplest of DICOM's lossless options. It achieves little on photographic data, but works well on the large uniform regions typical of segmentation masks and some modalities.\n\nWhere stronger lossless compression is needed, [image/jls](/image/jls) is the usual alternative.",
+    "links": {
+      "deprecates": [],
+      "relatedTo": [
+        "image/jls"
+      ],
+      "parentOf": [],
+      "alternativeTo": []
+    },
+    "fileTypes": [
+      ".drle"
+    ],
+    "furtherReading": [
+      {
+        "title": "Internet Assigned Numbers Authority (IANA)",
+        "url": "https://www.iana.org/assignments/media-types/image/dicom-rle"
+      }
+    ],
+    "notices": {
+      "hasNoOfficial": false,
+      "communityContributed": false,
+      "popularUsage": null
+    }
   }
 ]
